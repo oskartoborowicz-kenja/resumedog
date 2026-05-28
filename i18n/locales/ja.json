@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "about": "私たちについて",
+    "services": "サービス",
+    "pricing": "料金プラン",
+    "blog": "ブログ",
+    "cta": "無料で始める"
+  },
+  "about": {
+    "label": "私たちについて",
+    "heading1": "求職者のための",
+    "heading2": "本気の",
+    "headingEm": "履歴書AI",
+    "sub": "ResumeAIは先進的な言語モデルを活用し、履歴書の書き直し・再フォーマット・求人への最適化を数秒で実現します。テンプレート不要、推測不要、結果のみ。",
+    "fast": {
+      "title": "高速",
+      "desc": "30秒以内に履歴書を変換。時間をかけずに。"
+    },
+    "targeted": {
+      "title": "ターゲット特化",
+      "desc": "貼り付けた求人内容に合わせて、出力が正確に調整されます。"
+    },
+    "private": {
+      "title": "プライバシー保護",
+      "desc": "データは保存されず、AIのトレーニングにも使用されません。"
+    }
+  },
+  "services": {
+    "label": "サービス",
+    "heading": "履歴書に必要な",
+    "headingEm": "すべて",
+    "sub": "ひとつのプラットフォームで、面接を勝ち取るすべてのツールを。",
+    "rewrite": {
+      "title": "AI書き直し",
+      "desc": "履歴書と求人情報を貼り付けると、ATS対応の洗練されたバージョンが即座に返ってきます。"
+    },
+    "matching": {
+      "title": "求人マッチング",
+      "desc": "履歴書と求人の一致度、不足キーワードを正確に確認できます。"
+    },
+    "format": {
+      "title": "フォーマット変換",
+      "desc": "PDF・Word・プレーンテキストへ、常にきれいな形式でエクスポート。"
+    },
+    "cover": {
+      "title": "カバーレター",
+      "desc": "ワンクリックで、履歴書に合わせたカバーレターを自動生成。"
+    }
+  },
+  "login": {
+    "title": "おかえりなさい",
+    "sub": "アカウントにログイン",
+    "email": "メールアドレス",
+    "emailPlaceholder": "you{'@'}example.com",
+    "password": "パスワード",
+    "passwordPlaceholder": "••••••••",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "showPassword": "パスワードを表示",
+    "hidePassword": "パスワードを非表示",
+    "submit": "ログイン",
+    "submitting": "ログイン中…",
+    "noAccount": "アカウントをお持ちでない方は",
+    "signupLink": "無料で登録",
+    "errorInvalid": "メールアドレスまたはパスワードが正しくありません。",
+    "errors": {
+      "emailRequired": "メールアドレスを入力してください。",
+      "emailInvalid": "有効なメールアドレスを入力してください。",
+      "passwordRequired": "パスワードを入力してください。"
+    }
+  },
+  "signup": {
+    "title": "アカウントを作成",
+    "sub": "無料でスタート — クレジットカード不要",
+    "name": "氏名",
+    "namePlaceholder": "山田 太郎",
+    "email": "メールアドレス",
+    "emailPlaceholder": "you{'@'}example.com",
+    "password": "パスワード",
+    "passwordPlaceholder": "8文字以上",
+    "confirm": "パスワード（確認）",
+    "confirmPlaceholder": "パスワードを再入力",
+    "eulaText": "以下に同意します：",
+    "eulaLink": "エンドユーザーライセンス契約",
+    "submit": "アカウントを作成",
+    "submitting": "作成中…",
+    "hasAccount": "すでにアカウントをお持ちの方は",
+    "loginLink": "ログイン",
+    "errorGeneric": "エラーが発生しました。もう一度お試しください。",
+    "strength": {
+      "weak": "弱い",
+      "fair": "普通",
+      "good": "良い",
+      "strong": "強い"
+    },
+    "errors": {
+      "nameRequired": "氏名を入力してください。",
+      "emailRequired": "メールアドレスを入力してください。",
+      "emailInvalid": "有効なメールアドレスを入力してください。",
+      "passwordRequired": "パスワードを入力してください。",
+      "passwordTooShort": "パスワードは8文字以上で入力してください。",
+      "confirmRequired": "パスワードを確認してください。",
+      "confirmMismatch": "パスワードが一致しません。",
+      "eulaRequired": "続行するにはEULAへの同意が必要です。"
+    }
+  },
+  "forgotPassword": {
+    "title": "パスワードをお忘れですか？",
+    "sub": "メールアドレスを入力すると、リセットリンクをお送りします。",
+    "email": "メールアドレス",
+    "emailPlaceholder": "you{'@'}example.com",
+    "submit": "リセットリンクを送信",
+    "submitting": "送信中…",
+    "successTitle": "メールをご確認ください",
+    "successSub": "{email} のアカウントが存在する場合、数分以内にパスワードリセットリンクが届きます。",
+    "spamNote": "届かない場合は迷惑メールフォルダをご確認ください。",
+    "backToLogin": "ログインに戻る",
+    "rememberIt": "思い出しましたか？",
+    "errors": {
+      "emailRequired": "メールアドレスを入力してください。",
+      "emailInvalid": "有効なメールアドレスを入力してください。"
+    }
+  }
+}

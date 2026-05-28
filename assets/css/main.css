@@ -1,0 +1,118 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root,
+[data-theme="light"] {
+  --ink: #09090b;
+  --ink2: #52525b;
+  --cream: #e0f2fe;
+  --cream2: #bae6fd;
+  --gold: #0ea5e9;
+  --gold2: #38bdf8;
+  --teal: #4338ca;
+  --teal2: #e0e7ff;
+  --cta: #0f766e;
+  --card-bg: #ffffff;
+  --border: rgba(9, 9, 11, 0.12);
+  --font-display: 'Geist', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+[data-theme="dark"] {
+  --ink: #f0ece6;
+  --ink2: #a09890;
+  --cream: #151210;
+  --cream2: #1e1a17;
+  --gold: #e8cb7a;
+  --gold2: #c9a84c;
+  --teal: #4db8a5;
+  --teal2: #0d2e29;
+  --card-bg: #1e1a17;
+  --border: rgba(240, 236, 230, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background 0.25s, color 0.25s;
+}
+
+a { text-decoration: none; }
+
+.btn-primary {
+  background: var(--cta);
+  color: #ffffff;
+  padding: 0.85rem 2rem;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.btn-primary:hover { background: #0d5c55; }
+
+.btn-secondary {
+  color: var(--ink2);
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.btn-secondary:hover { color: var(--ink); }
+
+.btn-gold {
+  background: var(--gold);
+  color: #1a1714;
+  padding: 0.9rem 2.25rem;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.btn-gold:hover { background: var(--gold2); }
+
+.section-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--teal);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.section-heading em { color: var(--gold); font-style: italic; }
+
+.section-sub {
+  font-size: 17px;
+  color: var(--ink2);
+  font-weight: 300;
+  max-width: 520px;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 900px) {
+  .section-heading { font-size: 2rem; }
+}

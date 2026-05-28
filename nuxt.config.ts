@@ -1,0 +1,35 @@
+export default defineNuxtConfig({
+  devtools: { enabled: true },
+  modules: ['@nuxtjs/i18n'],
+  compatibilityDate: '2026-05-29',
+  i18n: {
+    strategy: 'no_prefix',
+    defaultLocale: 'en',
+    langDir: 'locales',
+    locales: [
+      { code: 'en', language: 'en-US', file: 'en.json' },
+      { code: 'ja', language: 'ja-JP', file: 'ja.json' }
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'lang',
+      fallbackLocale: 'en'
+    }
+  },
+  app: {
+    head: {
+      title: 'ResumeAI — Your resume, reimagined',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'Upload your CV and let AI rewrite, convert, and match it to any job description — in seconds.' }
+      ],
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap' },
+        { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' }
+      ]
+    }
+  },
+  css: ['~/assets/css/main.css']
+})
