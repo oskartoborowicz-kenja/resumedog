@@ -2,6 +2,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/i18n'],
   compatibilityDate: '2026-05-29',
+  app: {
+  baseURL: '/resumedog/'
+  },
   i18n: {
     strategy: 'no_prefix',
     defaultLocale: 'en',
