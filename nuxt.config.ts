@@ -3,7 +3,26 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n'],
   compatibilityDate: '2026-05-29',
   app: {
-  baseURL: '/resumedog/'
+    baseURL: '/resumedog/',
+    head: {
+      title: 'ResumeDOG — Your resume, reimagined',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'Upload your CV and let AI rewrite, convert, and match it to any job description — in seconds.' }
+      ],
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap' },
+        { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' }
+      ]
+    }
+  },
+  nitro: {
+    prerender: {
+      failOnError: false,
+      routes: ['/', '/login', '/signup', '/forgot-password', '/pricing', '/blog']
+    }
   },
   i18n: {
     strategy: 'no_prefix',
@@ -17,21 +36,6 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'lang',
       fallbackLocale: 'en'
-    }
-  },
-  app: {
-    head: {
-      title: 'ResumeAI — Your resume, reimagined',
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Upload your CV and let AI rewrite, convert, and match it to any job description — in seconds.' }
-      ],
-      link: [
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap' },
-        { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' }
-      ]
     }
   },
   css: ['~/assets/css/main.css']
