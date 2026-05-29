@@ -5,6 +5,13 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static',
     prerender: {
+       ignore: [
+        '/terms',
+        '/contact',
+        '/privacy',
+        '/eula',
+        '/upload'
+      ],
       crawlLinks: false,
       failOnError: false
     }
