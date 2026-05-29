@@ -3,7 +3,11 @@ export default defineNuxtConfig({
   ssr: false,
   modules: ['@nuxtjs/i18n'],
   nitro: {
-    preset: 'static'
+    preset: 'static',
+    prerender: {
+      crawlLinks: false,
+      failOnError: false
+    }
   },
   compatibilityDate: '2026-05-29',
   app: {
