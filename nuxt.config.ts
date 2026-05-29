@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       failOnError: false
     }
   },
-  compatibilityDate: '2026-05-29',
+  compatibilityDate: '2025-05-29',
   app: {
     baseURL: '/resumedog/',
     head: {
