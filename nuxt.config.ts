@@ -2,6 +2,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
   modules: ['@nuxtjs/i18n'],
+  nitro: {
+    preset: 'static'
+  },
   compatibilityDate: '2026-05-29',
   app: {
     baseURL: '/resumedog/',
