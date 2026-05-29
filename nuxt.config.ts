@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  ssr: false,
   modules: ['@nuxtjs/i18n'],
   compatibilityDate: '2026-05-29',
   app: {
@@ -16,12 +17,6 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap' },
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' }
       ]
-    }
-  },
-  nitro: {
-    prerender: {
-      failOnError: false,
-      routes: ['/', '/login', '/signup', '/forgot-password', '/pricing', '/blog']
     }
   },
   i18n: {
