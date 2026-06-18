@@ -3,13 +3,8 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n'],
   nitro: {
     prerender: {
-       ignore: [
-        '/terms',
-        '/contact',
-        '/privacy',
-        '/eula',
-        '/upload'
-      ],
+      routes: ['/', '/about', '/services', '/pricing', '/blog'],
+      ignore: ['/terms', '/contact', '/privacy', '/eula', '/upload'],
       crawlLinks: false,
       failOnError: false
     }
@@ -40,11 +35,7 @@ export default defineNuxtConfig({
       { code: 'en', language: 'en-US', file: 'en.json' },
       { code: 'ja', language: 'ja-JP', file: 'ja.json' }
     ],
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'lang',
-      fallbackLocale: 'en'
-    }
+    detectBrowserLanguage: false
   },
   css: ['~/assets/css/main.css']
 })
