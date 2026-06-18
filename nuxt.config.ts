@@ -1,9 +1,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  ssr: false,
   modules: ['@nuxtjs/i18n'],
   nitro: {
-    preset: 'static',
     prerender: {
        ignore: [
         '/terms',
@@ -19,6 +17,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-29',
   app: {
     baseURL: '/resumedog/',
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: 'ResumeDOG — Your resume, reimagined',
       meta: [

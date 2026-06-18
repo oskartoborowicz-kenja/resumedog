@@ -3,11 +3,16 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -20,17 +25,11 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      - run: npm ci
 
-      - name: Build static site
-        run: npm run build
+      - run: npx nuxt generate
 
-      - name: Copy index.html to 404.html for SPA routing
-        run: cp .output/public/index.html .output/public/404.html
-
-      - name: Upload to Pages
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
 
@@ -40,9 +39,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      pages: write
-      id-token: write
     steps:
       - uses: actions/deploy-pages@v4
         id: deployment

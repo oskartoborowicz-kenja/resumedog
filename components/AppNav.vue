@@ -2,8 +2,9 @@
   <nav class="navbar">
     <NuxtLink to="/" class="logo">Resume<span>DOG</span></NuxtLink>
     <ul class="nav-links">
-      <li><NuxtLink to="/#about" :class="{ active: activeSection === 'about' }">{{ $t('nav.about') }}</NuxtLink></li>
-      <li><NuxtLink to="/#services" :class="{ active: activeSection === 'services' }">{{ $t('nav.services') }}</NuxtLink></li>
+      <li><NuxtLink to="/" :class="{ active: isHome }">{{ $t('nav.home') }}</NuxtLink></li>
+      <li><NuxtLink to="/about" :class="{ active: isAbout }">{{ $t('nav.about') }}</NuxtLink></li>
+      <li><NuxtLink to="/services" :class="{ active: isServices }">{{ $t('nav.services') }}</NuxtLink></li>
       <li><NuxtLink to="/pricing" :class="{ active: isPricing }">{{ $t('nav.pricing') }}</NuxtLink></li>
       <li><NuxtLink to="/blog" :class="{ active: isBlog }">{{ $t('nav.blog') }}</NuxtLink></li>
     </ul>
@@ -14,7 +15,7 @@
       <button class="theme-toggle" :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'" @click="toggleTheme">
         <i :class="isDark ? 'fa-regular fa-sun' : 'fa-regular fa-moon'" />
       </button>
-      <NuxtLink to="/login" class="nav-login">Log in</NuxtLink>
+      <NuxtLink to="/login" class="nav-login">{{ $t('nav.login') }}</NuxtLink>
       <NuxtLink to="/signup" class="btn-primary nav-cta">{{ $t('nav.cta') }}</NuxtLink>
     </div>
   </nav>
@@ -25,41 +26,12 @@ const { isDark, toggleTheme } = useTheme()
 const { locale, setLocale } = useI18n()
 const toggleLang = () => setLocale(locale.value === 'en' ? 'ja' : 'en')
 const route = useRoute()
-const activeSection = ref('')
 
+const isHome = computed(() => route.path === '/')
 const isPricing = computed(() => route.path === '/pricing')
 const isBlog = computed(() => route.path.startsWith('/blog'))
-
-const onScroll = () => {
-  const threshold = window.innerHeight * 0.4
-  let current = ''
-  for (const id of ['about', 'services']) {
-    const el = document.getElementById(id)
-    if (el && el.getBoundingClientRect().top <= threshold) current = id
-  }
-  activeSection.value = current
-}
-
-const startTracking = () => {
-  activeSection.value = ''
-  nextTick(() => {
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-  })
-}
-
-const stopTracking = () => {
-  window.removeEventListener('scroll', onScroll)
-  activeSection.value = ''
-}
-
-onMounted(() => { if (route.path === '/') startTracking() })
-onUnmounted(() => stopTracking())
-
-watch(() => route.path, (path) => {
-  if (path === '/') startTracking()
-  else stopTracking()
-})
+const isAbout = computed(() => route.path === '/about')
+const isServices = computed(() => route.path === '/services')
 </script>
 
 <style scoped>
@@ -67,7 +39,7 @@ watch(() => route.path, (path) => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 3rem;
+  padding: 0.875rem 3rem;
   background: var(--cream);
   position: sticky;
   top: 0;

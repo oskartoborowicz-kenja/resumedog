@@ -1,9 +1,9 @@
 <template>
   <main>
     <section class="blog-hero">
-      <div class="hero-eyebrow">The ResumeAI Blog</div>
-      <h1>Career advice, <em>delivered.</em></h1>
-      <p class="hero-sub">Tips on resumes, job searching, and landing the role you actually want.</p>
+      <div class="hero-eyebrow">{{ $t('blog.eyebrow') }}</div>
+      <h1>{{ $t('blog.heading') }} <em>{{ $t('blog.headingEm') }}</em></h1>
+      <p class="hero-sub">{{ $t('blog.sub') }}</p>
     </section>
 
     <section class="blog-content">
@@ -15,7 +15,7 @@
           </div>
           <h2>{{ posts[0].title }}</h2>
           <p>{{ posts[0].excerpt }}</p>
-          <div class="read-more">Read article <i class="fa-regular fa-arrow-right" /></div>
+          <div class="read-more">{{ $t('blog.readArticle') }} <i class="fa-regular fa-arrow-right" /></div>
         </NuxtLink>
       </div>
 
@@ -32,22 +32,22 @@
           </div>
           <h3>{{ post.title }}</h3>
           <p>{{ post.excerpt }}</p>
-          <div class="read-more">Read article <i class="fa-regular fa-arrow-right" /></div>
+          <div class="read-more">{{ $t('blog.readArticle') }} <i class="fa-regular fa-arrow-right" /></div>
         </NuxtLink>
       </div>
     </section>
 
     <section class="newsletter">
       <div class="newsletter-inner">
-        <div class="section-label">Stay updated</div>
-        <h2 class="section-heading">Get tips in your <em>inbox</em></h2>
-        <p class="section-sub">Weekly career advice and resume tips from our team. No spam, ever.</p>
+        <div class="section-label">{{ $t('blog.newsletter.label') }}</div>
+        <h2 class="section-heading">{{ $t('blog.newsletter.heading') }} <em>{{ $t('blog.newsletter.headingEm') }}</em></h2>
+        <p class="section-sub">{{ $t('blog.newsletter.sub') }}</p>
         <div class="subscribe-form">
-          <input v-model="email" type="email" placeholder="your@email.com" />
-          <button class="btn-primary" @click="subscribe">Subscribe</button>
+          <input v-model="email" type="email" :placeholder="$t('blog.newsletter.placeholder')" />
+          <button class="btn-primary" @click="subscribe">{{ $t('blog.newsletter.subscribe') }}</button>
         </div>
         <p v-if="subscribed" class="success-msg">
-          <i class="fa-regular fa-check-circle" /> You're subscribed!
+          <i class="fa-regular fa-check-circle" /> {{ $t('blog.newsletter.success') }}
         </p>
       </div>
     </section>
@@ -56,10 +56,11 @@
 
 <script setup>
 useSeoMeta({
-  title: 'Blog — ResumeAI',
-  description: 'Career advice, resume tips, and job search strategies from the ResumeAI team.'
+  title: 'Blog — ResumeDOG',
+  description: 'Career advice, resume tips, and job search strategies from the ResumeDOG team.'
 })
 
+const { tm, rt } = useI18n()
 const email = ref('')
 const subscribed = ref(false)
 
@@ -67,43 +68,17 @@ function subscribe() {
   if (email.value) subscribed.value = true
 }
 
-const posts = [
-  {
-    slug: 'how-to-beat-ats',
-    tag: 'ATS Tips',
-    date: 'May 20, 2026',
-    title: 'How to beat applicant tracking systems in 2026',
-    excerpt: 'Most resumes never reach a human. Here\'s exactly how ATS software scores your application — and how to optimize yours to pass every filter.'
-  },
-  {
-    slug: 'resume-rewrite-guide',
-    tag: 'Resume Writing',
-    date: 'May 14, 2026',
-    title: 'The complete guide to rewriting your resume with AI',
-    excerpt: 'AI can transform a mediocre resume into a compelling one — if you know how to use it. We walk through the full process.'
-  },
-  {
-    slug: 'job-description-matching',
-    tag: 'Job Search',
-    date: 'May 7, 2026',
-    title: 'Why tailoring your resume to each job description works',
-    excerpt: 'Generic resumes get generic results. Here\'s the data on why tailored applications get 3× more callbacks.'
-  },
-  {
-    slug: 'resume-formats-compared',
-    tag: 'Formats',
-    date: 'Apr 28, 2026',
-    title: 'PDF vs Word vs plain text: which resume format wins?',
-    excerpt: 'Recruiters and ATS systems treat different file formats very differently. We tested all of them so you don\'t have to.'
-  },
-  {
-    slug: 'career-change-resume',
-    tag: 'Career Change',
-    date: 'Apr 21, 2026',
-    title: 'How to write a resume when switching industries',
-    excerpt: 'Changing careers is hard. Your resume doesn\'t have to make it harder. Here\'s how to reframe your experience for a new field.'
-  }
-]
+const slugs = ['how-to-beat-ats', 'resume-rewrite-guide', 'job-description-matching', 'resume-formats-compared', 'career-change-resume']
+
+const posts = computed(() =>
+  tm('blog.posts').map((post, i) => ({
+    slug: slugs[i],
+    tag: rt(post.tag),
+    date: rt(post.date),
+    title: rt(post.title),
+    excerpt: rt(post.excerpt)
+  }))
+)
 </script>
 
 <style scoped>

@@ -1,31 +1,31 @@
 <template>
   <main>
     <section class="pricing-hero">
-      <div class="hero-eyebrow">Simple pricing</div>
-      <h1>Pay for what you <em>need</em></h1>
-      <p class="hero-sub">No hidden fees. Cancel anytime. Start free — no credit card required.</p>
+      <div class="hero-eyebrow">{{ $t('pricing.eyebrow') }}</div>
+      <h1>{{ $t('pricing.heading') }} <em>{{ $t('pricing.headingEm') }}</em></h1>
+      <p class="hero-sub">{{ $t('pricing.sub') }}</p>
       <div class="toggle-wrap">
-        <span :class="{ active: !annual }" @click="annual = false">Monthly</span>
+        <span :class="{ active: !annual }" @click="annual = false">{{ $t('pricing.monthly') }}</span>
         <div class="toggle" :class="{ on: annual }" @click="annual = !annual">
           <div class="toggle-knob" />
         </div>
-        <span :class="{ active: annual }" @click="annual = true">Annual <span class="save-badge">Save 30%</span></span>
+        <span :class="{ active: annual }" @click="annual = true">{{ $t('pricing.annual') }} <span class="save-badge">{{ $t('pricing.saveBadge') }}</span></span>
       </div>
     </section>
 
     <section class="plans">
       <div
         v-for="plan in plans"
-        :key="plan.name"
+        :key="plan.id"
         class="plan-card"
         :class="{ featured: plan.featured }"
       >
-        <div v-if="plan.featured" class="plan-badge">Most popular</div>
+        <div v-if="plan.featured" class="plan-badge">{{ $t('pricing.mostPopular') }}</div>
         <div class="plan-name">{{ plan.name }}</div>
         <div class="plan-price">
           <span class="currency">$</span>
           <span class="amount">{{ annual ? plan.annualPrice : plan.monthlyPrice }}</span>
-          <span class="period">/mo</span>
+          <span class="period">{{ $t('pricing.period') }}</span>
         </div>
         <p class="plan-desc">{{ plan.description }}</p>
         <NuxtLink :to="plan.cta.href" :class="plan.featured ? 'btn-primary' : 'btn-outline'">
@@ -40,8 +40,8 @@
     </section>
 
     <section class="faq">
-      <div class="section-label">FAQs</div>
-      <h2 class="section-heading">Common <em>questions</em></h2>
+      <div class="section-label">{{ $t('pricing.faqLabel') }}</div>
+      <h2 class="section-heading">{{ $t('pricing.faqHeading') }} <em>{{ $t('pricing.faqHeadingEm') }}</em></h2>
       <div class="faq-grid">
         <div v-for="item in faqs" :key="item.q" class="faq-item">
           <h4>{{ item.q }}</h4>
@@ -56,73 +56,49 @@
 
 <script setup>
 useSeoMeta({
-  title: 'Pricing — ResumeAI',
+  title: 'Pricing — ResumeDOG',
   description: 'Simple, transparent pricing. Start free, upgrade when you need more.'
 })
 
+const { t, tm, rt } = useI18n()
 const annual = ref(false)
 
-const plans = [
+const plans = computed(() => [
   {
-    name: 'Free',
+    id: 'free',
+    name: t('pricing.plans.free.name'),
     monthlyPrice: '0',
     annualPrice: '0',
-    description: 'Perfect for trying out ResumeAI with one resume.',
+    description: t('pricing.plans.free.description'),
     featured: false,
-    cta: { label: 'Get started free', href: '/signup' },
-    features: [
-      '1 resume conversion/month',
-      'PDF & Word export',
-      'Basic AI rewrite',
-      'ATS score check',
-      '3 templates'
-    ]
+    cta: { label: t('pricing.plans.free.cta'), href: '/signup' },
+    features: tm('pricing.plans.free.features').map(f => rt(f))
   },
   {
-    name: 'Pro',
+    id: 'pro',
+    name: t('pricing.plans.pro.name'),
     monthlyPrice: '12',
     annualPrice: '8',
-    description: 'For active job seekers who need unlimited power.',
+    description: t('pricing.plans.pro.description'),
     featured: true,
-    cta: { label: 'Start Pro free', href: '/signup?plan=pro' },
-    features: [
-      'Unlimited conversions',
-      'All 12+ export formats',
-      'Advanced AI rewrite',
-      'Job description matching',
-      'ATS score & suggestions',
-      '20+ templates',
-      'Multilingual support',
-      'Priority processing'
-    ]
+    cta: { label: t('pricing.plans.pro.cta'), href: '/signup?plan=pro' },
+    features: tm('pricing.plans.pro.features').map(f => rt(f))
   },
   {
-    name: 'Team',
+    id: 'team',
+    name: t('pricing.plans.team.name'),
     monthlyPrice: '39',
     annualPrice: '27',
-    description: 'For recruiters and career coaches managing multiple clients.',
+    description: t('pricing.plans.team.description'),
     featured: false,
-    cta: { label: 'Contact sales', href: '/contact' },
-    features: [
-      'Everything in Pro',
-      'Up to 10 seats',
-      'Team dashboard',
-      'Bulk resume processing',
-      'API access',
-      'Custom templates',
-      'Dedicated support'
-    ]
+    cta: { label: t('pricing.plans.team.cta'), href: '/contact' },
+    features: tm('pricing.plans.team.features').map(f => rt(f))
   }
-]
+])
 
-const faqs = [
-  { q: 'Can I cancel anytime?', a: 'Yes — no contracts, no commitments. Cancel with one click from your account settings.' },
-  { q: 'What happens when I hit my free limit?', a: 'You can upgrade to Pro or wait until the next month. We never delete your resumes.' },
-  { q: 'Do you store my resume data?', a: 'Resumes are processed and stored encrypted. You can delete your data at any time from your account.' },
-  { q: 'Is there a student discount?', a: 'Yes — students get 50% off Pro with a valid .edu email. Reach out to our support team.' },
-  { q: 'Can I use the API?', a: 'API access is available on the Team plan. Contact us for custom volume pricing.' },
-  { q: 'What file formats can I upload?', a: 'We accept PDF, Word (.docx), plain text, and LinkedIn profile exports.' }
-]
+const faqs = computed(() =>
+  tm('pricing.faqs').map(faq => ({ q: rt(faq.q), a: rt(faq.a) }))
+)
 </script>
 
 <style scoped>
@@ -210,6 +186,11 @@ h1 em { color: var(--gold); font-style: italic; }
   border-radius: 20px;
   padding: 2rem;
   position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.plan-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
 }
 .plan-card.featured {
   border: 2px solid var(--ink);

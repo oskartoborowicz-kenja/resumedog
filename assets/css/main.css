@@ -6,11 +6,11 @@
   --ink2: #52525b;
   --cream: #e0f2fe;
   --cream2: #bae6fd;
-  --gold: #0ea5e9;
-  --gold2: #38bdf8;
-  --teal: #4338ca;
+  --gold: #0d9488;
+  --gold2: #0f766e;
+  --teal: #312e81;
   --teal2: #e0e7ff;
-  --cta: #0f766e;
+  --cta: #0d9488;
   --card-bg: #ffffff;
   --border: rgba(9, 9, 11, 0.12);
   --font-display: 'Geist', sans-serif;
@@ -20,17 +20,36 @@
 [data-theme="dark"] {
   --ink: #f0ece6;
   --ink2: #a09890;
-  --cream: #151210;
-  --cream2: #1e1a17;
-  --gold: #e8cb7a;
-  --gold2: #c9a84c;
-  --teal: #4db8a5;
-  --teal2: #0d2e29;
-  --card-bg: #1e1a17;
+  --cream: #0f172a;
+  --cream2: #1e293b;
+  --gold: #fb923c;
+  --gold2: #f97316;
+  --teal: #818cf8;
+  --teal2: #1e1b4b;
+  --cta: #f97316;
+  --card-bg: #1e293b;
   --border: rgba(240, 236, 230, 0.1);
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+}
+* { scroll-margin-top: 80px; }
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
 
 body {
   background: var(--cream);
@@ -86,31 +105,31 @@ a { text-decoration: none; }
 .btn-gold:hover { background: var(--gold2); }
 
 .section-label {
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--teal);
   font-weight: 500;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .section-heading {
   font-family: var(--font-display);
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   letter-spacing: -0.03em;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--ink);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   font-weight: 600;
 }
 .section-heading em { color: var(--gold); font-style: italic; }
 
 .section-sub {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--ink2);
   font-weight: 300;
   max-width: 520px;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 900px) {

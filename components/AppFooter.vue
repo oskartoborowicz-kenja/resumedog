@@ -7,14 +7,14 @@
       <NuxtLink to="/blog">Blog</NuxtLink>
       <NuxtLink to="/contact">Contact</NuxtLink>
     </div>
-    <div class="copyright">© 2026 ResumeAI</div>
+    <div class="copyright">© 2026 ResumeDOG</div>
   </footer>
 </template>
 
 <style scoped>
 .app-footer {
   border-top: 0.5px solid var(--border);
-  padding: 2rem 3rem;
+  padding: 1.25rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
