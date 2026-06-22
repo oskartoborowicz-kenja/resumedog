@@ -29,13 +29,14 @@ watch(isOpen, async (val) => {
 <style scoped>
 .faq-item {
   background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.faq-item:last-child {
+  border-bottom: none;
 }
 .faq-summary {
   width: 100%;
-  padding: 1.1rem 1.5rem;
+  padding: 1.3rem 1.75rem;
   font-size: 15px;
   font-weight: 500;
   color: var(--ink);
@@ -46,17 +47,28 @@ watch(isOpen, async (val) => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   text-align: left;
+  transition: background 0.15s;
 }
+.faq-summary:hover { background: var(--cream2); }
 .faq-icon {
-  font-size: 1.2rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
   color: var(--ink2);
   flex-shrink: 0;
-  transition: transform 0.4s ease;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), border-color 0.2s, color 0.2s;
 }
 .faq-item.open .faq-icon {
   transform: rotate(45deg);
+  border-color: var(--gold);
+  color: var(--gold);
 }
 .faq-body {
   height: 0;
@@ -64,9 +76,10 @@ watch(isOpen, async (val) => {
   transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .faq-body p {
-  padding: 0 1.5rem 1.1rem;
-  font-size: 15px;
+  padding: 0 1.75rem 1.3rem;
+  font-size: 14px;
   color: var(--ink2);
-  line-height: 1.7;
+  line-height: 1.75;
+  max-width: 680px;
 }
 </style>

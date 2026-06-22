@@ -175,6 +175,50 @@
       </div>
     </section>
 
+    <!-- Visual Break Bar -->
+    <div class="marquee-bar" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-inner">
+          <span class="mq-item"><i class="fa-solid fa-align-left"></i> Resume Formatting</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-language"></i> EN→JP Translation</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-user-slash"></i> Candidate Anonymization</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-bullseye"></i> JD Matching</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-file-word"></i> Word &amp; PDF Export</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-globe"></i> Rirekisho Support</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-sliders"></i> Agency Templates</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-bolt"></i> 30-second Processing</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-shield-halved"></i> Enterprise Security</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-align-left"></i> Resume Formatting</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-language"></i> EN→JP Translation</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-user-slash"></i> Candidate Anonymization</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-bullseye"></i> JD Matching</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-file-word"></i> Word &amp; PDF Export</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-globe"></i> Rirekisho Support</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-sliders"></i> Agency Templates</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-bolt"></i> 30-second Processing</span>
+          <span class="mq-sep">·</span>
+          <span class="mq-item"><i class="fa-solid fa-shield-halved"></i> Enterprise Security</span>
+          <span class="mq-sep">·</span>
+        </div>
+      </div>
+    </div>
+
     <!-- 2. What ResumeDOG Does -->
     <section class="what-we-do">
       <div class="container">
@@ -195,24 +239,9 @@
             <p>{{ $t('whatWeDo.translation.desc') }}</p>
           </div>
           <div class="wwd-card">
-            <span class="wwd-icon"><i class="fa-solid fa-user-slash"></i></span>
+            <span class="wwd-icon"><i class="fa-solid fa-user-shield"></i></span>
             <h3>{{ $t('whatWeDo.anonymization.title') }}</h3>
             <p>{{ $t('whatWeDo.anonymization.desc') }}</p>
-          </div>
-          <div class="wwd-card">
-            <span class="wwd-icon"><i class="fa-solid fa-bullseye"></i></span>
-            <h3>{{ $t('whatWeDo.matching.title') }}</h3>
-            <p>{{ $t('whatWeDo.matching.desc') }}</p>
-          </div>
-          <div class="wwd-card">
-            <span class="wwd-icon"><i class="fa-solid fa-sliders"></i></span>
-            <h3>{{ $t('whatWeDo.templates.title') }}</h3>
-            <p>{{ $t('whatWeDo.templates.desc') }}</p>
-          </div>
-          <div class="wwd-card">
-            <span class="wwd-icon"><i class="fa-solid fa-file-export"></i></span>
-            <h3>{{ $t('whatWeDo.export.title') }}</h3>
-            <p>{{ $t('whatWeDo.export.desc') }}</p>
           </div>
         </div>
         <div class="section-footer">
@@ -221,80 +250,141 @@
       </div>
     </section>
 
-    <!-- 3. How It Works -->
+    <!-- 3. What ResumeDOG Does -->
     <section class="how-it-works">
       <div class="container">
-        <p class="section-label">{{ $t('howItWorks.label') }}</p>
-        <h2 class="section-heading">
-          {{ $t('howItWorks.heading') }} <em>{{ $t('howItWorks.headingEm') }}</em>
-        </h2>
-        <p class="section-sub">{{ $t('howItWorks.body') }}</p>
-        <div class="steps-grid">
-          <div v-for="n in 6" :key="n" class="step-card">
-            <div class="step-num">{{ $t(`howItWorks.step${n}.num`) }}</div>
-            <h3>{{ $t(`howItWorks.step${n}.title`) }}</h3>
-            <p>{{ $t(`howItWorks.step${n}.desc`) }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. Built for Recruiters -->
-    <section class="for-recruiters">
-      <div class="container">
-        <div class="fr-header">
-          <div>
-            <p class="section-label">{{ $t('recruiters.label') }}</p>
+        <div class="hiw-inner">
+          <div class="hiw-content">
+            <p class="section-label">{{ $t('howItWorks.label') }}</p>
             <h2 class="section-heading">
-              {{ $t('recruiters.heading') }} <em>{{ $t('recruiters.headingEm') }}</em>
+              {{ $t('howItWorks.heading') }} <em>{{ $t('howItWorks.headingEm') }}</em>
             </h2>
-            <p class="section-sub">{{ $t('recruiters.body') }}</p>
+            <p class="hiw-body">{{ $t('howItWorks.body') }}</p>
+            <ul class="hiw-bullets">
+              <li v-for="n in 6" :key="n">
+                <span class="hiw-check"><i class="fa-solid fa-check"></i></span>
+                {{ $t(`howItWorks.bullet${n}`) }}
+              </li>
+            </ul>
           </div>
-          <div class="fr-tagline">
-            <span>{{ $t('recruiters.tagline') }}</span>
-          </div>
-        </div>
-        <div class="fr-grid">
-          <div v-for="key in ['jd','formatting','consistent','multilingual','anonymize','export']" :key="key" class="fr-card">
-            <i class="fa-solid fa-check fr-check"></i>
-            <div>
-              <h3>{{ $t(`recruiters.${key}.title`) }}</h3>
-              <p>{{ $t(`recruiters.${key}.desc`) }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. Japan / Multilingual -->
-    <section class="japan-section">
-      <div class="container">
-        <div class="japan-inner">
-          <div class="japan-content">
-            <p class="section-label">{{ $t('japan.label') }}</p>
-            <h2 class="section-heading">
-              {{ $t('japan.heading') }} <em>{{ $t('japan.headingEm') }}</em>
-            </h2>
-            <p class="section-sub">{{ $t('japan.body') }}</p>
-            <div class="japan-badges">
-              <span class="badge-pill">{{ $t('japan.badge1') }}</span>
-              <span class="badge-pill">{{ $t('japan.badge2') }}</span>
-              <span class="badge-pill">{{ $t('japan.badge3') }}</span>
-            </div>
-          </div>
-          <div class="japan-workflow">
-            <p class="workflow-label">{{ $t('japan.workflowLabel') }}</p>
-            <div class="workflow-steps">
-              <div v-for="key in ['w1','w2','w3','w4','w5']" :key="key" class="wf-step">
-                <span>{{ $t(`japan.${key}`) }}</span>
-                <i v-if="key !== 'w5'" class="fa-solid fa-arrow-right wf-arrow"></i>
+          <div class="hiw-visual">
+            <div class="hiv-pipeline">
+              <div class="hiv-doc hiv-doc-in">
+                <div class="hiv-doc-bar"></div>
+                <div class="hiv-doc-header">
+                  <span class="hiv-mono">candidate_resume.docx</span>
+                  <div class="hiv-dot-sm"></div>
+                </div>
+                <div class="hiv-lines">
+                  <div class="hiv-line dark short"></div>
+                  <div class="hiv-line long"></div>
+                  <div class="hiv-line med"></div>
+                  <div class="hiv-line long"></div>
+                  <div class="hiv-line short"></div>
+                  <div class="hiv-gap"></div>
+                  <div class="hiv-line dark short"></div>
+                  <div class="hiv-line long"></div>
+                  <div class="hiv-line med"></div>
+                </div>
+                <div class="hiv-label">Raw input</div>
+              </div>
+              <div class="hiv-steps">
+                <div v-for="(s, i) in hiwSteps" :key="i" class="hiv-step">
+                  <div class="hiv-step-icon"><i :class="s.icon"></i></div>
+                  <span>{{ s.label }}</span>
+                </div>
+              </div>
+              <div class="hiv-doc hiv-doc-out">
+                <div class="hiv-doc-stripe"></div>
+                <div class="hiv-doc-header">
+                  <div class="hiv-out-logo">
+                    <i class="fa-solid fa-dog"></i>
+                  </div>
+                  <span class="hiv-mono">client_ready.docx</span>
+                </div>
+                <div class="hiv-lines">
+                  <div class="hiv-line dark short"></div>
+                  <div class="hiv-line long accent"></div>
+                  <div class="hiv-line med accent"></div>
+                  <div class="hiv-line long accent"></div>
+                  <div class="hiv-line med"></div>
+                  <div class="hiv-gap"></div>
+                  <div class="hiv-line dark short"></div>
+                  <div class="hiv-line long accent"></div>
+                  <div class="hiv-line med accent"></div>
+                </div>
+                <div class="hiv-exports">
+                  <span class="hiv-export-tag"><i class="fa-solid fa-file-word"></i> DOCX</span>
+                  <span class="hiv-export-tag"><i class="fa-regular fa-file-pdf"></i> PDF</span>
+                </div>
+                <div class="hiv-label out">Client-ready</div>
               </div>
             </div>
-            <div class="haken-box">
-              <p class="haken-label">{{ $t('japan.hakenLabel') }}</p>
-              <h3>{{ $t('japan.hakenHeading') }}</h3>
-              <p>{{ $t('japan.hakenBody') }}</p>
-              <p class="haken-note">{{ $t('japan.hakenNote') }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. How It Works Timeline -->
+    <section class="hiw-timeline-section">
+      <div class="container">
+        <div class="hiw-tl-header">
+          <p class="section-label">{{ $t('howItWorks2.label') }}</p>
+          <h2 class="section-heading">{{ $t('howItWorks2.heading') }}</h2>
+          <p class="section-sub">{{ $t('howItWorks2.body') }}</p>
+        </div>
+        <div class="hiw-tl-track">
+          <div class="hiw-tl-line"></div>
+          <div v-for="n in 5" :key="n" class="hiw-tl-step">
+            <div class="hiw-tl-dot">
+              <span class="hiw-tl-num">{{ n }}</span>
+            </div>
+            <div class="hiw-tl-card">
+              <h3>{{ $t(`howItWorks2.step${n}.title`) }}</h3>
+              <p>{{ $t(`howItWorks2.step${n}.desc`) }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Japan Map -->
+    <section class="japan-map-section">
+      <div class="container">
+        <div class="japan-map-inner">
+          <div class="japan-map-content">
+            <p class="section-label">{{ $t('japan.label') }}</p>
+            <h2 class="section-heading">{{ $t('japan.heading') }}</h2>
+            <p class="section-sub">{{ $t('japan.body') }}</p>
+          </div>
+          <div class="japan-map-visual">
+            <div class="jmap-wrap">
+              <div class="jmap-center">
+                <i class="fa-solid fa-dog"></i>
+                <span>ResumeDOG</span>
+              </div>
+              <div class="jmap-node jmap-n1">
+                <i class="fa-solid fa-building"></i>
+                <span>{{ $t('japan.map1') }}</span>
+              </div>
+              <div class="jmap-node jmap-n2">
+                <i class="fa-solid fa-language"></i>
+                <span>{{ $t('japan.map2') }}</span>
+              </div>
+              <div class="jmap-node jmap-n3">
+                <i class="fa-solid fa-user"></i>
+                <span>{{ $t('japan.map3') }}</span>
+              </div>
+              <div class="jmap-node jmap-n4">
+                <i class="fa-solid fa-file-circle-check"></i>
+                <span>{{ $t('japan.map4') }}</span>
+              </div>
+              <svg class="jmap-lines" viewBox="0 0 400 400" preserveAspectRatio="none">
+                <line x1="200" y1="200" x2="60" y2="80" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                <line x1="200" y1="200" x2="340" y2="80" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                <line x1="200" y1="200" x2="60" y2="320" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                <line x1="200" y1="200" x2="340" y2="320" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+              </svg>
             </div>
           </div>
         </div>
@@ -304,72 +394,91 @@
     <!-- 6. Why We Built It -->
     <section class="why-we-built">
       <div class="container">
-        <div class="wwb-inner">
-          <div class="wwb-content">
-            <p class="section-label">{{ $t('whyWeBuilt.label') }}</p>
-            <h2 class="section-heading">
-              {{ $t('whyWeBuilt.heading') }} <em>{{ $t('whyWeBuilt.headingEm') }}</em>
-            </h2>
-            <p>{{ $t('whyWeBuilt.p1') }}</p>
-            <p>{{ $t('whyWeBuilt.p2') }}</p>
-            <p>{{ $t('whyWeBuilt.p3') }}</p>
-          </div>
-          <blockquote class="wwb-quote">
-            <span class="quote-mark">"</span>
-            {{ $t('whyWeBuilt.quote') }}
-          </blockquote>
+        <p class="section-label">{{ $t('whyWeBuilt.label') }}</p>
+        <h2 class="section-heading wwb-heading">
+          {{ $t('whyWeBuilt.heading') }} <em>{{ $t('whyWeBuilt.headingEm') }}</em>
+        </h2>
+        <div class="wwb-body">
+          <p>{{ $t('whyWeBuilt.p1') }}</p>
+          <p>{{ $t('whyWeBuilt.p2') }}</p>
         </div>
+        <blockquote class="wwb-quote">
+          <span class="quote-mark">"</span>
+          {{ $t('whyWeBuilt.quote') }}
+        </blockquote>
       </div>
     </section>
 
-    <!-- 7. Plan Preview -->
-    <section class="plan-preview">
+    <!-- 7. Trial CTA -->
+    <section class="trial-cta">
       <div class="container">
-        <p class="section-label">{{ $t('pricing.eyebrow') }}</p>
-        <h2 class="section-heading">{{ $t('pricing.heading') }} <em>{{ $t('pricing.headingEm') }}</em></h2>
-        <p class="section-sub">{{ $t('pricing.sub') }}</p>
-        <div class="plans-grid">
-          <div v-for="plan in ['free','pro','team']" :key="plan" class="plan-card" :class="{ popular: plan === 'pro' }">
-            <div v-if="plan === 'pro'" class="popular-badge">{{ $t('pricing.mostPopular') }}</div>
-            <h3>{{ $t(`pricing.plans.${plan}.name`) }}</h3>
-            <p class="plan-desc">{{ $t(`pricing.plans.${plan}.description`) }}</p>
-            <ul class="plan-features">
-              <li v-for="(feature, i) in $tm(`pricing.plans.${plan}.features`)" :key="i">
-                <i class="fa-solid fa-check"></i> {{ $rt(feature) }}
-              </li>
-            </ul>
-            <NuxtLink to="/pricing" class="plan-cta" :class="plan === 'pro' ? 'btn-primary' : 'btn-outline'">
-              {{ $t(`pricing.plans.${plan}.cta`) }}
-            </NuxtLink>
-          </div>
-        </div>
-        <div class="pricing-link">
-          <NuxtLink to="/pricing">{{ $t('about.readMore') }} <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+        <p class="section-label tctl-label">{{ $t('trialCta.label') }}</p>
+        <h2 class="section-heading">{{ $t('trialCta.heading') }}</h2>
+        <p class="trial-body">{{ $t('trialCta.body') }}</p>
+        <div class="trial-actions">
+          <NuxtLink to="/signup" class="btn-primary btn-lg">{{ $t('trialCta.cta') }}</NuxtLink>
+          <p class="trial-fine">{{ $t('trialCta.fine') }}</p>
         </div>
       </div>
     </section>
 
-    <!-- 8. FAQs -->
+    <!-- 8. Book a Demo -->
+    <section class="book-demo-section">
+      <div class="container">
+        <div class="bd-inner">
+          <div class="bd-copy">
+            <p class="section-label">{{ $t('bookDemo.label') }}</p>
+            <h2 class="section-heading">{{ $t('bookDemo.heading') }}</h2>
+            <p class="section-sub">{{ $t('bookDemo.body') }}</p>
+          </div>
+          <form class="bd-form" @submit.prevent>
+            <div class="bd-row">
+              <div class="bd-field">
+                <label>{{ $t('bookDemo.name') }}</label>
+                <input type="text" :placeholder="$t('bookDemo.name')" />
+              </div>
+              <div class="bd-field">
+                <label>{{ $t('bookDemo.company') }}</label>
+                <input type="text" :placeholder="$t('bookDemo.company')" />
+              </div>
+            </div>
+            <div class="bd-row">
+              <div class="bd-field">
+                <label>{{ $t('bookDemo.email') }}</label>
+                <input type="email" :placeholder="$t('bookDemo.email')" />
+              </div>
+              <div class="bd-field">
+                <label>{{ $t('bookDemo.phone') }}</label>
+                <input type="tel" :placeholder="$t('bookDemo.phone')" />
+              </div>
+            </div>
+            <div class="bd-field">
+              <label>{{ $t('bookDemo.demoTime') }}</label>
+              <input type="text" :placeholder="$t('bookDemo.demoTime')" />
+            </div>
+            <div class="bd-field">
+              <label>{{ $t('bookDemo.message') }}</label>
+              <textarea rows="4" :placeholder="$t('bookDemo.messagePlaceholder')"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">{{ $t('bookDemo.cta') }}</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FAQs -->
     <section class="faqs-section">
       <div class="container">
-        <p class="section-label">{{ $t('homeFaqs.label') }}</p>
-        <h2 class="section-heading">{{ $t('homeFaqs.heading') }} <em>{{ $t('homeFaqs.headingEm') }}</em></h2>
+        <div class="faqs-header">
+          <p class="section-label">{{ $t('homeFaqs.label') }}</p>
+          <h2 class="section-heading">{{ $t('homeFaqs.heading') }} <em>{{ $t('homeFaqs.headingEm') }}</em></h2>
+        </div>
         <div class="faqs-list">
           <FaqItem v-for="(faq, i) in $tm('homeFaqs.items')" :key="i" :q="$rt(faq.q)" :a="$rt(faq.a)" />
         </div>
       </div>
     </section>
 
-    <!-- 9. Final CTA -->
-    <section class="final-cta">
-      <div class="container">
-        <h2>{{ $t('finalCta.heading') }} <em>{{ $t('finalCta.headingEm') }}</em></h2>
-        <div class="final-actions">
-          <NuxtLink to="/signup" class="btn-primary">{{ $t('finalCta.cta1') }}</NuxtLink>
-          <button class="btn-demo">{{ $t('finalCta.cta2') }}</button>
-        </div>
-      </div>
-    </section>
 
   </main>
 </template>
@@ -379,6 +488,15 @@ useSeoMeta({
   title: 'ResumeDOG | AI Resume Formatting & Translation for Recruitment Agencies',
   description: 'ResumeDOG helps recruitment agencies format, translate, anonymize, and prepare candidate resumes for client submission. Built for English-Japanese recruiting workflows.'
 })
+
+const hiwSteps = [
+  { icon: 'fa-solid fa-align-left',   label: 'Format' },
+  { icon: 'fa-solid fa-language',     label: 'Translate' },
+  { icon: 'fa-solid fa-user-shield',  label: 'Anonymize' },
+  { icon: 'fa-solid fa-bullseye',     label: 'Tailor to JD' },
+  { icon: 'fa-solid fa-pen-to-square',label: 'Review' },
+  { icon: 'fa-solid fa-file-export',  label: 'Export' },
+]
 </script>
 
 <style scoped>
@@ -832,417 +950,565 @@ h1 em { color: var(--gold); font-style: italic; }
   line-height: 1.5;
 }
 
+/* ── Marquee Bar ── */
+.marquee-bar {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--card-bg);
+  overflow: hidden;
+  padding: 0.85rem 0;
+}
+.marquee-track {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.marquee-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.mq-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink2);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+.mq-item i { color: var(--gold); font-size: 12px; }
+.mq-sep {
+  color: var(--border);
+  font-size: 16px;
+  user-select: none;
+}
+
 /* ── What We Do ── */
 .what-we-do {
-  padding: 3.5rem 0;
+  padding: 5rem 0;
   background: var(--cream2);
 }
 .wwd-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
 }
 .wwd-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.25rem;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 .wwd-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   background: var(--teal2);
   color: var(--teal);
-  border-radius: 8px;
-  font-size: 14px;
-  margin-bottom: 0.6rem;
+  border-radius: 12px;
+  font-size: 18px;
 }
 .wwd-card h3 {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--ink);
-  margin-bottom: 0.4rem;
+  line-height: 1.3;
 }
-.wwd-card p { font-size: 14px; color: var(--ink2); line-height: 1.6; }
+.wwd-card p { font-size: 15px; color: var(--ink2); line-height: 1.7; }
 
-/* ── How It Works ── */
+/* ── What ResumeDOG Does (split) ── */
 .how-it-works {
-  padding: 3.5rem 0;
+  padding: 5rem 0;
+  background: var(--cream);
 }
-.steps-grid {
+.hiw-inner {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
-.step-card {
+.hiw-body {
+  font-size: 15px;
+  color: var(--ink2);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.hiw-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.hiw-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.hiw-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--teal2);
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Pipeline visual */
+.hiv-pipeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.hiv-doc {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
 }
-.step-num {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--gold);
+.hiv-doc-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--border);
+}
+.hiv-doc-stripe {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--teal), var(--gold));
+}
+.hiv-doc-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.hiv-mono {
+  font-size: 10px;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink2);
+}
+.hiv-dot-sm {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+  margin-left: auto;
+}
+.hiv-out-logo {
+  width: 20px; height: 20px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px;
+}
+.hiv-lines { display: flex; flex-direction: column; gap: 5px; }
+.hiv-line {
+  height: 6px;
+  border-radius: 100px;
+  background: var(--border);
+}
+.hiv-line.dark { background: var(--ink2); opacity: 0.25; }
+.hiv-line.accent { background: var(--gold); opacity: 0.5; }
+.hiv-line.short { width: 40%; }
+.hiv-line.med { width: 65%; }
+.hiv-line.long { width: 90%; }
+.hiv-gap { height: 6px; }
+.hiv-label {
+  position: absolute;
+  bottom: 0.75rem; right: 0.75rem;
+  font-size: 9px;
+  font-family: monospace;
+  text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 2px 7px;
+  border-radius: 4px;
 }
-.step-card h3 {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
+.hiv-label.out {
+  background: var(--gold);
   color: var(--ink);
-  margin-bottom: 0.4rem;
 }
-.step-card p { font-size: 14px; color: var(--ink2); line-height: 1.6; }
+.hiv-exports {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.hiv-export-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-family: monospace;
+  font-weight: 600;
+  color: var(--ink2);
+  background: var(--cream2);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
 
-/* ── Built for Recruiters ── */
-.for-recruiters {
-  padding: 3.5rem 0;
+/* Steps strip */
+.hiv-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.hiv-step {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink2);
+}
+.hiv-step-icon {
+  color: var(--gold);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* ── How It Works Timeline ── */
+.hiw-timeline-section {
+  padding: 5rem 0;
   background: var(--cream2);
 }
-.fr-header {
+.hiw-tl-header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 3rem;
+}
+.hiw-tl-track {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
-}
-.fr-tagline {
-  flex-shrink: 0;
-  max-width: 260px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.5rem;
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.4;
-  align-self: flex-end;
-}
-.fr-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-}
-.fr-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.5rem;
-  display: flex;
   gap: 1rem;
-  align-items: flex-start;
 }
-.fr-check {
-  color: var(--gold);
-  margin-top: 3px;
+.hiw-tl-line {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  right: 22px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--teal));
+  opacity: 0.35;
+  z-index: 0;
+}
+.hiw-tl-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+.hiw-tl-dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
-.fr-card h3 {
+.hiw-tl-num {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+.hiw-tl-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  width: 100%;
+}
+.hiw-tl-card h3 {
   font-family: var(--font-display);
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--ink);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
-.fr-card p { font-size: 13px; color: var(--ink2); line-height: 1.5; }
+.hiw-tl-card p { font-size: 13px; color: var(--ink2); line-height: 1.5; }
 
-/* ── Japan Section ── */
-.japan-section {
-  padding: 3.5rem 0;
+/* ── Japan Map Section ── */
+.japan-map-section {
+  padding: 5rem 0;
+  background: var(--cream);
 }
-.japan-inner {
+.japan-map-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: start;
-}
-.japan-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-}
-.badge-pill {
-  background: var(--teal2);
-  color: var(--teal);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 0.3rem 0.85rem;
-  border-radius: 100px;
-  letter-spacing: 0.03em;
-}
-.workflow-label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--ink2);
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-.workflow-steps {
-  display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 0.4rem;
-  margin-bottom: 1rem;
-  background: var(--cream2);
-  border-radius: 12px;
-  padding: 0.75rem 1rem;
 }
-.wf-step {
+.jmap-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 380px;
+  margin: 0 auto;
+}
+.jmap-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.jmap-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--gold);
+  color: #fff;
+  border-radius: 16px;
+  padding: 0.85rem 1.2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--ink);
+  gap: 0.35rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  z-index: 2;
+  white-space: nowrap;
 }
-.wf-arrow { color: var(--gold); font-size: 11px; }
-.haken-box {
+.jmap-center i { font-size: 1.3rem; }
+.jmap-node {
+  position: absolute;
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.75rem;
-}
-.haken-label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--teal);
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-.haken-box h3 {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 600;
+  border-radius: 12px;
+  padding: 0.65rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 12px;
+  font-weight: 500;
   color: var(--ink);
-  margin-bottom: 0.75rem;
+  text-align: center;
+  z-index: 2;
+  max-width: 110px;
 }
-.haken-box p { font-size: 14px; color: var(--ink2); line-height: 1.65; }
-.haken-note {
-  margin-top: 0.75rem;
-  font-size: 13px !important;
-  font-style: italic;
-  color: var(--ink2);
-  opacity: 0.8;
-}
+.jmap-node i { color: var(--teal); font-size: 1rem; }
+.jmap-n1 { top: 5%; left: 5%; }
+.jmap-n2 { top: 5%; right: 5%; }
+.jmap-n3 { bottom: 5%; left: 5%; }
+.jmap-n4 { bottom: 5%; right: 5%; }
 
 /* ── Why We Built It ── */
 .why-we-built {
-  padding: 3.5rem 0;
+  padding: 5rem 0;
   background: var(--cream2);
 }
-.wwb-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
+.wwb-heading {
+  max-width: 680px;
+  margin-bottom: 1.5rem;
 }
-.wwb-content p {
+.wwb-body {
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+.wwb-body p {
   font-size: 16px;
   color: var(--ink2);
   line-height: 1.75;
   margin-bottom: 1rem;
 }
 .wwb-quote {
+  max-width: 620px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-left: 3px solid var(--gold);
   border-radius: 0 14px 14px 0;
-  padding: 2rem;
+  padding: 1.75rem 2rem;
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--ink);
-  line-height: 1.6;
-  position: relative;
-  align-self: center;
+  line-height: 1.65;
 }
 .quote-mark {
   display: block;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--gold);
   line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-/* ── Plan Preview ── */
-.plan-preview {
-  padding: 3.5rem 0;
-}
-.plans-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.plan-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.5rem;
-  position: relative;
-}
-.plan-card.popular {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 1px var(--gold);
-}
-.popular-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--gold);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 0.25rem 0.85rem;
-  border-radius: 100px;
-  white-space: nowrap;
-}
-.plan-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--ink);
   margin-bottom: 0.4rem;
 }
-.plan-desc {
-  font-size: 13px;
-  color: var(--ink2);
-  margin-bottom: 1.25rem;
-  line-height: 1.5;
+
+/* ── Trial CTA ── */
+.trial-cta {
+  padding: 6rem 0;
+  background: #0d1117;
+  text-align: center;
 }
-.plan-features {
-  list-style: none;
-  margin-bottom: 1.5rem;
+.tctl-label {
+  color: var(--gold) !important;
+  opacity: 0.85;
 }
-.plan-features li {
-  font-size: 13px;
-  color: var(--ink2);
-  padding: 0.35rem 0;
+.trial-cta .section-heading {
+  color: #f0ece6;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+}
+.trial-body {
+  font-size: 16px;
+  color: #a09890;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+.trial-actions {
   display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-.plan-features li i { color: var(--gold); margin-top: 3px; flex-shrink: 0; }
-.plan-cta {
-  display: block;
-  text-align: center;
-  padding: 0.7rem 1.25rem;
-  border-radius: 100px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-.btn-outline {
-  border: 1px solid var(--border);
-  color: var(--ink);
-  background: transparent;
-}
-.btn-outline:hover { border-color: var(--ink2); }
-.pricing-link {
-  margin-top: 2rem;
-  text-align: center;
-}
-.pricing-link a {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--teal);
-  display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  transition: gap 0.2s;
+  gap: 0.75rem;
 }
-.pricing-link a:hover { gap: 0.75rem; }
+.btn-lg {
+  font-size: 1rem;
+  padding: 0.85rem 2.25rem;
+}
+.trial-fine {
+  font-size: 13px;
+  color: #a09890;
+  opacity: 0.75;
+}
+
+/* ── Book a Demo ── */
+.book-demo-section {
+  padding: 5rem 0;
+  background: var(--cream);
+}
+.bd-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: start;
+}
+.bd-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.bd-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.bd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.bd-field label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink2);
+  letter-spacing: 0.01em;
+}
+.bd-field input,
+.bd-field textarea {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+  width: 100%;
+}
+.bd-field input:focus,
+.bd-field textarea:focus {
+  border-color: var(--gold);
+}
+.bd-field input::placeholder,
+.bd-field textarea::placeholder {
+  color: var(--ink2);
+  opacity: 0.5;
+}
 
 /* ── FAQs ── */
 .faqs-section {
-  padding: 3.5rem 0;
+  padding: 5rem 0;
   background: var(--cream2);
 }
+.faqs-header {
+  max-width: 580px;
+  margin-bottom: 2.5rem;
+}
+.faqs-header .section-heading {
+  margin-bottom: 0;
+}
 .faqs-list {
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 780px;
 }
-
-/* ── Final CTA ── */
-.final-cta {
-  padding: 4rem 0;
-  text-align: center;
-  background: var(--ink);
-}
-.final-cta h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: 700;
-  color: var(--cream);
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-}
-.final-cta em { font-style: italic; color: var(--gold); }
-.final-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.final-cta .btn-demo {
-  color: rgba(255,255,255,0.8);
-  border-color: rgba(255,255,255,0.25);
-}
-.final-cta .btn-demo:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
-
-/* ── Shared section footer ── */
-.section-footer {
-  margin-top: 1.25rem;
-  display: flex;
-  justify-content: flex-end;
-}
-.read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--teal);
-  transition: gap 0.2s;
-}
-.read-more:hover { gap: 0.75rem; }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .hero-inner,
-  .wwb-inner,
-  .japan-inner { grid-template-columns: 1fr; }
+  .hiw-inner,
+  .japan-map-inner,
+  .bd-inner { grid-template-columns: 1fr; }
   .hero-visual { display: none; }
-  .wwd-grid,
-  .steps-grid,
-  .fr-grid,
-  .plans-grid { grid-template-columns: 1fr 1fr; }
-  .fr-header { flex-direction: column; }
-  .fr-tagline { max-width: 100%; }
+  .wwd-grid { grid-template-columns: 1fr 1fr; }
+  .hiw-tl-track { flex-direction: column; align-items: stretch; }
+  .hiw-tl-line { display: none; }
+  .hiw-tl-step { flex-direction: row; align-items: flex-start; gap: 1rem; }
+  .hiw-tl-card { text-align: left; }
+  .jmap-wrap { max-width: 320px; }
 }
 @media (max-width: 600px) {
   .wwd-grid,
-  .steps-grid,
-  .fr-grid,
-  .plans-grid { grid-template-columns: 1fr; }
-  .workflow-steps { flex-direction: column; align-items: flex-start; }
+  .bd-row { grid-template-columns: 1fr; }
 }
 </style>
