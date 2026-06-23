@@ -56,7 +56,7 @@
 
 <script setup>
 useSeoMeta({
-  title: 'Blog — ResumeDOG',
+  title: 'Blog - ResumeDOG',
   description: 'Career advice, resume tips, and job search strategies from the ResumeDOG team.'
 })
 
@@ -68,7 +68,7 @@ function subscribe() {
   if (email.value) subscribed.value = true
 }
 
-const slugs = ['how-to-beat-ats', 'resume-rewrite-guide', 'job-description-matching', 'resume-formats-compared', 'career-change-resume']
+const slugs = ['ai-recruiting-what-firms-need-to-know-in-2026', 'ai-trends-shaping-recruiting-in-2026', 'how-ai-can-automate-resume-formatting-and-processing']
 
 const posts = computed(() =>
   tm('blog.posts').map((post, i) => ({

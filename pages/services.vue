@@ -1,74 +1,96 @@
 <template>
   <main>
 
-    <!-- Hero -->
-    <section class="services-hero">
+    <!-- Section 1: Hero -->
+    <section class="sv-hero">
       <div class="container">
         <p class="section-label">{{ $t('services.label') }}</p>
-        <h1 class="section-heading">
-          {{ $t('services.page.heading') }} <em>{{ $t('services.page.headingEm') }}</em>
-        </h1>
-        <p class="section-sub">{{ $t('services.page.subheading') }}</p>
+        <h1 class="section-heading sv-h1">{{ $t('services.page.heading') }}</h1>
+        <p class="sv-body">{{ $t('services.page.body') }}</p>
+        <NuxtLink to="/about" class="btn-primary sv-cta">{{ $t('services.page.heroCta') }}</NuxtLink>
       </div>
     </section>
 
-    <!-- Service rows -->
-    <section class="services-list">
+    <!-- Section 2: Core Services Grid -->
+    <section class="sv-services">
       <div class="container">
-        <div
-          v-for="key in ['formatting','translation','anonymization','matching','templates','japanOutputs','export']"
-          :key="key"
-          class="service-row"
-        >
-          <div class="service-meta">
-            <div class="service-num">{{ $t(`services.page.${key}.num`) }}</div>
-            <h2>{{ $t(`services.page.${key}.heading`) }}</h2>
-            <p>{{ $t(`services.page.${key}.body`) }}</p>
-            <p v-if="$te(`services.page.${key}.note`)" class="service-note">
-              <i class="fa-solid fa-circle-info"></i> {{ $t(`services.page.${key}.note`) }}
-            </p>
-          </div>
-          <div class="service-badge-wrap">
-            <div class="service-title-card">
-              <span class="stc-num">{{ $t(`services.page.${key}.num`) }}</span>
-              <span class="stc-title">{{ $t(`services.page.${key}.title`) }}</span>
+        <div class="sv-grid">
+          <div
+            v-for="(key, icon) in cardIcons"
+            :key="key"
+            class="sv-card"
+          >
+            <div class="sv-card-icon">
+              <i :class="icon"></i>
             </div>
+            <h3>{{ $t(`services.page.cards.${key}.title`) }}</h3>
+            <p>{{ $t(`services.page.cards.${key}.body`) }}</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Demo note -->
-    <section class="demo-note">
+    <!-- Section 3: Workflow CTA -->
+    <section class="sv-workflow-cta">
       <div class="container">
-        <div class="demo-inner">
-          <i class="fa-solid fa-circle-play demo-icon"></i>
+        <div class="sv-wf-inner">
           <div>
-            <h3>Demo coming soon</h3>
-            <p>We're preparing before/after examples and an interactive walkthrough. Check back once our beta is stable.</p>
+            <p class="section-label">{{ $t('services.page.workflowCta.label') }}</p>
+            <h2 class="section-heading">{{ $t('services.page.workflowCta.heading') }}</h2>
+            <p class="sv-body">{{ $t('services.page.workflowCta.body') }}</p>
+          </div>
+          <NuxtLink to="/about" class="btn-primary sv-wf-btn">{{ $t('services.page.workflowCta.cta') }}</NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: AI Explainer Video -->
+    <section class="sv-video">
+      <div class="container">
+        <p class="section-label">{{ $t('services.page.video.label') }}</p>
+        <h2 class="section-heading">{{ $t('services.page.video.heading') }}</h2>
+        <p class="sv-body sv-video-body">{{ $t('services.page.video.body') }}</p>
+        <div class="sv-video-frame">
+          <div class="sv-video-placeholder">
+            <div class="sv-video-icon">
+              <i class="fa-solid fa-dog"></i>
+            </div>
+            <p class="sv-video-coming">{{ $t('services.page.video.note') }}</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQs -->
-    <section class="faqs-section">
+    <!-- Section 5: Ask a Question -->
+    <section class="sv-ask">
       <div class="container">
-        <p class="section-label">{{ $t('homeFaqs.label') }}</p>
-        <h2 class="section-heading">{{ $t('homeFaqs.heading') }} <em>{{ $t('homeFaqs.headingEm') }}</em></h2>
-        <div class="faqs-list">
-          <FaqItem v-for="(faq, i) in $tm('services.page.faqs')" :key="i" :q="$rt(faq.q)" :a="$rt(faq.a)" />
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-band">
-      <div class="container">
-        <h2>{{ $t('finalCta.heading') }} <em>{{ $t('finalCta.headingEm') }}</em></h2>
-        <div class="cta-actions">
-          <NuxtLink to="/signup" class="btn-primary">{{ $t('finalCta.cta1') }}</NuxtLink>
-          <button class="btn-demo">{{ $t('finalCta.cta2') }}</button>
+        <div class="sv-ask-inner">
+          <div class="sv-ask-copy">
+            <p class="section-label">{{ $t('services.page.askUs.label') }}</p>
+            <h2 class="section-heading">{{ $t('services.page.askUs.heading') }}</h2>
+            <p class="sv-body">{{ $t('services.page.askUs.body') }}</p>
+          </div>
+          <form class="sv-ask-form" @submit.prevent>
+            <div class="sv-ask-row">
+              <div class="sv-field">
+                <label>{{ $t('services.page.askUs.name') }}</label>
+                <input type="text" :placeholder="$t('services.page.askUs.name')" />
+              </div>
+              <div class="sv-field">
+                <label>{{ $t('services.page.askUs.company') }}</label>
+                <input type="text" :placeholder="$t('services.page.askUs.company')" />
+              </div>
+            </div>
+            <div class="sv-field">
+              <label>{{ $t('services.page.askUs.email') }}</label>
+              <input type="email" :placeholder="$t('services.page.askUs.email')" />
+            </div>
+            <div class="sv-field">
+              <label>{{ $t('services.page.askUs.question') }}</label>
+              <textarea rows="4" :placeholder="$t('services.page.askUs.questionPlaceholder')"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">{{ $t('services.page.askUs.cta') }}</button>
+          </form>
         </div>
       </div>
     </section>
@@ -81,6 +103,15 @@ useSeoMeta({
   title: 'Services — ResumeDOG | Resume Formatting, Translation & Anonymization',
   description: 'AI resume formatting, English-Japanese translation, candidate anonymization, job description matching, and Word/PDF export for recruitment agencies.'
 })
+
+const cardIcons = {
+  'fa-solid fa-align-left':      'formatting',
+  'fa-solid fa-language':        'translation',
+  'fa-solid fa-user-shield':     'anonymization',
+  'fa-solid fa-bullseye':        'matching',
+  'fa-solid fa-sliders':         'templates',
+  'fa-solid fa-file-arrow-down': 'export',
+}
 </script>
 
 <style scoped>
@@ -90,162 +121,186 @@ useSeoMeta({
   padding: 0 2rem;
 }
 
-/* Hero */
-.services-hero {
-  padding: 4rem 0 2.5rem;
+/* ── Hero ── */
+.sv-hero {
+  padding: 5rem 0 4.5rem;
+  background: var(--cream);
 }
-
-/* Service rows */
-.services-list {
-  padding: 1rem 0 3rem;
+.sv-h1 {
+  max-width: 700px;
+  margin-bottom: 1.25rem;
 }
-.service-row {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 2.5rem;
-  align-items: start;
-  padding: 2.5rem 0;
-  border-bottom: 1px solid var(--border);
-}
-.service-row:last-child { border-bottom: none; }
-
-.service-num {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 0.1em;
-  margin-bottom: 0.75rem;
-}
-.service-meta h2 {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-  line-height: 1.25;
-}
-.service-meta p {
-  font-size: 16px;
+.sv-body {
+  font-size: 17px;
   color: var(--ink2);
-  line-height: 1.75;
-}
-.service-note {
-  margin-top: 0.75rem;
-  font-size: 13px !important;
-  color: var(--teal) !important;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.service-badge-wrap {
-  padding-top: 2.25rem;
-}
-.service-title-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.stc-num {
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 0.12em;
-}
-.stc-title {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-/* Demo note */
-.demo-note {
-  padding: 2rem 0;
-  background: var(--cream2);
-}
-.demo-inner {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.75rem 2rem;
-}
-.demo-icon {
-  font-size: 2rem;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-.demo-inner h3 {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 0.25rem;
-}
-.demo-inner p { font-size: 14px; color: var(--ink2); line-height: 1.6; }
-
-/* FAQs */
-.faqs-section {
-  padding: 3rem 0;
-}
-.faqs-list {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-/* CTA band */
-.cta-band {
-  padding: 3.5rem 0;
-  background: var(--ink);
-  text-align: center;
-}
-.cta-band h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--cream);
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+  line-height: 1.8;
+  max-width: 580px;
   margin-bottom: 2rem;
 }
-.cta-band em { font-style: italic; color: var(--gold); }
-.cta-actions {
+.sv-cta { display: inline-flex; }
+
+/* ── Services Grid ── */
+.sv-services {
+  padding: 5rem 0;
+  background: var(--cream2);
+}
+.sv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.sv-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem;
   display: flex;
+  flex-direction: column;
   gap: 1rem;
+}
+.sv-card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--teal2);
+  color: var(--teal);
+  display: flex;
+  align-items: center;
   justify-content: center;
+  font-size: 18px;
+}
+.sv-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.sv-card p {
+  font-size: 14px;
+  color: var(--ink2);
+  line-height: 1.7;
+}
+
+/* ── Workflow CTA ── */
+.sv-workflow-cta {
+  padding: 5rem 0;
+  background: var(--cream);
+}
+.sv-wf-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
   flex-wrap: wrap;
 }
-.btn-demo {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: rgba(255,255,255,0.8);
-  padding: 0.85rem 1.5rem;
-  border-radius: 100px;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  font-family: var(--font-body);
-  transition: border-color 0.2s, color 0.2s;
-}
-.btn-demo:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
-[data-theme="dark"] .btn-demo { background: var(--cream2); }
+.sv-wf-inner .section-heading { margin-bottom: 0.75rem; }
+.sv-wf-inner .sv-body { margin-bottom: 0; }
+.sv-wf-btn { flex-shrink: 0; }
 
+/* ── Video Section ── */
+.sv-video {
+  padding: 5rem 0;
+  background: var(--cream2);
+}
+.sv-video-body { margin-bottom: 2.5rem; }
+.sv-video-frame {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  aspect-ratio: 16 / 9;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.sv-video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0.45;
+}
+.sv-video-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--cream2);
+  border: 2px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--ink2);
+}
+.sv-video-coming {
+  font-size: 13px;
+  color: var(--ink2);
+  font-style: italic;
+  max-width: 320px;
+  text-align: center;
+}
+
+/* ── Ask a Question ── */
+.sv-ask {
+  padding: 5rem 0;
+  background: var(--cream);
+}
+.sv-ask-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: start;
+}
+.sv-ask-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.sv-ask-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.sv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.sv-field label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink2);
+}
+.sv-field input,
+.sv-field textarea {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-size: 14px;
+  font-family: var(--font-body);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+  width: 100%;
+}
+.sv-field input:focus,
+.sv-field textarea:focus { border-color: var(--gold); }
+.sv-field input::placeholder,
+.sv-field textarea::placeholder { color: var(--ink2); opacity: 0.5; }
+
+/* ── Responsive ── */
 @media (max-width: 900px) {
-  .service-row {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .service-badge-wrap { padding-top: 0; }
+  .sv-grid { grid-template-columns: repeat(2, 1fr); }
+  .sv-wf-inner { flex-direction: column; align-items: flex-start; }
+  .sv-ask-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .sv-grid { grid-template-columns: 1fr; }
+  .sv-ask-row { grid-template-columns: 1fr; }
 }
 </style>

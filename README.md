@@ -1,4 +1,4 @@
-# ResumeAI — Nuxt 3 Landing Page
+# ResumeAI - Nuxt 3 Landing Page
 
 ## Setup
 

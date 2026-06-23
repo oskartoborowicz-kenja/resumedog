@@ -2,7 +2,7 @@
   <section id="features" class="features">
     <div class="section-label">What we do</div>
     <h2 class="section-heading">Everything your resume <em>needs</em></h2>
-    <p class="section-sub">From smart rewrites to job matching — all in one place, powered by AI that understands hiring.</p>
+    <p class="section-sub">From smart rewrites to job matching - all in one place, powered by AI that understands hiring.</p>
     <div class="features-grid">
       <div
         v-for="feature in features"
@@ -31,7 +31,7 @@ const features = [
   {
     icon: 'fa-file-export',
     title: 'Format conversion',
-    description: 'Convert between PDF, Word, plain text, and JSON Resume — perfectly formatted every time.',
+    description: 'Convert between PDF, Word, plain text, and JSON Resume - perfectly formatted every time.',
     tag: '12+ formats'
   },
   {
@@ -55,7 +55,7 @@ const features = [
   {
     icon: 'fa-sparkles',
     title: 'Multiple style templates',
-    description: 'Choose from modern, executive, creative, or minimal layouts — all ATS-compliant and recruiter-approved.',
+    description: 'Choose from modern, executive, creative, or minimal layouts - all ATS-compliant and recruiter-approved.',
     tag: null
   }
 ]

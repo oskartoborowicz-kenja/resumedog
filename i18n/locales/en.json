@@ -5,6 +5,7 @@
     "services": "Services",
     "pricing": "Pricing",
     "blog": "Blog",
+    "contact": "Contact",
     "cta": "Start Free Trial",
     "demo": "Book a Demo",
     "login": "Log in"
@@ -63,7 +64,7 @@
   "japan": {
     "label": "Built for Japan",
     "heading": "Built for Japan-based recruitment teams.",
-    "body": "ResumeDOG is designed for agencies running English–Japanese hiring workflows. Translate, anonymize, and format candidate resumes for the Japanese market without rebuilding every document manually.",
+    "body": "ResumeDOG is designed for agencies running English-Japanese hiring workflows. Translate, anonymize, and format candidate resumes for the Japanese market without rebuilding every document manually.",
     "map1": "Japan recruitment teams",
     "map2": "English ⇄ Japanese resumes",
     "map3": "International candidates",
@@ -73,7 +74,7 @@
     "label": "Why We Built It",
     "heading": "Recruiters should not spend hours",
     "headingEm": "fixing resumes.",
-    "p1": "Recruiters should spend their time sourcing candidates, speaking with clients, and moving hiring processes forward — not rebuilding documents from scratch.",
+    "p1": "Recruiters should spend their time sourcing candidates, speaking with clients, and moving hiring processes forward - not rebuilding documents from scratch.",
     "p2": "ResumeDOG removes the repetitive formatting, translation, anonymization, and export work that slows down client submissions. Recruiters stay in control, but the manual document work becomes faster and more consistent.",
     "quote": "The problem was not the candidate. It was the manual work needed before a strong candidate could be sent to the client."
   },
@@ -107,114 +108,74 @@
       { "q": "Does ResumeDOG replace recruiters?", "a": "No. ResumeDOG is designed to reduce repetitive document preparation work. Recruiters still review, edit, and approve resumes before client submission." },
       { "q": "Why is ResumeDOG focused on Japan?", "a": "ResumeDOG is being built with Japanese recruitment workflows in mind, including English-Japanese translation, privacy-conscious resume handling, and future support for Japan-specific recruitment outputs." },
       { "q": "Is ResumeDOG Haken Law compliant?", "a": "ResumeDOG is being developed with Haken Law-related workflow requirements in mind, and those requirements are being reviewed as part of product development." },
-      { "q": "Can I cancel anytime?", "a": "Yes — no contracts, no commitments. Cancel with one click from your account settings." }
+      { "q": "Can I cancel anytime?", "a": "Yes - no contracts, no commitments. Cancel with one click from your account settings." }
     ]
-  },
-  "finalCta": {
-    "heading": "Prepare client-ready resumes faster with",
-    "headingEm": "ResumeDOG.",
-    "cta1": "Request Access",
-    "cta2": "Book a Demo"
   },
   "about": {
     "label": "About",
     "readMore": "Learn more about us",
     "page": {
-      "heading": "Built to remove the resume",
-      "headingEm": "formatting bottleneck.",
-      "body": "ResumeDOG was created for recruitment teams that spend too much time turning raw candidate files into polished, client-ready submissions. The product is designed to reduce repetitive formatting, translation, anonymization, and editing work before resumes reach clients.",
-      "why": {
-        "label": "Why ResumeDOG Exists",
-        "heading": "Strong candidates should not be slowed down by",
-        "headingEm": "document work.",
-        "p1": "Recruiters are judged on speed, accuracy, and the quality of candidate submissions. But before a candidate can be sent to a client, recruiters often need to clean formatting, rewrite unclear sections, translate content, anonymize personal details, and adjust the document to fit agency or client expectations.",
-        "p2": "ResumeDOG exists to make that preparation process faster and more consistent, while still leaving final judgment and review in the hands of recruiters."
+      "s1": {
+        "label": "ResumeDOG",
+        "heading": "Built for the work recruiters do before submission.",
+        "body": "ResumeDOG was created to reduce the manual document work that happens between receiving a candidate resume and sending a client-ready version to an employer. It helps recruitment agencies format, translate, anonymize, tailor, review, and export resumes more consistently."
       },
-      "whoFor": {
-        "label": "Who ResumeDOG Is For",
-        "heading": "For recruiters, recruitment agencies, and",
-        "headingEm": "staffing teams.",
-        "body": "ResumeDOG is not a consumer resume builder. It is a recruiter-side workflow tool for agencies and teams that need to prepare candidate resumes for client submission.",
-        "bullet1": "Recruitment agencies preparing resumes for clients",
-        "bullet2": "Staffing firms working across Japanese and international hiring workflows",
-        "bullet3": "Recruiters who need faster formatting and translation support",
-        "bullet4": "Teams that need controlled anonymization before submission",
-        "bullet5": "Agencies that want more consistent resume outputs across consultants"
+      "s2": {
+        "label": "The Problem",
+        "heading": "Resume preparation is still too manual.",
+        "body": "Recruiters often receive resumes in different formats, languages, structures, and levels of quality. Before a candidate can be submitted, the resume may need to be cleaned, translated, anonymized, reformatted, and tailored to a specific role. That work is repetitive, time-consuming, and hard to standardize across a team."
       },
-      "believe": {
-        "label": "What We Believe",
-        "heading": "AI should support recruiters,",
-        "headingEm": "not replace recruiter judgment.",
-        "body": "ResumeDOG is built around the idea that recruiters should stay in control. AI can reduce repetitive document work, but recruiters still review, adjust, and decide what is appropriate before a resume is sent to a client."
+      "s3": {
+        "label": "The Solution",
+        "heading": "One workflow for cleaner candidate submissions.",
+        "body": "ResumeDOG brings the resume preparation workflow into one place. Recruiters upload a resume, choose the required settings, review the AI-generated version, and export a client-ready file."
       },
-      "faqs": [
-        { "q": "What is ResumeDOG?", "a": "ResumeDOG is an AI-powered resume formatting and translation tool for recruitment agencies. It helps recruiters prepare candidate resumes for client submission by supporting formatting, translation, anonymization, editing, and export." },
-        { "q": "Who is ResumeDOG built for?", "a": "ResumeDOG is built for recruitment agencies, staffing firms, and recruiting teams that prepare candidate resumes before sending them to clients. It is not designed as a general resume builder for job seekers." },
-        { "q": "Does ResumeDOG replace recruiters?", "a": "No. ResumeDOG is designed to reduce repetitive document preparation work. Recruiters still review, edit, and approve resumes before client submission." },
-        { "q": "Why is ResumeDOG focused on Japan?", "a": "ResumeDOG is being built with Japanese recruitment workflows in mind, including English-Japanese translation, privacy-conscious resume handling, and future support for Japan-specific recruitment outputs." },
-        { "q": "Is ResumeDOG already Haken Law compliant?", "a": "ResumeDOG is being developed with Haken Law-related workflow requirements in mind, and those requirements are being reviewed as part of product development." }
-      ]
+      "s4": {
+        "label": "Our Approach",
+        "heading": "AI-assisted, recruiter-controlled.",
+        "body": "ResumeDOG is designed to support recruiters, not replace them. The platform helps with formatting, translation, anonymization, and document preparation, while recruiters stay responsible for reviewing and approving the final resume."
+      }
     }
   },
   "services": {
     "label": "Services",
     "readMore": "Explore all services",
     "page": {
-      "heading": "Resume preparation tools for",
-      "headingEm": "recruitment agencies.",
-      "subheading": "Format, translate, anonymize, tailor, and export candidate resumes with a workflow built around recruiter needs.",
-      "formatting": {
-        "num": "01",
-        "title": "Resume Formatting",
-        "heading": "Standardize candidate resumes faster.",
-        "body": "Candidate resumes often arrive in different formats, styles, and levels of quality. ResumeDOG helps recruiters convert inconsistent documents into cleaner, more professional outputs that are easier to review and send to clients."
+      "heading": "Resume preparation services for recruitment agencies.",
+      "body": "ResumeDOG helps recruiters format, translate, anonymize, tailor, and export candidate resumes for client submission.",
+      "heroCta": "See How It Works",
+      "cards": {
+        "formatting":    { "title": "Resume Formatting",           "body": "Standardize candidate resumes into clean, professional layouts that match your agency's workflow." },
+        "translation":   { "title": "English-Japanese Translation", "body": "Translate resumes between English and Japanese with recruitment-aware wording." },
+        "anonymization": { "title": "Candidate Anonymization",      "body": "Hide selected personal details before sharing resumes with clients." },
+        "matching":      { "title": "Job Description Matching",     "body": "Adjust resume emphasis to better reflect the client's role requirements while keeping the candidate's facts intact." },
+        "templates":     { "title": "Template and Format Controls", "body": "Apply your agency's preferred structure, layout, and formatting rules." },
+        "export":        { "title": "Word and PDF Export",          "body": "Download polished files in the formats clients expect." }
       },
-      "translation": {
-        "num": "02",
-        "title": "English-Japanese Translation",
-        "heading": "Translate resumes for Japanese and international hiring workflows.",
-        "body": "ResumeDOG supports English-Japanese resume workflows for recruiters working with Japanese clients, international candidates, or cross-border hiring processes. Additional languages can be positioned as planned once the roadmap is confirmed."
+      "workflowCta": {
+        "label": "Workflow",
+        "heading": "See the full workflow.",
+        "body": "From upload to export, ResumeDOG keeps the resume preparation process simple, controlled, and recruiter-led.",
+        "cta": "How It Works"
       },
-      "anonymization": {
-        "num": "03",
-        "title": "Anonymization",
-        "heading": "Control candidate information before submission.",
-        "body": "Use anonymization settings to hide selected candidate details before sharing resumes with clients. Recruiters can manage what information appears in the final export depending on their workflow and plan."
+      "video": {
+        "label": "Meet ResumeDOG",
+        "heading": "Meet ResumeDOG.",
+        "body": "Watch how ResumeDOG helps recruitment teams turn raw candidate resumes into client-ready submissions.",
+        "script": "Recruiters lose time cleaning, translating, and formatting resumes before they can send them to clients. ResumeDOG helps turn raw candidate documents into client-ready submissions in minutes. Upload the resume, choose your settings, review the output, anonymize if needed, and export a polished Word or PDF file.",
+        "note": "Video coming soon - contact Pritha for the animated explainer."
       },
-      "matching": {
-        "num": "04",
-        "title": "Job Description Matching",
-        "heading": "Tailor resumes to client role requirements.",
-        "body": "When job description matching is enabled, recruiters can add role details to help align a candidate's resume with the skills, experience, and requirements of a specific client opening.",
-        "note": "Available in selected plans."
-      },
-      "templates": {
-        "num": "05",
-        "title": "Agency Templates and Formatting Controls",
-        "heading": "Keep submissions consistent across the agency.",
-        "body": "Apply selected templates, formatting rules, and brand settings so resumes prepared by different recruiters still feel consistent and professional."
-      },
-      "japanOutputs": {
-        "num": "06",
-        "title": "Japanese Recruitment Outputs",
-        "heading": "Japan-specific outputs, planned.",
-        "body": "ResumeDOG is being developed with Japanese recruitment workflows in mind, including future support for formats such as 履歴書, 職務経歴書, and skill sheets.",
-        "note": "Available once confirmed."
-      },
-      "export": {
-        "num": "07",
-        "title": "Word and PDF Export",
-        "heading": "Export in the formats clients expect.",
-        "body": "Recruiters can download polished outputs in Word and PDF, depending on the selected settings and plan."
-      },
-      "faqs": [
-        { "q": "What can recruiters do with ResumeDOG?", "a": "Recruiters can format resumes, translate between English and Japanese, anonymize selected candidate details, adjust resume sections, and export client-ready documents in Word or PDF." },
-        { "q": "Does ResumeDOG translate resumes?", "a": "Yes. ResumeDOG is currently focused on English-Japanese resume translation, with additional language support planned." },
-        { "q": "Can ResumeDOG anonymize candidate information?", "a": "Yes. ResumeDOG includes anonymization functions that allow recruiters to hide selected candidate details before client submission." },
-        { "q": "Can I control which candidate details are hidden?", "a": "Depending on the plan and settings, recruiters can control details such as name, phone number, email address, and other personal information before export." },
-        { "q": "Does ResumeDOG support job description matching?", "a": "Job description matching is available in selected plans. Recruiters can add job description details to help tailor resumes to a specific role." },
-        { "q": "Can I export resumes in Word and PDF?", "a": "Yes. ResumeDOG supports Word and PDF export depending on the selected output settings and plan." }
-      ]
+      "askUs": {
+        "label": "Ask a Question",
+        "heading": "Have a question about ResumeDOG?",
+        "body": "Send us your question and we'll get back to you with the best setup for your recruitment workflow.",
+        "name": "Name",
+        "company": "Company",
+        "email": "Email",
+        "question": "Question",
+        "questionPlaceholder": "What would you like to know about ResumeDOG?",
+        "cta": "Send Question"
+      }
     }
   },
   "login": {
@@ -240,7 +201,7 @@
   },
   "signup": {
     "title": "Create your account",
-    "sub": "Start for free — no credit card required",
+    "sub": "Start for free - no credit card required",
     "name": "Full name",
     "namePlaceholder": "Jane Smith",
     "email": "Email",
@@ -274,68 +235,69 @@
     }
   },
   "pricing": {
-    "eyebrow": "Simple pricing",
-    "heading": "Pay for what you",
-    "headingEm": "need",
-    "sub": "No hidden fees. Cancel anytime. Start free — no credit card required.",
-    "monthly": "Monthly",
-    "annual": "Annual",
-    "saveBadge": "Save 30%",
-    "mostPopular": "Most popular",
-    "period": "/mo",
-    "faqLabel": "FAQs",
-    "faqHeading": "Common",
-    "faqHeadingEm": "questions",
+    "label": "Pricing",
+    "heading": "Choose the ResumeDOG plan that fits your team",
+    "body": "Choose the plan that matches your resume volume, team size, and workflow needs.",
+    "tbd": "TBD",
+    "compare": "Compare plans",
     "plans": {
-      "free": {
-        "name": "Free",
-        "description": "Perfect for trying out ResumeDOG with one resume.",
+      "trial": {
+        "name": "Trial",
+        "description": "For testing ResumeDOG with a small number of resumes.",
         "cta": "Start Free Trial",
-        "features": ["1 resume conversion/month", "PDF & Word export", "Basic AI rewrite", "ATS score check", "3 templates"]
+        "features": ["Limited resume conversions", "Word/PDF export", "Basic formatting"]
       },
-      "pro": {
-        "name": "Pro",
-        "description": "For active recruiters who need unlimited power.",
-        "cta": "Start Pro free",
-        "features": ["Unlimited conversions", "All 12+ export formats", "Advanced AI rewrite", "Job description matching", "ATS score & suggestions", "20+ templates", "Multilingual support", "Priority processing"]
+      "starter": {
+        "name": "Starter",
+        "description": "For individual recruiters preparing resumes occasionally.",
+        "cta": "Choose Starter",
+        "features": ["Resume conversions", "English-Japanese translation", "Anonymization", "Word/PDF export"]
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "For recruiters preparing client submissions regularly.",
+        "cta": "Choose Professional",
+        "features": ["Unlimited conversions", "English-Japanese translation", "Anonymization", "Job description matching", "Word/PDF export"]
       },
       "team": {
         "name": "Team",
-        "description": "For recruitment agencies managing multiple clients.",
-        "cta": "Contact sales",
-        "features": ["Everything in Pro", "Up to 10 seats", "Team dashboard", "Bulk resume processing", "API access", "Custom templates", "Dedicated support"]
+        "description": "For agencies with multiple recruiters and shared workflows.",
+        "cta": "Choose Team",
+        "features": ["Everything in Professional", "Multiple seats", "Admin dashboard", "Shared workflows"]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "For larger agencies needing custom templates, admin controls, and support.",
+        "cta": "Contact Sales",
+        "features": ["Everything in Team", "Custom templates", "Priority support", "Dedicated account management"]
       }
     },
-    "faqs": [
-      { "q": "Can I cancel anytime?", "a": "Yes — no contracts, no commitments. Cancel with one click from your account settings." },
-      { "q": "What happens when I hit my free limit?", "a": "You can upgrade to Pro or wait until the next month. We never delete your resumes." },
-      { "q": "Do you store my resume data?", "a": "Resumes are processed and stored encrypted. You can delete your data at any time from your account." },
-      { "q": "Is there a student discount?", "a": "Yes — students get 50% off Pro with a valid .edu email. Reach out to our support team." },
-      { "q": "Can I use the API?", "a": "API access is available on the Team plan. Contact us for custom volume pricing." },
-      { "q": "What file formats can I upload?", "a": "We accept PDF, Word (.docx), plain text, and LinkedIn profile exports." }
-    ]
+    "cta": {
+      "label": "Get in touch",
+      "heading": "Not sure which plan fits?",
+      "body": "Tell us about your agency size and resume volume, and we'll recommend the right setup.",
+      "cta": "Contact Sales"
+    }
   },
   "blog": {
     "eyebrow": "The ResumeDOG Blog",
-    "heading": "Career advice,",
+    "heading": "Recruiting insights,",
     "headingEm": "delivered.",
-    "sub": "Tips on resumes, job searching, and landing the role you actually want.",
+    "sub": "Practical guidance on AI, resume preparation, and modern recruiting workflows.",
     "readArticle": "Read article",
     "newsletter": {
       "label": "Stay updated",
-      "heading": "Get tips in your",
+      "heading": "Get insights in your",
       "headingEm": "inbox",
-      "sub": "Weekly career advice and resume tips from our team. No spam, ever.",
+      "sub": "Practical recruiting and AI tips from the ResumeDOG team. No spam, ever.",
       "placeholder": "your{'@'}email.com",
       "subscribe": "Subscribe",
       "success": "You're subscribed!"
     },
     "posts": [
-      { "tag": "ATS Tips", "date": "May 20, 2026", "title": "How to beat applicant tracking systems in 2026", "excerpt": "Most resumes never reach a human. Here's exactly how ATS software scores your application — and how to optimize yours to pass every filter." },
-      { "tag": "Resume Writing", "date": "May 14, 2026", "title": "The complete guide to rewriting your resume with AI", "excerpt": "AI can transform a mediocre resume into a compelling one — if you know how to use it. We walk through the full process." },
-      { "tag": "Job Search", "date": "May 7, 2026", "title": "Why tailoring your resume to each job description works", "excerpt": "Generic resumes get generic results. Here's the data on why tailored applications get 3× more callbacks." },
-      { "tag": "Formats", "date": "Apr 28, 2026", "title": "PDF vs Word vs plain text: which resume format wins?", "excerpt": "Recruiters and ATS systems treat different file formats very differently. We tested all of them so you don't have to." },
-      { "tag": "Career Change", "date": "Apr 21, 2026", "title": "How to write a resume when switching industries", "excerpt": "Changing careers is hard. Your resume doesn't have to make it harder. Here's how to reframe your experience for a new field." }
+      { "tag": "AI Recruiting", "date": "Apr 3, 2026", "title": "AI Recruiting: What Firms Need To Know in 2026", "excerpt": "Recruiting has always been an industry where speed, accuracy, and relationships matter. AI tools are now being used to assist with candidate sourcing, screening, and resume preparation - here's what firms need to understand." },
+      { "tag": "Industry Trends", "date": "Apr 3, 2026", "title": "AI Trends Shaping Recruiting in 2026", "excerpt": "Artificial intelligence is playing an increasingly visible role in the recruiting industry. Tools have evolved from basic automation to more advanced systems capable of assisting with candidate sourcing, resume processing, and workflow management." },
+      { "tag": "Resume Automation", "date": "Apr 3, 2026", "title": "How AI Can Automate Resume Formatting and Processing", "excerpt": "Recruiters often work with large volumes of resumes that vary widely in format, structure, and quality. AI tools are now being introduced to assist with these tasks - here's how they work and where the limits are." }
     ]
   },
   "forgotPassword": {

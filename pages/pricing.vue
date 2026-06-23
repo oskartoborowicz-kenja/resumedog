@@ -1,270 +1,325 @@
 <template>
   <main>
-    <section class="pricing-hero">
-      <div class="hero-eyebrow">{{ $t('pricing.eyebrow') }}</div>
-      <h1>{{ $t('pricing.heading') }} <em>{{ $t('pricing.headingEm') }}</em></h1>
-      <p class="hero-sub">{{ $t('pricing.sub') }}</p>
-      <div class="toggle-wrap">
-        <span :class="{ active: !annual }" @click="annual = false">{{ $t('pricing.monthly') }}</span>
-        <div class="toggle" :class="{ on: annual }" @click="annual = !annual">
-          <div class="toggle-knob" />
-        </div>
-        <span :class="{ active: annual }" @click="annual = true">{{ $t('pricing.annual') }} <span class="save-badge">{{ $t('pricing.saveBadge') }}</span></span>
+
+    <!-- Section 1: Hero -->
+    <section class="pr-hero">
+      <div class="container">
+        <p class="section-label">{{ $t('pricing.label') }}</p>
+        <h1 class="section-heading pr-h1">{{ $t('pricing.heading') }}</h1>
+        <p class="pr-body">{{ $t('pricing.body') }}</p>
       </div>
     </section>
 
-    <section class="plans">
-      <div
-        v-for="plan in plans"
-        :key="plan.id"
-        class="plan-card"
-        :class="{ featured: plan.featured }"
-      >
-        <div v-if="plan.featured" class="plan-badge">{{ $t('pricing.mostPopular') }}</div>
-        <div class="plan-name">{{ plan.name }}</div>
-        <div class="plan-price">
-          <span class="currency">$</span>
-          <span class="amount">{{ annual ? plan.annualPrice : plan.monthlyPrice }}</span>
-          <span class="period">{{ $t('pricing.period') }}</span>
-        </div>
-        <p class="plan-desc">{{ plan.description }}</p>
-        <NuxtLink :to="plan.cta.href" :class="plan.featured ? 'btn-primary' : 'btn-outline'">
-          {{ plan.cta.label }}
-        </NuxtLink>
-        <ul class="plan-features">
-          <li v-for="feat in plan.features" :key="feat">
-            <i class="fa-regular fa-check" /> {{ feat }}
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="faq">
-      <div class="section-label">{{ $t('pricing.faqLabel') }}</div>
-      <h2 class="section-heading">{{ $t('pricing.faqHeading') }} <em>{{ $t('pricing.faqHeadingEm') }}</em></h2>
-      <div class="faq-grid">
-        <div v-for="item in faqs" :key="item.q" class="faq-item">
-          <h4>{{ item.q }}</h4>
-          <p>{{ item.a }}</p>
+    <!-- Section 2: Plan Cards -->
+    <section class="pr-plans">
+      <div class="container">
+        <div class="pr-grid">
+          <div
+            v-for="plan in plans"
+            :key="plan.id"
+            class="pr-card"
+            :class="{ 'pr-card--featured': plan.featured }"
+          >
+            <div class="pr-card-top">
+              <p class="pr-plan-name">{{ plan.name }}</p>
+              <p class="pr-price">{{ $t('pricing.tbd') }}</p>
+              <p class="pr-plan-desc">{{ plan.description }}</p>
+            </div>
+            <NuxtLink to="/contact" :class="plan.featured ? 'btn-primary pr-cta' : 'btn-outline pr-cta'">
+              {{ plan.cta }}
+            </NuxtLink>
+            <ul class="pr-features">
+              <li v-for="feat in plan.features" :key="feat">
+                <i class="fa-solid fa-check pr-check" /> {{ feat }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <CtaSection />
+    <!-- Section 3: Comparison Table -->
+    <section class="pr-compare">
+      <div class="container">
+        <h2 class="section-heading pr-compare-heading">{{ $t('pricing.compare') }}</h2>
+        <div class="pr-table-wrap">
+          <table class="pr-table">
+            <thead>
+              <tr>
+                <th class="pr-th-feature"></th>
+                <th v-for="plan in plans" :key="plan.id" :class="{ 'pr-th-featured': plan.featured }">
+                  {{ plan.name }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in compareRows" :key="row.label">
+                <td class="pr-row-label">{{ row.label }}</td>
+                <td v-for="(val, i) in row.values" :key="i" :class="{ 'pr-td-featured': plans[i].featured }">
+                  <span v-if="val === true" class="pr-check-icon"><i class="fa-solid fa-check"></i></span>
+                  <span v-else-if="val === false" class="pr-dash">-</span>
+                  <span v-else class="pr-cell-text">{{ val }}</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: CTA -->
+    <section class="pr-cta-section">
+      <div class="container">
+        <p class="section-label">{{ $t('pricing.cta.label') }}</p>
+        <h2 class="section-heading pr-cta-heading">{{ $t('pricing.cta.heading') }}</h2>
+        <p class="pr-body pr-cta-body">{{ $t('pricing.cta.body') }}</p>
+        <NuxtLink to="/contact" class="btn-primary">{{ $t('pricing.cta.cta') }}</NuxtLink>
+      </div>
+    </section>
+
   </main>
 </template>
 
 <script setup>
 useSeoMeta({
-  title: 'Pricing — ResumeDOG',
-  description: 'Simple, transparent pricing. Start free, upgrade when you need more.'
+  title: 'Pricing - ResumeDOG',
+  description: 'Choose the ResumeDOG plan that fits your team. Resume formatting, translation, and anonymization for recruitment agencies.'
 })
 
 const { t, tm, rt } = useI18n()
-const annual = ref(false)
 
-const plans = computed(() => [
-  {
-    id: 'free',
-    name: t('pricing.plans.free.name'),
-    monthlyPrice: '0',
-    annualPrice: '0',
-    description: t('pricing.plans.free.description'),
-    featured: false,
-    cta: { label: t('pricing.plans.free.cta'), href: '/signup' },
-    features: tm('pricing.plans.free.features').map(f => rt(f))
-  },
-  {
-    id: 'pro',
-    name: t('pricing.plans.pro.name'),
-    monthlyPrice: '12',
-    annualPrice: '8',
-    description: t('pricing.plans.pro.description'),
-    featured: true,
-    cta: { label: t('pricing.plans.pro.cta'), href: '/signup?plan=pro' },
-    features: tm('pricing.plans.pro.features').map(f => rt(f))
-  },
-  {
-    id: 'team',
-    name: t('pricing.plans.team.name'),
-    monthlyPrice: '39',
-    annualPrice: '27',
-    description: t('pricing.plans.team.description'),
-    featured: false,
-    cta: { label: t('pricing.plans.team.cta'), href: '/contact' },
-    features: tm('pricing.plans.team.features').map(f => rt(f))
-  }
-])
+const planIds = ['trial', 'starter', 'professional', 'team', 'enterprise']
 
-const faqs = computed(() =>
-  tm('pricing.faqs').map(faq => ({ q: rt(faq.q), a: rt(faq.a) }))
+const plans = computed(() =>
+  planIds.map((id, i) => ({
+    id,
+    name: t(`pricing.plans.${id}.name`),
+    description: t(`pricing.plans.${id}.description`),
+    cta: t(`pricing.plans.${id}.cta`),
+    features: tm(`pricing.plans.${id}.features`).map(f => rt(f)),
+    featured: id === 'professional',
+  }))
 )
+
+const compareRows = [
+  { label: 'Monthly resume conversions', values: ['Limited', 'TBD', 'Unlimited', 'Unlimited', 'Unlimited'] },
+  { label: 'English-Japanese translation', values: [false, true, true, true, true] },
+  { label: 'Anonymization', values: [false, true, true, true, true] },
+  { label: 'Job description matching', values: [false, false, true, true, true] },
+  { label: 'Word/PDF export', values: [true, true, true, true, true] },
+  { label: 'Admin dashboard', values: [false, false, false, true, true] },
+  { label: 'Custom templates', values: [false, false, false, false, true] },
+  { label: 'Priority support', values: [false, false, false, false, true] },
+]
 </script>
 
 <style scoped>
-.pricing-hero {
-  text-align: center;
-  padding: 5rem 3rem 3rem;
-  max-width: 700px;
+.container {
+  max-width: 1160px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--teal2);
-  color: var(--teal);
-  padding: 0.3rem 0.9rem;
+
+/* ── Hero ── */
+.pr-hero {
+  padding: 5rem 0;
+  background: var(--cream);
+}
+.pr-h1 {
+  max-width: 680px;
+  margin-bottom: 1.25rem;
+}
+.pr-body {
+  font-size: 17px;
+  color: var(--ink2);
+  line-height: 1.8;
+  max-width: 560px;
+}
+
+/* ── Plan Cards ── */
+.pr-plans {
+  padding: 5rem 0;
+  background: var(--cream2);
+}
+.pr-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+.pr-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.pr-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 36px rgba(0,0,0,0.10);
+}
+.pr-card--featured {
+  border-color: var(--ink);
+  border-width: 2px;
+}
+.pr-card-top { flex: 1; }
+.pr-plan-name {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink2);
+  margin-bottom: 0.6rem;
+}
+.pr-price {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+.pr-plan-desc {
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.55;
+}
+.pr-cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.65rem 1rem;
   border-radius: 100px;
   font-size: 13px;
   font-weight: 500;
-  margin-bottom: 1.5rem;
 }
-h1 {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
-h1 em { color: var(--gold); font-style: italic; }
-.hero-sub { font-size: 17px; color: var(--ink2); font-weight: 300; margin-bottom: 2rem; }
-
-.toggle-wrap {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: var(--ink2);
-  cursor: pointer;
-}
-.toggle-wrap span.active { color: var(--ink); font-weight: 500; }
-.toggle {
-  width: 44px;
-  height: 24px;
-  border-radius: 100px;
-  background: var(--cream2);
-  border: 0.5px solid var(--border);
-  position: relative;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.toggle.on { background: var(--teal); border-color: var(--teal); }
-.toggle-knob {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: white;
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  transition: transform 0.2s;
-}
-.toggle.on .toggle-knob { transform: translateX(20px); }
-.save-badge {
-  background: var(--gold2);
-  color: var(--ink);
-  font-size: 11px;
-  padding: 0.15rem 0.4rem;
-  border-radius: 4px;
-  font-weight: 500;
-  margin-left: 4px;
-}
-
-.plans {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  max-width: 1100px;
-  margin: 3rem auto 5rem;
-  padding: 0 3rem;
-}
-.plan-card {
-  background: var(--card-bg);
-  border: 0.5px solid var(--border);
-  border-radius: 20px;
-  padding: 2rem;
-  position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.plan-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-}
-.plan-card.featured {
-  border: 2px solid var(--ink);
-}
-.plan-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--ink);
-  color: var(--cream);
-  font-size: 11px;
-  font-weight: 500;
-  padding: 0.25rem 0.9rem;
-  border-radius: 100px;
-  white-space: nowrap;
-}
-.plan-name { font-size: 14px; font-weight: 500; color: var(--ink2); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.08em; }
-.plan-price { display: flex; align-items: baseline; gap: 2px; margin-bottom: 0.75rem; }
-.currency { font-size: 1.2rem; color: var(--ink2); font-weight: 300; margin-top: 6px; }
-.amount { font-family: var(--font-display); font-size: 3.5rem; color: var(--ink); letter-spacing: -0.03em; line-height: 1; }
-.period { font-size: 14px; color: var(--ink2); font-weight: 300; margin-left: 2px; }
-.plan-desc { font-size: 14px; color: var(--ink2); font-weight: 300; margin-bottom: 1.5rem; line-height: 1.5; }
-
 .btn-outline {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  border: 0.5px solid var(--border);
+  border: 1px solid var(--border);
   color: var(--ink);
-  padding: 0.75rem;
-  border-radius: 100px;
-  font-size: 14px;
-  font-weight: 500;
   transition: border-color 0.2s, background 0.2s;
-  margin-bottom: 1.5rem;
 }
 .btn-outline:hover { border-color: var(--ink); background: var(--cream2); }
 .btn-primary {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
   background: var(--ink);
   color: var(--cream);
-  padding: 0.75rem;
-  border-radius: 100px;
-  font-size: 14px;
-  font-weight: 500;
   transition: background 0.2s;
-  margin-bottom: 1.5rem;
 }
 .btn-primary:hover { background: var(--teal); }
+.pr-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+.pr-features li {
+  font-size: 12px;
+  color: var(--ink2);
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.4;
+}
+.pr-check {
+  color: var(--gold);
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
 
-.plan-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-.plan-features li { font-size: 14px; color: var(--ink2); display: flex; align-items: center; gap: 8px; font-weight: 300; }
-.plan-features li i { color: var(--teal); font-size: 13px; flex-shrink: 0; }
+/* ── Comparison Table ── */
+.pr-compare {
+  padding: 5rem 0;
+  background: var(--cream);
+}
+.pr-compare-heading {
+  margin-bottom: 2.5rem;
+}
+.pr-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.pr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.pr-table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+.pr-table th {
+  padding: 1rem 1.25rem;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink2);
+  background: var(--card-bg);
+}
+.pr-th-feature {
+  text-align: left;
+  width: 220px;
+}
+.pr-th-featured {
+  color: var(--gold);
+  background: var(--cream);
+}
+.pr-table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+.pr-table tbody tr:last-child { border-bottom: none; }
+.pr-table tbody tr:hover { background: var(--cream2); }
+.pr-table td {
+  padding: 0.85rem 1.25rem;
+  text-align: center;
+  background: var(--card-bg);
+  color: var(--ink);
+}
+.pr-td-featured {
+  background: var(--cream);
+}
+.pr-row-label {
+  text-align: left;
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 400;
+}
+.pr-check-icon { color: var(--gold); font-size: 14px; }
+.pr-dash { color: var(--ink2); opacity: 0.4; font-size: 16px; }
+.pr-cell-text { font-size: 13px; color: var(--ink2); }
 
-.faq {
+/* ── CTA ── */
+.pr-cta-section {
+  padding: 5rem 0;
   background: var(--cream2);
-  padding: 5rem 3rem;
 }
-.faq-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  max-width: 900px;
-  margin-top: 3rem;
+.pr-cta-heading { margin-bottom: 1rem; }
+.pr-cta-body { margin-bottom: 2rem; }
+.pr-cta-section .btn-primary {
+  display: inline-flex;
+  padding: 0.9rem 2rem;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 500;
+  background: var(--ink);
+  color: var(--cream);
+  transition: background 0.2s;
 }
-.faq-item h4 { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem; }
-.faq-item p { font-size: 14px; color: var(--ink2); font-weight: 300; line-height: 1.6; }
+.pr-cta-section .btn-primary:hover { background: var(--teal); }
 
-@media (max-width: 900px) {
-  .plans { grid-template-columns: 1fr; padding: 0 1.5rem; }
-  .faq-grid { grid-template-columns: 1fr; }
-  h1 { font-size: 2.5rem; }
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .pr-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .pr-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .pr-grid { grid-template-columns: 1fr; }
 }
 </style>

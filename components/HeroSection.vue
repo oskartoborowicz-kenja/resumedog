@@ -4,7 +4,7 @@
       <div class="hero-eyebrow">AI-Powered Resume Tool</div>
       <h1>Your resume,<em>reimagined.</em></h1>
       <p class="hero-sub">
-        Upload your CV and let AI rewrite, convert, and match it to any job description — in seconds.
+        Upload your CV and let AI rewrite, convert, and match it to any job description - in seconds.
         Land more interviews with a resume that actually stands out.
       </p>
       <div class="hero-actions">

@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-useSeoMeta({ title: 'Log in — ResumeAI' })
+useSeoMeta({ title: 'Log in - ResumeAI' })
 
 const { t } = useI18n()
 const form = reactive({ email: '', password: '' })

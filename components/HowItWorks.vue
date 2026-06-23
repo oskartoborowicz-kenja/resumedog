@@ -17,7 +17,7 @@
 
 <script setup>
 const steps = [
-  { number: '1', title: 'Upload your resume', description: 'PDF, Word, or plain text — we handle any format you have.' },
+  { number: '1', title: 'Upload your resume', description: 'PDF, Word, or plain text - we handle any format you have.' },
   { number: '2', title: 'Choose your goal', description: 'Rewrite, convert, or match to a specific job description.' },
   { number: '3', title: 'AI does the work', description: 'Our model analyzes, rewrites, and structures in under 30 seconds.' },
   { number: '4', title: 'Download & apply', description: 'Get your polished resume in the format you need, ready to send.' }

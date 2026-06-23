@@ -3,8 +3,8 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n'],
   nitro: {
     prerender: {
-      routes: ['/', '/about', '/services', '/pricing', '/blog'],
-      ignore: ['/terms', '/contact', '/privacy', '/eula', '/upload'],
+      routes: ['/', '/about', '/services', '/pricing', '/blog', '/contact'],
+      ignore: ['/terms', '/privacy', '/eula', '/upload'],
       crawlLinks: false,
       failOnError: false
     }
@@ -14,11 +14,11 @@ export default defineNuxtConfig({
     baseURL: '/resumedog/',
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      title: 'ResumeDOG — Your resume, reimagined',
+      title: 'ResumeDOG - Your resume, reimagined',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Upload your CV and let AI rewrite, convert, and match it to any job description — in seconds.' }
+        { name: 'description', content: 'Upload your CV and let AI rewrite, convert, and match it to any job description - in seconds.' }
       ],
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

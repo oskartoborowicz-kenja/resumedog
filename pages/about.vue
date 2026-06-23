@@ -1,101 +1,56 @@
 <template>
   <main>
 
-    <!-- Hero -->
-    <section class="about-hero">
+    <!-- Section 1: ResumeDOG -->
+    <section class="ab-hero">
       <div class="container">
-        <p class="section-label">{{ $t('about.label') }}</p>
-        <h1 class="section-heading">
-          {{ $t('about.page.heading') }} <em>{{ $t('about.page.headingEm') }}</em>
-        </h1>
-        <p class="section-sub">{{ $t('about.page.body') }}</p>
+        <p class="section-label">{{ $t('about.page.s1.label') }}</p>
+        <h1 class="section-heading ab-h1">{{ $t('about.page.s1.heading') }}</h1>
+        <p class="ab-body">{{ $t('about.page.s1.body') }}</p>
       </div>
     </section>
 
-    <!-- Why ResumeDOG Exists -->
-    <section class="why-section">
-      <div class="container">
-        <div class="why-inner">
-          <div>
-            <p class="section-label">{{ $t('about.page.why.label') }}</p>
-            <h2 class="section-heading">
-              {{ $t('about.page.why.heading') }} <em>{{ $t('about.page.why.headingEm') }}</em>
-            </h2>
-            <p class="body-text">{{ $t('about.page.why.p1') }}</p>
-            <p class="body-text">{{ $t('about.page.why.p2') }}</p>
-          </div>
-          <div class="why-visual">
-            <div class="stat-card">
-              <span class="stat-val">75%</span>
-              <span class="stat-label">of resumes rejected by ATS before a human sees them</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-val">3×</span>
-              <span class="stat-label">more client submissions with a tailored resume</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-val">30s</span>
-              <span class="stat-label">average time to transform a candidate resume</span>
-            </div>
-          </div>
+    <!-- Section 2: The Problem -->
+    <section class="ab-section ab-alt">
+      <div class="container ab-split">
+        <div class="ab-marker">
+          <span class="ab-num">01</span>
+          <div class="ab-line"></div>
+        </div>
+        <div class="ab-content">
+          <p class="section-label">{{ $t('about.page.s2.label') }}</p>
+          <h2 class="section-heading">{{ $t('about.page.s2.heading') }}</h2>
+          <p class="ab-body">{{ $t('about.page.s2.body') }}</p>
         </div>
       </div>
     </section>
 
-    <!-- Who ResumeDOG Is For -->
-    <section class="who-for">
-      <div class="container">
-        <p class="section-label">{{ $t('about.page.whoFor.label') }}</p>
-        <h2 class="section-heading">
-          {{ $t('about.page.whoFor.heading') }} <em>{{ $t('about.page.whoFor.headingEm') }}</em>
-        </h2>
-        <p class="section-sub">{{ $t('about.page.whoFor.body') }}</p>
-        <ul class="who-list">
-          <li v-for="n in 5" :key="n">
-            <i class="fa-solid fa-check"></i>
-            {{ $t(`about.page.whoFor.bullet${n}`) }}
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- What We Believe -->
-    <section class="believe-section">
-      <div class="container">
-        <div class="believe-inner">
-          <div>
-            <p class="section-label">{{ $t('about.page.believe.label') }}</p>
-            <h2 class="section-heading">
-              {{ $t('about.page.believe.heading') }} <em>{{ $t('about.page.believe.headingEm') }}</em>
-            </h2>
-            <p class="body-text">{{ $t('about.page.believe.body') }}</p>
-          </div>
-          <blockquote class="believe-quote">
-            <span class="quote-mark">"</span>
-            {{ $t('whyWeBuilt.quote') }}
-          </blockquote>
+    <!-- Section 3: The Solution -->
+    <section class="ab-section">
+      <div class="container ab-split">
+        <div class="ab-marker">
+          <span class="ab-num">02</span>
+          <div class="ab-line"></div>
+        </div>
+        <div class="ab-content">
+          <p class="section-label">{{ $t('about.page.s3.label') }}</p>
+          <h2 class="section-heading">{{ $t('about.page.s3.heading') }}</h2>
+          <p class="ab-body">{{ $t('about.page.s3.body') }}</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQs -->
-    <section class="faqs-section">
-      <div class="container">
-        <p class="section-label">{{ $t('homeFaqs.label') }}</p>
-        <h2 class="section-heading">{{ $t('homeFaqs.heading') }} <em>{{ $t('homeFaqs.headingEm') }}</em></h2>
-        <div class="faqs-list">
-          <FaqItem v-for="(faq, i) in $tm('about.page.faqs')" :key="i" :q="$rt(faq.q)" :a="$rt(faq.a)" />
+    <!-- Section 4: Our Approach -->
+    <section class="ab-section ab-alt">
+      <div class="container ab-split">
+        <div class="ab-marker">
+          <span class="ab-num">03</span>
+          <div class="ab-line"></div>
         </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-band">
-      <div class="container">
-        <h2>{{ $t('finalCta.heading') }} <em>{{ $t('finalCta.headingEm') }}</em></h2>
-        <div class="cta-actions">
-          <NuxtLink to="/signup" class="btn-primary">{{ $t('finalCta.cta1') }}</NuxtLink>
-          <button class="btn-demo">{{ $t('finalCta.cta2') }}</button>
+        <div class="ab-content">
+          <p class="section-label">{{ $t('about.page.s4.label') }}</p>
+          <h2 class="section-heading">{{ $t('about.page.s4.heading') }}</h2>
+          <p class="ab-body">{{ $t('about.page.s4.body') }}</p>
         </div>
       </div>
     </section>
@@ -106,7 +61,7 @@
 <script setup>
 useSeoMeta({
   title: 'About ResumeDOG | AI Resume Formatting for Recruitment Agencies',
-  description: 'ResumeDOG was built to remove the resume formatting bottleneck for recruitment agencies. Learn why we built it and who it\'s for.'
+  description: 'ResumeDOG was built to reduce the manual resume preparation work that slows down client submissions. Learn what we built and why.'
 })
 </script>
 
@@ -118,159 +73,74 @@ useSeoMeta({
 }
 
 /* Hero */
-.about-hero {
-  padding: 4rem 0 2.5rem;
+.ab-hero {
+  padding: 5rem 0 4rem;
+  background: var(--cream);
+}
+.ab-h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  max-width: 720px;
+  margin-bottom: 1.5rem;
+}
+.ab-body {
+  font-size: 17px;
+  color: var(--ink2);
+  line-height: 1.8;
+  max-width: 640px;
 }
 
-/* Why section */
-.why-section {
-  padding: 3rem 0;
+/* Numbered sections */
+.ab-section {
+  padding: 5rem 0;
+  background: var(--cream);
+}
+.ab-alt {
   background: var(--cream2);
 }
-.why-inner {
+.ab-split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 80px 1fr;
   gap: 2.5rem;
   align-items: start;
 }
-.body-text {
-  font-size: 16px;
-  color: var(--ink2);
-  line-height: 1.75;
-  margin-bottom: 1rem;
-}
-.why-visual {
+.ab-marker {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-}
-.stat-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.5rem;
-  display: flex;
   align-items: center;
-  gap: 1.25rem;
+  padding-top: 0.2rem;
 }
-.stat-val {
+.ab-num {
   font-family: var(--font-display);
-  font-size: 2.25rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--gold);
-  letter-spacing: -0.03em;
-  flex-shrink: 0;
-}
-.stat-label {
-  font-size: 14px;
-  color: var(--ink2);
-  line-height: 1.5;
-}
-
-/* Who for */
-.who-for {
-  padding: 3rem 0;
-}
-.who-list {
-  list-style: none;
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.who-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  font-size: 16px;
-  color: var(--ink);
-  padding: 1rem 1.25rem;
+  letter-spacing: 0.08em;
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  white-space: nowrap;
 }
-.who-list li i { color: var(--gold); margin-top: 3px; flex-shrink: 0; }
-
-/* Believe section */
-.believe-section {
-  padding: 3rem 0;
-  background: var(--cream2);
+.ab-line {
+  width: 1px;
+  flex: 1;
+  min-height: 80px;
+  background: var(--border);
+  margin-top: 0.75rem;
 }
-.believe-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: center;
+.ab-content .section-heading {
+  max-width: 600px;
+  margin-bottom: 1.25rem;
 }
-.believe-quote {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
-  border-radius: 0 14px 14px 0;
-  padding: 2rem;
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--ink);
-  line-height: 1.65;
-}
-.quote-mark {
-  display: block;
-  font-size: 3rem;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 0.5rem;
+.ab-content .ab-body {
+  max-width: 580px;
 }
 
-/* FAQs */
-.faqs-section {
-  padding: 3rem 0;
-}
-.faqs-list {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-/* CTA band */
-.cta-band {
-  padding: 3.5rem 0;
-  background: var(--ink);
-  text-align: center;
-}
-.cta-band h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--cream);
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  margin-bottom: 2rem;
-}
-.cta-band em { font-style: italic; color: var(--gold); }
-.cta-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.btn-demo {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: rgba(255,255,255,0.8);
-  padding: 0.85rem 1.5rem;
-  border-radius: 100px;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  font-family: var(--font-body);
-  transition: border-color 0.2s, color 0.2s;
-}
-.btn-demo:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
-[data-theme="dark"] .btn-demo { background: var(--cream2); }
-
-@media (max-width: 900px) {
-  .why-inner,
-  .believe-inner { grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+  .ab-split {
+    grid-template-columns: 1fr;
+  }
+  .ab-marker { flex-direction: row; gap: 0.75rem; }
+  .ab-line { display: none; }
 }
 </style>

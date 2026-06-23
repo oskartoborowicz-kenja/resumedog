@@ -2,7 +2,7 @@
   <section class="formats">
     <div class="section-label">File formats</div>
     <h2 class="section-heading">Every format, <em>covered</em></h2>
-    <p class="section-sub">Input or output — we support every format recruiters and ATS systems expect.</p>
+    <p class="section-sub">Input or output - we support every format recruiters and ATS systems expect.</p>
     <div class="formats-grid">
       <div v-for="fmt in formats" :key="fmt.label" class="fmt-pill">
         <span class="fmt-icon">{{ fmt.icon }}</span>

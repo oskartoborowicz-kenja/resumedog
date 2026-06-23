@@ -7,6 +7,7 @@
       <li><NuxtLink to="/services" :class="{ active: isServices }">{{ $t('nav.services') }}</NuxtLink></li>
       <li><NuxtLink to="/pricing" :class="{ active: isPricing }">{{ $t('nav.pricing') }}</NuxtLink></li>
       <li><NuxtLink to="/blog" :class="{ active: isBlog }">{{ $t('nav.blog') }}</NuxtLink></li>
+      <li><NuxtLink to="/contact" :class="{ active: isContact }">{{ $t('nav.contact') }}</NuxtLink></li>
     </ul>
     <div class="nav-right">
       <button class="lang-toggle" :aria-label="`Switch to ${locale === 'en' ? 'Japanese' : 'English'}`" @click="toggleLang">
@@ -32,6 +33,7 @@ const isPricing = computed(() => route.path === '/pricing')
 const isBlog = computed(() => route.path.startsWith('/blog'))
 const isAbout = computed(() => route.path === '/about')
 const isServices = computed(() => route.path === '/services')
+const isContact = computed(() => route.path === '/contact')
 </script>
 
 <style scoped>
