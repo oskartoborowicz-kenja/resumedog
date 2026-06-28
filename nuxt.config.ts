@@ -3,8 +3,8 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n'],
   nitro: {
     prerender: {
-      routes: ['/', '/about', '/services', '/pricing', '/blog', '/contact'],
-      ignore: ['/terms', '/privacy', '/eula', '/upload'],
+      routes: ['/', '/about', '/services', '/pricing', '/blog', '/contact', '/privacy', '/terms', '/eula'],
+      ignore: ['/upload'],
       crawlLinks: false,
       failOnError: false
     }

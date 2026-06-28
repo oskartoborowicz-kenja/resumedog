@@ -3,8 +3,8 @@
     <section class="ct-section">
       <div class="container">
         <div class="ct-header">
-          <p class="section-label">Contact</p>
-          <h1 class="section-heading ct-heading">Get in touch</h1>
+          <p class="section-label">{{ $t('contactPage.label') }}</p>
+          <h1 class="section-heading ct-heading">{{ $t('contactPage.heading') }}</h1>
         </div>
         <div class="ct-inner">
 
@@ -14,7 +14,7 @@
               <div class="ct-detail">
                 <div class="ct-icon"><i class="fa-solid fa-location-dot"></i></div>
                 <div>
-                  <p class="ct-detail-label">Address</p>
+                  <p class="ct-detail-label">{{ $t('contactPage.addressLabel') }}</p>
                   <p class="ct-detail-value">Moto Akasaka Building 9F</p>
                   <p class="ct-detail-value">Moto Akasaka 1-7-10, Minato Ku</p>
                   <p class="ct-detail-value">Tokyo, Japan</p>
@@ -24,7 +24,7 @@
               <div class="ct-detail">
                 <div class="ct-icon"><i class="fa-solid fa-envelope"></i></div>
                 <div>
-                  <p class="ct-detail-label">Email</p>
+                  <p class="ct-detail-label">{{ $t('contactPage.emailLabel') }}</p>
                   <a href="mailto:contact@kenja.com" class="ct-detail-link">contact@kenja.com</a>
                 </div>
               </div>
@@ -32,7 +32,7 @@
               <div class="ct-detail">
                 <div class="ct-icon"><i class="fa-solid fa-phone"></i></div>
                 <div>
-                  <p class="ct-detail-label">Phone</p>
+                  <p class="ct-detail-label">{{ $t('contactPage.phoneLabel') }}</p>
                   <a href="tel:+81354136267" class="ct-detail-link">(+81) (0)3-5413-6267</a>
                 </div>
               </div>
@@ -43,21 +43,21 @@
           <form class="ct-form" @submit.prevent>
             <div class="ct-row">
               <div class="ct-field">
-                <label>Name</label>
-                <input type="text" placeholder="Name" />
+                <label>{{ $t('contactPage.name') }}</label>
+                <input type="text" :placeholder="$t('contactPage.name')" />
               </div>
               <div class="ct-field">
-                <label>Company</label>
-                <input type="text" placeholder="Company" />
+                <label>{{ $t('contactPage.company') }}</label>
+                <input type="text" :placeholder="$t('contactPage.company')" />
               </div>
             </div>
             <div class="ct-row">
               <div class="ct-field">
-                <label>Email</label>
-                <input type="email" placeholder="Email" />
+                <label>{{ $t('contactPage.email') }}</label>
+                <input type="email" :placeholder="$t('contactPage.email')" />
               </div>
               <div class="ct-field">
-                <label>Phone</label>
+                <label>{{ $t('contactPage.phone') }}</label>
                 <div class="ct-phone-wrap">
                   <div class="ct-dial-wrap" ref="dialWrap">
                     <button type="button" class="ct-dial-btn" @click="dialOpen = !dialOpen">
@@ -79,19 +79,19 @@
                       </li>
                     </ul>
                   </div>
-                  <input type="tel" placeholder="Phone number" class="ct-phone-input" />
+                  <input type="tel" :placeholder="$t('contactPage.phonePlaceholder')" class="ct-phone-input" />
                 </div>
               </div>
             </div>
             <div class="ct-field">
-              <label>Subject</label>
-              <input type="text" placeholder="Subject" />
+              <label>{{ $t('contactPage.subject') }}</label>
+              <input type="text" :placeholder="$t('contactPage.subject')" />
             </div>
             <div class="ct-field">
-              <label>Message</label>
-              <textarea rows="5" placeholder="How can we help?"></textarea>
+              <label>{{ $t('contactPage.message') }}</label>
+              <textarea rows="5" :placeholder="$t('contactPage.messagePlaceholder')"></textarea>
             </div>
-            <button type="submit" class="btn-primary">Send Message</button>
+            <button type="submit" class="btn-primary">{{ $t('contactPage.send') }}</button>
           </form>
 
         </div>

@@ -49,7 +49,11 @@
     "bullet3": "Hide selected candidate details before client submission",
     "bullet4": "Tailor resumes to job descriptions",
     "bullet5": "Review and edit before export",
-    "bullet6": "Export clean Word or PDF files"
+    "bullet6": "Export clean Word or PDF files",
+    "pipelineIn": "Raw input",
+    "pipelineOut": "Client-ready",
+    "steps": ["Format", "Translate", "Anonymize", "Tailor to JD", "Review", "Export"],
+    "stepIcons": ["fa-solid fa-align-left", "fa-solid fa-language", "fa-solid fa-user-shield", "fa-solid fa-bullseye", "fa-solid fa-pen-to-square", "fa-solid fa-file-export"]
   },
   "howItWorks2": {
     "label": "How It Works",
@@ -123,12 +127,30 @@
       "s2": {
         "label": "The Problem",
         "heading": "Resume preparation is still too manual.",
-        "body": "Recruiters often receive resumes in different formats, languages, structures, and levels of quality. Before a candidate can be submitted, the resume may need to be cleaned, translated, anonymized, reformatted, and tailored to a specific role. That work is repetitive, time-consuming, and hard to standardize across a team."
+        "body": "Recruiters often receive resumes in different formats, languages, structures, and levels of quality. Before a candidate can be submitted, the resume may need to be cleaned, translated, anonymized, reformatted, and tailored to a specific role. That work is repetitive, time-consuming, and hard to standardize across a team.",
+        "diagram": {
+          "input": "Raw Resume",
+          "inputSub": "Any format, any language",
+          "steps": ["Clean", "Translate", "Anonymize", "Reformat", "Tailor"],
+          "icons": ["fa-solid fa-broom", "fa-solid fa-language", "fa-solid fa-eye-slash", "fa-solid fa-sliders", "fa-solid fa-pen-to-square"],
+          "output": "Client-Ready",
+          "outputSub": "Hours of manual work",
+          "timeLabel": "~2–4 hrs per resume"
+        }
       },
       "s3": {
         "label": "The Solution",
         "heading": "One workflow for cleaner candidate submissions.",
-        "body": "ResumeDOG brings the resume preparation workflow into one place. Recruiters upload a resume, choose the required settings, review the AI-generated version, and export a client-ready file."
+        "body": "ResumeDOG brings the resume preparation workflow into one place. Recruiters upload a resume, choose the required settings, review the AI-generated version, and export a client-ready file.",
+        "diagram": {
+          "input": "Upload",
+          "inputSub": "Any format, any language",
+          "steps": ["Configure", "AI Process", "Export"],
+          "icons": ["fa-solid fa-sliders", "fa-solid fa-microchip", "fa-solid fa-file-export"],
+          "output": "Review",
+          "outputSub": "Minutes, not hours",
+          "timeLabel": "~3 min per resume"
+        }
       },
       "s4": {
         "label": "Our Approach",
@@ -240,6 +262,8 @@
     "body": "Choose the plan that matches your resume volume, team size, and workflow needs.",
     "tbd": "TBD",
     "compare": "Compare plans",
+    "compareLabels": ["Monthly resume conversions", "English-Japanese translation", "Anonymization", "Job description matching", "Word/PDF export", "Admin dashboard", "Custom templates", "Priority support"],
+    "compareCell": { "limited": "Limited", "tbd": "TBD", "unlimited": "Unlimited" },
     "plans": {
       "trial": {
         "name": "Trial",
@@ -316,5 +340,72 @@
       "emailRequired": "Email is required.",
       "emailInvalid": "Enter a valid email address."
     }
+  },
+  "marquee": {
+    "items": [
+      "Resume Formatting",
+      "EN→JP Translation",
+      "Candidate Anonymization",
+      "JD Matching",
+      "Word & PDF Export",
+      "Rirekisho Support",
+      "Agency Templates",
+      "30-second Processing",
+      "Enterprise Security"
+    ],
+    "icons": [
+      "fa-solid fa-align-left",
+      "fa-solid fa-language",
+      "fa-solid fa-user-slash",
+      "fa-solid fa-bullseye",
+      "fa-solid fa-file-word",
+      "fa-solid fa-globe",
+      "fa-solid fa-sliders",
+      "fa-solid fa-bolt",
+      "fa-solid fa-shield-halved"
+    ]
+  },
+  "heroStats": {
+    "stat1": { "num": "30s", "title": "30-second processing", "body": "From raw upload to client-ready output, in under a minute." },
+    "stat2": { "num": "2 lang", "title": "EN ⇄ JP translation", "body": "Native Japanese handling and Rirekisho support built in." },
+    "stat3": { "num": "100%", "title": "Enterprise-grade security", "body": "Anonymization, role-based access, and audit-ready exports." }
+  },
+  "footer": {
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "© 2026 ResumeDOG"
+  },
+  "contactPage": {
+    "label": "Contact",
+    "heading": "Get in touch",
+    "addressLabel": "Address",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "name": "Name",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone",
+    "phonePlaceholder": "Phone number",
+    "subject": "Subject",
+    "message": "Message",
+    "messagePlaceholder": "How can we help?",
+    "send": "Send Message"
+  },
+  "blogPost": {
+    "backToBlog": "Back to blog",
+    "moreArticles": "More articles",
+    "notFound": "Post not found",
+    "backToList": "Back to blog",
+    "authorRole": "ResumeDOG"
+  },
+  "privacy": {
+    "label": "Legal",
+    "heading": "Privacy Policy",
+    "coming": "This page is coming soon."
+  },
+  "terms": {
+    "label": "Legal",
+    "heading": "Terms of Service",
+    "coming": "This page is coming soon."
   }
 }

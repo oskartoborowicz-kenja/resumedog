@@ -2,12 +2,12 @@
   <footer class="app-footer">
     <NuxtLink to="/" class="logo">Resume<span>DOG</span></NuxtLink>
     <div class="footer-links">
-      <NuxtLink to="/privacy">Privacy</NuxtLink>
-      <NuxtLink to="/terms">Terms</NuxtLink>
-      <NuxtLink to="/blog">Blog</NuxtLink>
-      <NuxtLink to="/contact">Contact</NuxtLink>
+      <NuxtLink to="/privacy">{{ $t('footer.privacy') }}</NuxtLink>
+      <NuxtLink to="/terms">{{ $t('footer.terms') }}</NuxtLink>
+      <NuxtLink to="/blog">{{ $t('nav.blog') }}</NuxtLink>
+      <NuxtLink to="/contact">{{ $t('nav.contact') }}</NuxtLink>
     </div>
-    <div class="copyright">© 2026 ResumeDOG</div>
+    <div class="copyright">{{ $t('footer.copyright') }}</div>
   </footer>
 </template>
 

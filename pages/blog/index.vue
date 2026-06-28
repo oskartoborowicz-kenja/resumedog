@@ -9,13 +9,16 @@
     <section class="blog-content">
       <div class="featured-post">
         <NuxtLink :to="`/blog/${posts[0].slug}`" class="featured-card">
-          <div class="featured-meta">
-            <span class="post-tag">{{ posts[0].tag }}</span>
-            <span class="post-date">{{ posts[0].date }}</span>
+          <div class="featured-img" :style="{ backgroundImage: `url(${posts[0].image})` }" />
+          <div class="featured-body">
+            <div class="featured-meta">
+              <span class="post-tag">{{ posts[0].tag }}</span>
+              <span class="post-date">{{ posts[0].date }}</span>
+            </div>
+            <h2>{{ posts[0].title }}</h2>
+            <p>{{ posts[0].excerpt }}</p>
+            <div class="read-more">{{ $t('blog.readArticle') }} <i class="fa-regular fa-arrow-right" /></div>
           </div>
-          <h2>{{ posts[0].title }}</h2>
-          <p>{{ posts[0].excerpt }}</p>
-          <div class="read-more">{{ $t('blog.readArticle') }} <i class="fa-regular fa-arrow-right" /></div>
         </NuxtLink>
       </div>
 
@@ -26,13 +29,16 @@
           :to="`/blog/${post.slug}`"
           class="post-card"
         >
-          <div class="post-meta">
-            <span class="post-tag">{{ post.tag }}</span>
-            <span class="post-date">{{ post.date }}</span>
+          <div class="post-cover" :style="{ backgroundImage: `url(${post.image})` }" />
+          <div class="post-body-inner">
+            <div class="post-meta">
+              <span class="post-tag">{{ post.tag }}</span>
+              <span class="post-date">{{ post.date }}</span>
+            </div>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt }}</p>
+            <div class="read-more">{{ $t('blog.readArticle') }} <i class="fa-regular fa-arrow-right" /></div>
           </div>
-          <h3>{{ post.title }}</h3>
-          <p>{{ post.excerpt }}</p>
-          <div class="read-more">{{ $t('blog.readArticle') }} <i class="fa-regular fa-arrow-right" /></div>
         </NuxtLink>
       </div>
     </section>
@@ -63,6 +69,7 @@ useSeoMeta({
 const { tm, rt } = useI18n()
 const email = ref('')
 const subscribed = ref(false)
+const base = useRuntimeConfig().app.baseURL.replace(/\/$/, '')
 
 function subscribe() {
   if (email.value) subscribed.value = true
@@ -70,9 +77,16 @@ function subscribe() {
 
 const slugs = ['ai-recruiting-what-firms-need-to-know-in-2026', 'ai-trends-shaping-recruiting-in-2026', 'how-ai-can-automate-resume-formatting-and-processing']
 
+const images = [
+  `${base}/images/blog-ai-recruiting.webp`,
+  `${base}/images/blog-ai-trends.webp`,
+  `${base}/images/blog-resume-auto.jpg`,
+]
+
 const posts = computed(() =>
   tm('blog.posts').map((post, i) => ({
     slug: slugs[i],
+    image: images[i],
     tag: rt(post.tag),
     date: rt(post.date),
     title: rt(post.title),
@@ -117,12 +131,21 @@ h1 em { color: var(--gold); font-style: italic; }
   padding: 3rem;
 }
 
+.featured-img {
+  width: 100%;
+  height: 280px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1.75rem;
+}
+.featured-body { }
 .featured-card {
   display: block;
   background: var(--card-bg);
   border: 0.5px solid var(--border);
   border-radius: 20px;
-  padding: 2.5rem;
+  padding: 2rem;
   margin-bottom: 2rem;
   transition: border-color 0.2s, transform 0.2s;
   color: inherit;
@@ -144,12 +167,21 @@ h1 em { color: var(--gold); font-style: italic; }
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
+.post-cover {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1.25rem;
+}
+.post-body-inner { }
 .post-card {
   display: block;
   background: var(--card-bg);
   border: 0.5px solid var(--border);
   border-radius: 16px;
-  padding: 1.75rem;
+  padding: 1.5rem;
   transition: border-color 0.2s, transform 0.2s;
   color: inherit;
 }

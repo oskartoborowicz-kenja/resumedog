@@ -3,11 +3,14 @@
 
     <!-- Section 1: Hero -->
     <section class="sv-hero">
-      <div class="container">
-        <p class="section-label">{{ $t('services.label') }}</p>
-        <h1 class="section-heading sv-h1">{{ $t('services.page.heading') }}</h1>
-        <p class="sv-body">{{ $t('services.page.body') }}</p>
-        <NuxtLink to="/about" class="btn-primary sv-cta">{{ $t('services.page.heroCta') }}</NuxtLink>
+      <div class="container sv-hero-split">
+        <div>
+          <p class="section-label">{{ $t('services.label') }}</p>
+          <h1 class="section-heading sv-h1">{{ $t('services.page.heading') }}</h1>
+          <p class="sv-body">{{ $t('services.page.body') }}</p>
+          <NuxtLink to="/about" class="btn-primary sv-cta">{{ $t('services.page.heroCta') }}</NuxtLink>
+        </div>
+        <div class="sv-hero-img" :style="{ backgroundImage: `url(${base}/images/home-resume.jpg)` }" />
       </div>
     </section>
 
@@ -103,6 +106,7 @@ useSeoMeta({
   title: 'Services — ResumeDOG | Resume Formatting, Translation & Anonymization',
   description: 'AI resume formatting, English-Japanese translation, candidate anonymization, job description matching, and Word/PDF export for recruitment agencies.'
 })
+const base = useRuntimeConfig().app.baseURL.replace(/\/$/, '')
 
 const cardIcons = {
   'fa-solid fa-align-left':      'formatting',
@@ -126,6 +130,18 @@ const cardIcons = {
   padding: 5rem 0 4.5rem;
   background: var(--cream);
 }
+.sv-hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.sv-hero-img {
+  height: 360px;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+}
 .sv-h1 {
   max-width: 700px;
   margin-bottom: 1.25rem;
@@ -138,6 +154,10 @@ const cardIcons = {
   margin-bottom: 2rem;
 }
 .sv-cta { display: inline-flex; }
+@media (max-width: 900px) {
+  .sv-hero-split { grid-template-columns: 1fr; }
+  .sv-hero-img { height: 220px; }
+}
 
 /* ── Services Grid ── */
 .sv-services {

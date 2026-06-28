@@ -101,16 +101,25 @@ const plans = computed(() =>
   }))
 )
 
-const compareRows = [
-  { label: 'Monthly resume conversions', values: ['Limited', 'TBD', 'Unlimited', 'Unlimited', 'Unlimited'] },
-  { label: 'English-Japanese translation', values: [false, true, true, true, true] },
-  { label: 'Anonymization', values: [false, true, true, true, true] },
-  { label: 'Job description matching', values: [false, false, true, true, true] },
-  { label: 'Word/PDF export', values: [true, true, true, true, true] },
-  { label: 'Admin dashboard', values: [false, false, false, true, true] },
-  { label: 'Custom templates', values: [false, false, false, false, true] },
-  { label: 'Priority support', values: [false, false, false, false, true] },
-]
+const compareRows = computed(() => {
+  const lim = t('pricing.compareCell.limited')
+  const tbd = t('pricing.compareCell.tbd')
+  const unl = t('pricing.compareCell.unlimited')
+  const rowValues = [
+    [lim, tbd, unl, unl, unl],
+    [false, true, true, true, true],
+    [false, true, true, true, true],
+    [false, false, true, true, true],
+    [true, true, true, true, true],
+    [false, false, false, true, true],
+    [false, false, false, false, true],
+    [false, false, false, false, true],
+  ]
+  return tm('pricing.compareLabels').map((label, i) => ({
+    label: rt(label),
+    values: rowValues[i],
+  }))
+})
 </script>
 
 <style scoped>

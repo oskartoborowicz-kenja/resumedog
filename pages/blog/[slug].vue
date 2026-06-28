@@ -3,7 +3,7 @@
     <article class="post-article" v-if="post">
       <div class="post-header">
         <NuxtLink to="/blog" class="back-link">
-          <i class="fa-regular fa-arrow-left" /> Back to blog
+          <i class="fa-regular fa-arrow-left" /> {{ $t('blogPost.backToBlog') }}
         </NuxtLink>
         <div class="post-meta">
           <span class="post-tag">{{ post.tag }}</span>
@@ -19,14 +19,14 @@
       <div class="post-body" v-html="post.content" />
       <div class="post-footer">
         <NuxtLink to="/blog" class="btn-outline">
-          <i class="fa-regular fa-arrow-left" /> More articles
+          <i class="fa-regular fa-arrow-left" /> {{ $t('blogPost.moreArticles') }}
         </NuxtLink>
       </div>
     </article>
 
     <div v-else class="not-found">
-      <h2>Post not found</h2>
-      <NuxtLink to="/blog" class="btn-primary">Back to blog</NuxtLink>
+      <h2>{{ $t('blogPost.notFound') }}</h2>
+      <NuxtLink to="/blog" class="btn-primary">{{ $t('blogPost.backToList') }}</NuxtLink>
     </div>
   </main>
 </template>

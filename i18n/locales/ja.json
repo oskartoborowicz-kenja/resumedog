@@ -49,7 +49,11 @@
     "bullet3": "クライアント提出前に選択した候補者情報を非表示",
     "bullet4": "求人情報に合わせて履歴書を調整",
     "bullet5": "エクスポート前に確認・編集",
-    "bullet6": "きれいなWordまたはPDFファイルを書き出し"
+    "bullet6": "きれいなWordまたはPDFファイルを書き出し",
+    "pipelineIn": "元データ",
+    "pipelineOut": "提出可能",
+    "steps": ["フォーマット", "翻訳", "匿名化", "JD調整", "確認", "エクスポート"],
+    "stepIcons": ["fa-solid fa-align-left", "fa-solid fa-language", "fa-solid fa-user-shield", "fa-solid fa-bullseye", "fa-solid fa-pen-to-square", "fa-solid fa-file-export"]
   },
   "howItWorks2": {
     "label": "使い方",
@@ -123,12 +127,30 @@
       "s2": {
         "label": "課題",
         "heading": "履歴書の準備はまだ手作業が多すぎる。",
-        "body": "採用担当者は、さまざまなフォーマット、言語、構成、品質の履歴書を受け取ります。候補者を提出する前に、履歴書の整理、翻訳、匿名化、再フォーマット、特定の職種への調整が必要になることがあります。その作業は繰り返しが多く、時間がかかり、チーム全体で標準化することが難しいです。"
+        "body": "採用担当者は、さまざまなフォーマット、言語、構成、品質の履歴書を受け取ります。候補者を提出する前に、履歴書の整理、翻訳、匿名化、再フォーマット、特定の職種への調整が必要になることがあります。その作業は繰り返しが多く、時間がかかり、チーム全体で標準化することが難しいです。",
+        "diagram": {
+          "input": "生の履歴書",
+          "inputSub": "あらゆる形式・言語",
+          "steps": ["整理", "翻訳", "匿名化", "再フォーマット", "調整"],
+          "icons": ["fa-solid fa-broom", "fa-solid fa-language", "fa-solid fa-eye-slash", "fa-solid fa-sliders", "fa-solid fa-pen-to-square"],
+          "output": "提出可能な書類",
+          "outputSub": "数時間の手作業",
+          "timeLabel": "1件あたり約2〜4時間"
+        }
       },
       "s3": {
         "label": "解決策",
         "heading": "より整った候補者提出のための一つのワークフロー。",
-        "body": "ResumeDOGは履歴書準備のワークフローを一か所にまとめます。採用担当者は履歴書をアップロードし、必要な設定を選び、AI生成バージョンを確認して、クライアント提出可能なファイルをエクスポートします。"
+        "body": "ResumeDOGは履歴書準備のワークフローを一か所にまとめます。採用担当者は履歴書をアップロードし、必要な設定を選び、AI生成バージョンを確認して、クライアント提出可能なファイルをエクスポートします。",
+        "diagram": {
+          "input": "アップロード",
+          "inputSub": "あらゆる形式・言語",
+          "steps": ["設定", "AI処理", "エクスポート"],
+          "icons": ["fa-solid fa-sliders", "fa-solid fa-microchip", "fa-solid fa-file-export"],
+          "output": "確認",
+          "outputSub": "数時間ではなく数分で",
+          "timeLabel": "1件あたり約3分"
+        }
       },
       "s4": {
         "label": "私たちのアプローチ",
@@ -240,6 +262,8 @@
     "body": "履歴書の処理量、チームの規模、ワークフローのニーズに合ったプランをお選びください。",
     "tbd": "未定",
     "compare": "プランを比較",
+    "compareLabels": ["月間履歴書変換数", "英日翻訳", "匿名化", "求人票マッチング", "Word/PDFエクスポート", "管理ダッシュボード", "カスタムテンプレート", "優先サポート"],
+    "compareCell": { "limited": "制限あり", "tbd": "未定", "unlimited": "無制限" },
     "plans": {
       "trial": {
         "name": "トライアル",
@@ -316,5 +340,72 @@
       "emailRequired": "メールアドレスを入力してください。",
       "emailInvalid": "有効なメールアドレスを入力してください。"
     }
+  },
+  "marquee": {
+    "items": [
+      "履歴書フォーマット",
+      "EN→JP翻訳",
+      "候補者匿名化",
+      "求人票マッチング",
+      "Word・PDF出力",
+      "履歴書サポート",
+      "エージェンシーテンプレート",
+      "30秒処理",
+      "エンタープライズセキュリティ"
+    ],
+    "icons": [
+      "fa-solid fa-align-left",
+      "fa-solid fa-language",
+      "fa-solid fa-user-slash",
+      "fa-solid fa-bullseye",
+      "fa-solid fa-file-word",
+      "fa-solid fa-globe",
+      "fa-solid fa-sliders",
+      "fa-solid fa-bolt",
+      "fa-solid fa-shield-halved"
+    ]
+  },
+  "heroStats": {
+    "stat1": { "num": "30秒", "title": "30秒処理", "body": "アップロードからクライアント提出まで、1分以内に完了。" },
+    "stat2": { "num": "2言語", "title": "EN⇄JP翻訳", "body": "日本語ネイティブ対応・履歴書サポートを内蔵。" },
+    "stat3": { "num": "100%", "title": "エンタープライズセキュリティ", "body": "匿名化・ロールベースアクセス・監査対応エクスポート。" }
+  },
+  "footer": {
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "copyright": "© 2026 ResumeDOG"
+  },
+  "contactPage": {
+    "label": "お問い合わせ",
+    "heading": "お気軽にどうぞ",
+    "addressLabel": "住所",
+    "emailLabel": "メール",
+    "phoneLabel": "電話",
+    "name": "お名前",
+    "company": "会社名",
+    "email": "メールアドレス",
+    "phone": "電話番号",
+    "phonePlaceholder": "電話番号",
+    "subject": "件名",
+    "message": "メッセージ",
+    "messagePlaceholder": "どのようなご用件でしょうか？",
+    "send": "送信する"
+  },
+  "blogPost": {
+    "backToBlog": "ブログに戻る",
+    "moreArticles": "他の記事を見る",
+    "notFound": "記事が見つかりません",
+    "backToList": "ブログに戻る",
+    "authorRole": "ResumeDOG"
+  },
+  "privacy": {
+    "label": "法的情報",
+    "heading": "プライバシーポリシー",
+    "coming": "このページは近日公開予定です。"
+  },
+  "terms": {
+    "label": "法的情報",
+    "heading": "利用規約",
+    "coming": "このページは近日公開予定です。"
   }
 }

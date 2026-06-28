@@ -58,7 +58,7 @@
                   <div class="hv-line long"></div>
                   <div class="hv-line med"></div>
                 </div>
-                <div class="hv-badge-raw">Raw input</div>
+                <div class="hv-badge-raw">{{ $t('howItWorks.pipelineIn') }}</div>
               </div>
 
               <!-- JD card -->
@@ -113,7 +113,7 @@
                   <div class="hv-line long"></div>
                   <div class="hv-line med"></div>
                 </div>
-                <div class="hv-badge-out">Client-ready</div>
+                <div class="hv-badge-out">{{ $t('howItWorks.pipelineOut') }}</div>
               </div>
 
               <!-- Floating pills -->
@@ -149,26 +149,26 @@
             <div class="hv-stat-card">
               <div class="hv-stat-top">
                 <div class="hv-stat-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
-                <span class="hv-stat-num">30s</span>
+                <span class="hv-stat-num">{{ $t('heroStats.stat1.num') }}</span>
               </div>
-              <div class="hv-stat-title">30-second processing</div>
-              <div class="hv-stat-body">From raw upload to client-ready output, in under a minute.</div>
+              <div class="hv-stat-title">{{ $t('heroStats.stat1.title') }}</div>
+              <div class="hv-stat-body">{{ $t('heroStats.stat1.body') }}</div>
             </div>
             <div class="hv-stat-card">
               <div class="hv-stat-top">
                 <div class="hv-stat-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
-                <span class="hv-stat-num">2 lang</span>
+                <span class="hv-stat-num">{{ $t('heroStats.stat2.num') }}</span>
               </div>
-              <div class="hv-stat-title">EN ⇄ JP translation</div>
-              <div class="hv-stat-body">Native Japanese handling and Rirekisho support built in.</div>
+              <div class="hv-stat-title">{{ $t('heroStats.stat2.title') }}</div>
+              <div class="hv-stat-body">{{ $t('heroStats.stat2.body') }}</div>
             </div>
             <div class="hv-stat-card">
               <div class="hv-stat-top">
                 <div class="hv-stat-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6l8-3z"/></svg></div>
-                <span class="hv-stat-num">100%</span>
+                <span class="hv-stat-num">{{ $t('heroStats.stat3.num') }}</span>
               </div>
-              <div class="hv-stat-title">Enterprise-grade security</div>
-              <div class="hv-stat-body">Anonymization, role-based access, and audit-ready exports.</div>
+              <div class="hv-stat-title">{{ $t('heroStats.stat3.title') }}</div>
+              <div class="hv-stat-body">{{ $t('heroStats.stat3.body') }}</div>
             </div>
           </div>
         </div>
@@ -179,42 +179,12 @@
     <div class="marquee-bar" aria-hidden="true">
       <div class="marquee-track">
         <div class="marquee-inner">
-          <span class="mq-item"><i class="fa-solid fa-align-left"></i> Resume Formatting</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-language"></i> EN→JP Translation</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-user-slash"></i> Candidate Anonymization</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-bullseye"></i> JD Matching</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-file-word"></i> Word &amp; PDF Export</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-globe"></i> Rirekisho Support</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-sliders"></i> Agency Templates</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-bolt"></i> 30-second Processing</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-shield-halved"></i> Enterprise Security</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-align-left"></i> Resume Formatting</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-language"></i> EN→JP Translation</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-user-slash"></i> Candidate Anonymization</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-bullseye"></i> JD Matching</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-file-word"></i> Word &amp; PDF Export</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-globe"></i> Rirekisho Support</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-sliders"></i> Agency Templates</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-bolt"></i> 30-second Processing</span>
-          <span class="mq-sep">·</span>
-          <span class="mq-item"><i class="fa-solid fa-shield-halved"></i> Enterprise Security</span>
-          <span class="mq-sep">·</span>
+          <template v-for="_ in 2" :key="_">
+            <template v-for="(item, i) in $tm('marquee.items')" :key="i">
+              <span class="mq-item"><i :class="$rt($tm('marquee.icons')[i])"></i> {{ $rt(item) }}</span>
+              <span class="mq-sep">·</span>
+            </template>
+          </template>
         </div>
       </div>
     </div>
@@ -286,7 +256,7 @@
                   <div class="hiv-line long"></div>
                   <div class="hiv-line med"></div>
                 </div>
-                <div class="hiv-label">Raw input</div>
+                <div class="hiv-label">{{ $t('howItWorks.pipelineIn') }}</div>
               </div>
               <div class="hiv-steps">
                 <div v-for="(s, i) in hiwSteps" :key="i" class="hiv-step">
@@ -317,7 +287,7 @@
                   <span class="hiv-export-tag"><i class="fa-solid fa-file-word"></i> DOCX</span>
                   <span class="hiv-export-tag"><i class="fa-regular fa-file-pdf"></i> PDF</span>
                 </div>
-                <div class="hiv-label out">Client-ready</div>
+                <div class="hiv-label out">{{ $t('howItWorks.pipelineOut') }}</div>
               </div>
             </div>
           </div>
@@ -489,14 +459,13 @@ useSeoMeta({
   description: 'ResumeDOG helps recruitment agencies format, translate, anonymize, and prepare candidate resumes for client submission. Built for English-Japanese recruiting workflows.'
 })
 
-const hiwSteps = [
-  { icon: 'fa-solid fa-align-left',   label: 'Format' },
-  { icon: 'fa-solid fa-language',     label: 'Translate' },
-  { icon: 'fa-solid fa-user-shield',  label: 'Anonymize' },
-  { icon: 'fa-solid fa-bullseye',     label: 'Tailor to JD' },
-  { icon: 'fa-solid fa-pen-to-square',label: 'Review' },
-  { icon: 'fa-solid fa-file-export',  label: 'Export' },
-]
+const { tm, rt } = useI18n()
+const hiwSteps = computed(() =>
+  tm('howItWorks.steps').map((label, i) => ({
+    icon: rt(tm('howItWorks.stepIcons')[i]),
+    label: rt(label),
+  }))
+)
 </script>
 
 <style scoped>

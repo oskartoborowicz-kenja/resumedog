@@ -12,9 +12,10 @@
     <div class="nav-right">
       <button class="lang-toggle" :aria-label="`Switch to ${locale === 'en' ? 'Japanese' : 'English'}`" @click="toggleLang">
         {{ locale === 'en' ? 'JP' : 'EN' }}
+        <img :src="`https://flagcdn.com/20x15/${locale === 'en' ? 'jp' : 'us'}.png`" class="lang-flag" :alt="locale === 'en' ? 'JP' : 'EN'" />
       </button>
       <button class="theme-toggle" :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'" @click="toggleTheme">
-        <i :class="isDark ? 'fa-regular fa-sun' : 'fa-regular fa-moon'" />
+        <i :class="isDark ? 'fa-solid fa-sun' : 'fa-regular fa-moon'" />
       </button>
       <NuxtLink to="/login" class="nav-login">{{ $t('nav.login') }}</NuxtLink>
       <NuxtLink to="/signup" class="btn-primary nav-cta">{{ $t('nav.cta') }}</NuxtLink>
@@ -99,9 +100,19 @@ const isContact = computed(() => route.path === '/contact')
 }
 .nav-login:hover { color: var(--ink); }
 
+.lang-flag {
+  width: 20px;
+  height: 15px;
+  border-radius: 2px;
+  object-fit: cover;
+  display: block;
+}
 .lang-toggle {
   height: 36px;
   padding: 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   border-radius: 100px;
   border: 0.5px solid var(--border);
   background: transparent;
@@ -123,20 +134,21 @@ const isContact = computed(() => route.path === '/contact')
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 0.5px solid var(--border);
-  background: transparent;
-  color: var(--ink2);
+  border: none;
+  background: var(--ink);
+  color: var(--cream);
   font-size: 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 .theme-toggle:hover {
-  background: var(--cream2);
-  color: var(--ink);
-  border-color: var(--ink2);
+  background: var(--teal);
+}
+[data-theme="dark"] .theme-toggle {
+  color: #fbbf24;
 }
 
 .nav-cta {
