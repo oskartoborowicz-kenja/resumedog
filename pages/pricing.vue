@@ -124,7 +124,7 @@ const compareRows = computed(() => {
 
 <style scoped>
 .container {
-  max-width: 1160px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -163,15 +163,21 @@ const compareRows = computed(() => {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 .pr-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 36px rgba(0,0,0,0.10);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,.15);
+  z-index: 2;
 }
 .pr-card--featured {
   border-color: var(--ink);
   border-width: 2px;
+}
+.pr-card--featured:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,.15);
+  z-index: 2;
 }
 .pr-card-top { flex: 1; }
 .pr-plan-name {
@@ -330,5 +336,10 @@ const compareRows = computed(() => {
 }
 @media (max-width: 480px) {
   .pr-grid { grid-template-columns: 1fr; }
+  .container { padding: 0 1.25rem; }
+  .pr-hero,
+  .pr-plans,
+  .pr-compare,
+  .pr-cta-section { padding: 3rem 0; }
 }
 </style>

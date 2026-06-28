@@ -126,7 +126,7 @@ h1 em { color: var(--gold); font-style: italic; }
 .hero-sub { font-size: 17px; color: var(--ink2); font-weight: 300; }
 
 .blog-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 3rem;
 }

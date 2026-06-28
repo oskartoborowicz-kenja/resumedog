@@ -1,6 +1,9 @@
 <template>
   <nav class="navbar">
-    <NuxtLink to="/" class="logo">Resume<span>DOG</span></NuxtLink>
+    <NuxtLink to="/" class="logo">
+      <img :src="`${base}images/logo-nav.avif`" alt="ResumeDOG" class="logo-img" />
+      <span class="logo-name">ResumeDOG</span>
+    </NuxtLink>
     <ul class="nav-links">
       <li><NuxtLink to="/" :class="{ active: isHome }">{{ $t('nav.home') }}</NuxtLink></li>
       <li><NuxtLink to="/about" :class="{ active: isAbout }">{{ $t('nav.about') }}</NuxtLink></li>
@@ -10,9 +13,13 @@
       <li><NuxtLink to="/contact" :class="{ active: isContact }">{{ $t('nav.contact') }}</NuxtLink></li>
     </ul>
     <div class="nav-right">
-      <button class="lang-toggle" :aria-label="`Switch to ${locale === 'en' ? 'Japanese' : 'English'}`" @click="toggleLang">
-        {{ locale === 'en' ? 'JP' : 'EN' }}
-        <img :src="`https://flagcdn.com/20x15/${locale === 'en' ? 'jp' : 'us'}.png`" class="lang-flag" :alt="locale === 'en' ? 'JP' : 'EN'" />
+      <button class="lang-switch" aria-label="Switch language" @click="toggleLang">
+        <span class="lang-opt" :class="{ 'lang-active': locale === 'en' }">
+          <img src="https://flagcdn.com/20x15/us.png" class="lang-flag" alt="EN" />EN
+        </span>
+        <span class="lang-opt" :class="{ 'lang-active': locale === 'ja' }">
+          <img src="https://flagcdn.com/20x15/jp.png" class="lang-flag" alt="JP" />JP
+        </span>
       </button>
       <button class="theme-toggle" :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'" @click="toggleTheme">
         <i :class="isDark ? 'fa-solid fa-sun' : 'fa-regular fa-moon'" />
@@ -24,6 +31,7 @@
 </template>
 
 <script setup>
+const base = useRuntimeConfig().app.baseURL
 const { isDark, toggleTheme } = useTheme()
 const { locale, setLocale } = useI18n()
 const toggleLang = () => setLocale(locale.value === 'en' ? 'ja' : 'en')
@@ -51,12 +59,25 @@ const isContact = computed(() => route.path === '/contact')
   transition: background 0.25s;
 }
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+.logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+.logo-name {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.02em;
+  user-select: none;
+  -webkit-user-select: none;
 }
-.logo span { color: var(--gold); font-style: italic; }
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -95,39 +116,51 @@ const isContact = computed(() => route.path === '/contact')
 .nav-login {
   font-size: 14px;
   font-weight: 500;
-  color: var(--ink2);
-  transition: color 0.2s;
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 0.45rem 1.1rem;
+  transition: border-color 0.2s, background 0.2s;
 }
-.nav-login:hover { color: var(--ink); }
+.nav-login:hover {
+  border-color: var(--ink2);
+  background: var(--cream2);
+}
 
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+.lang-opt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 6px 12px;
+  border-radius: 100px;
+  color: var(--ink2);
+  transition: background 0.2s, color 0.2s;
+  line-height: 1;
+}
 .lang-flag {
-  width: 20px;
-  height: 15px;
+  width: 18px;
+  height: 13px;
   border-radius: 2px;
   object-fit: cover;
   display: block;
 }
-.lang-toggle {
-  height: 36px;
-  padding: 0 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  border-radius: 100px;
-  border: 0.5px solid var(--border);
-  background: transparent;
-  color: var(--ink2);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-  font-family: var(--font-body);
-}
-.lang-toggle:hover {
-  background: var(--cream2);
-  color: var(--ink);
-  border-color: var(--ink2);
+.lang-active {
+  background: var(--gold);
+  color: #fff;
 }
 
 .theme-toggle {
@@ -148,7 +181,7 @@ const isContact = computed(() => route.path === '/contact')
   background: var(--teal);
 }
 [data-theme="dark"] .theme-toggle {
-  color: #fbbf24;
+  color: var(--gold);
 }
 
 .nav-cta {
@@ -165,5 +198,14 @@ const isContact = computed(() => route.path === '/contact')
 @media (max-width: 900px) {
   .navbar { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
+}
+@media (max-width: 680px) {
+  .navbar { padding: 0.75rem 1rem; }
+  .nav-login { display: none; }
+  .nav-cta {
+    font-size: 12px;
+    padding: 0.45rem 0.9rem;
+    white-space: nowrap;
+  }
 }
 </style>

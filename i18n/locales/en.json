@@ -106,6 +106,7 @@
     "label": "FAQs",
     "heading": "Frequently asked",
     "headingEm": "questions",
+    "sub": "Everything you need to know about ResumeDOG. Can't find the answer? Reach out to our team.",
     "items": [
       { "q": "What is ResumeDOG?", "a": "ResumeDOG is an AI-powered resume formatting and translation tool for recruitment agencies. It helps recruiters prepare candidate resumes for client submission by supporting formatting, translation, anonymization, editing, and export." },
       { "q": "Who is ResumeDOG built for?", "a": "ResumeDOG is built for recruitment agencies, staffing firms, and recruiting teams that prepare candidate resumes before sending them to clients. It is not designed as a general resume builder for job seekers." },
@@ -407,5 +408,12 @@
     "label": "Legal",
     "heading": "Terms of Service",
     "coming": "This page is coming soon."
+  },
+  "workflow": {
+    "upload": "Upload",
+    "configure": "Configure",
+    "aiProcess": "AI Process",
+    "review": "Review",
+    "export": "Export"
   }
 }

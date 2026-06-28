@@ -5,6 +5,9 @@
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-content">
+          <div class="hero-logo-lockup">
+            <img :src="`${base}images/logo.avif`" alt="" class="hero-logo-img" aria-hidden="true" />
+          </div>
           <div class="hero-eyebrow">{{ $t('hero.eyebrow') }}</div>
           <h1>{{ $t('hero.heading') }} <em>{{ $t('hero.headingEm') }}</em></h1>
           <p class="hero-supporting">{{ $t('hero.supporting') }}</p>
@@ -199,16 +202,25 @@
         <p class="section-sub">{{ $t('whatWeDo.body') }}</p>
         <div class="wwd-grid">
           <div class="wwd-card">
+            <div class="wwd-card-img">
+              <img :src="`${base}images/home-resume.jpg`" alt="" />
+            </div>
             <span class="wwd-icon"><i class="fa-solid fa-align-left"></i></span>
             <h3>{{ $t('whatWeDo.formatting.title') }}</h3>
             <p>{{ $t('whatWeDo.formatting.desc') }}</p>
           </div>
           <div class="wwd-card">
+            <div class="wwd-card-img">
+              <img :src="`${base}images/blog-ai-recruiting.webp`" alt="" />
+            </div>
             <span class="wwd-icon"><i class="fa-solid fa-language"></i></span>
             <h3>{{ $t('whatWeDo.translation.title') }}</h3>
             <p>{{ $t('whatWeDo.translation.desc') }}</p>
           </div>
           <div class="wwd-card">
+            <div class="wwd-card-img">
+              <img :src="`${base}images/man-cv.png`" alt="" />
+            </div>
             <span class="wwd-icon"><i class="fa-solid fa-user-shield"></i></span>
             <h3>{{ $t('whatWeDo.anonymization.title') }}</h3>
             <p>{{ $t('whatWeDo.anonymization.desc') }}</p>
@@ -364,18 +376,25 @@
     <!-- 6. Why We Built It -->
     <section class="why-we-built">
       <div class="container">
-        <p class="section-label">{{ $t('whyWeBuilt.label') }}</p>
-        <h2 class="section-heading wwb-heading">
-          {{ $t('whyWeBuilt.heading') }} <em>{{ $t('whyWeBuilt.headingEm') }}</em>
-        </h2>
-        <div class="wwb-body">
-          <p>{{ $t('whyWeBuilt.p1') }}</p>
-          <p>{{ $t('whyWeBuilt.p2') }}</p>
+        <div class="wwb-inner">
+          <div class="wwb-text">
+            <p class="section-label">{{ $t('whyWeBuilt.label') }}</p>
+            <h2 class="section-heading wwb-heading">
+              {{ $t('whyWeBuilt.heading') }} <em>{{ $t('whyWeBuilt.headingEm') }}</em>
+            </h2>
+            <div class="wwb-body">
+              <p>{{ $t('whyWeBuilt.p1') }}</p>
+              <p>{{ $t('whyWeBuilt.p2') }}</p>
+            </div>
+            <blockquote class="wwb-quote">
+              <span class="quote-mark">"</span>
+              {{ $t('whyWeBuilt.quote') }}
+            </blockquote>
+          </div>
+          <div class="wwb-photo">
+            <img :src="`${base}images/frustrated-man.png`" alt="" class="wwb-img" />
+          </div>
         </div>
-        <blockquote class="wwb-quote">
-          <span class="quote-mark">"</span>
-          {{ $t('whyWeBuilt.quote') }}
-        </blockquote>
       </div>
     </section>
 
@@ -430,7 +449,7 @@
               <label>{{ $t('bookDemo.message') }}</label>
               <textarea rows="4" :placeholder="$t('bookDemo.messagePlaceholder')"></textarea>
             </div>
-            <button type="submit" class="btn-primary">{{ $t('bookDemo.cta') }}</button>
+            <button type="submit" class="btn-primary bd-submit">{{ $t('bookDemo.cta') }}</button>
           </form>
         </div>
       </div>
@@ -439,12 +458,15 @@
     <!-- 9. FAQs -->
     <section class="faqs-section">
       <div class="container">
-        <div class="faqs-header">
-          <p class="section-label">{{ $t('homeFaqs.label') }}</p>
-          <h2 class="section-heading">{{ $t('homeFaqs.heading') }} <em>{{ $t('homeFaqs.headingEm') }}</em></h2>
-        </div>
-        <div class="faqs-list">
-          <FaqItem v-for="(faq, i) in $tm('homeFaqs.items')" :key="i" :q="$rt(faq.q)" :a="$rt(faq.a)" />
+        <div class="faqs-inner">
+          <div class="faqs-header">
+            <p class="section-label">{{ $t('homeFaqs.label') }}</p>
+            <h2 class="section-heading">{{ $t('homeFaqs.heading') }} <em>{{ $t('homeFaqs.headingEm') }}</em></h2>
+            <p class="faqs-sub">{{ $t('homeFaqs.sub') }}</p>
+          </div>
+          <div class="faqs-list">
+            <FaqItem v-for="(faq, i) in $tm('homeFaqs.items')" :key="i" :q="$rt(faq.q)" :a="$rt(faq.a)" />
+          </div>
         </div>
       </div>
     </section>
@@ -459,6 +481,7 @@ useSeoMeta({
   description: 'ResumeDOG helps recruitment agencies format, translate, anonymize, and prepare candidate resumes for client submission. Built for English-Japanese recruiting workflows.'
 })
 
+const base = useRuntimeConfig().app.baseURL
 const { tm, rt } = useI18n()
 const hiwSteps = computed(() =>
   tm('howItWorks.steps').map((label, i) => ({
@@ -470,7 +493,7 @@ const hiwSteps = computed(() =>
 
 <style scoped>
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -481,13 +504,34 @@ const hiwSteps = computed(() =>
   padding: 3.5rem 2rem 3rem;
 }
 .hero-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
 }
+.hero-logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+.hero-logo-img {
+  height: 120px;
+  width: auto;
+  display: block;
+}
+.hero-logo-text {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -625,13 +669,13 @@ h1 em { color: var(--gold); font-style: italic; }
   gap: 4px;
   font-size: 10px;
   font-family: monospace;
-  color: #d97706;
+  color: var(--gold2);
 }
 .hv-pulse {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #f59e0b;
+  background: var(--gold);
   animation: pulse 2s ease-in-out infinite;
 }
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
@@ -686,7 +730,7 @@ h1 em { color: var(--gold); font-style: italic; }
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(to right, var(--ink), #f59e0b, var(--ink));
+  background: linear-gradient(to right, var(--ink), var(--gold), var(--ink));
 }
 .hv-card-header {
   display: flex;
@@ -701,7 +745,7 @@ h1 em { color: var(--gold); font-style: italic; }
   letter-spacing: 0.1em;
   color: var(--ink2);
 }
-.hv-mono.amber { color: #d97706; }
+.hv-mono.amber { color: var(--gold2); }
 .hv-dot-sm {
   width: 8px;
   height: 8px;
@@ -710,7 +754,7 @@ h1 em { color: var(--gold); font-style: italic; }
   opacity: 0.4;
   margin-left: auto;
 }
-.hv-icon-amber { color: #d97706; }
+.hv-icon-amber { color: var(--gold2); }
 
 /* Lines (document skeleton) */
 .hv-lines { display: flex; flex-direction: column; gap: 6px; }
@@ -720,7 +764,7 @@ h1 em { color: var(--gold); font-style: italic; }
   background: var(--border);
 }
 .hv-line.dark { background: var(--ink2); opacity: 0.35; }
-.hv-line.amber { background: #f59e0b; opacity: 0.7; }
+.hv-line.amber { background: var(--gold); opacity: 0.7; }
 .hv-line.short { width: 45%; }
 .hv-line.med { width: 65%; }
 .hv-line.long { width: 90%; }
@@ -744,7 +788,7 @@ h1 em { color: var(--gold); font-style: italic; }
   position: absolute;
   bottom: -8px;
   right: -8px;
-  background: #f59e0b;
+  background: var(--gold);
   color: var(--ink);
   font-size: 9px;
   font-family: monospace;
@@ -788,7 +832,7 @@ h1 em { color: var(--gold); font-style: italic; }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #f59e0b;
+  background: var(--gold);
   flex-shrink: 0;
 }
 
@@ -844,7 +888,7 @@ h1 em { color: var(--gold); font-style: italic; }
   font-weight: 500;
   box-shadow: 0 10px 24px -10px rgba(15,28,46,0.35);
 }
-.hv-pill-amber { background: #f59e0b; color: var(--ink); }
+.hv-pill-amber { background: var(--gold); color: var(--ink); }
 .hv-pill-dark { background: var(--ink); color: var(--cream); }
 .hv-pill-light { background: var(--card-bg); color: var(--ink); border: 1px solid var(--border); }
 
@@ -904,7 +948,7 @@ h1 em { color: var(--gold); font-style: italic; }
 .hv-stat-num {
   font-size: 11px;
   font-family: monospace;
-  color: #d97706;
+  color: var(--gold2);
 }
 .hv-stat-title {
   font-size: 13px;
@@ -975,11 +1019,33 @@ h1 em { color: var(--gold); font-style: italic; }
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0;
+  overflow: hidden;
 }
+.wwd-card-img {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+.wwd-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.wwd-icon {
+  margin-top: 1.5rem;
+  margin-left: 2rem;
+}
+.wwd-card h3,
+.wwd-card p {
+  padding: 0 2rem;
+}
+.wwd-card h3 { margin-top: 0.75rem; }
+.wwd-card p { margin-bottom: 2rem; }
 .wwd-icon {
   display: inline-flex;
   align-items: center;
@@ -1288,17 +1354,18 @@ h1 em { color: var(--gold); font-style: italic; }
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 0.65rem 0.9rem;
+  padding: 0.65rem 0.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.3rem;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--ink);
   text-align: center;
   z-index: 2;
-  max-width: 110px;
+  width: 120px;
+  line-height: 1.35;
 }
 .jmap-node i { color: var(--teal); font-size: 1rem; }
 .jmap-n1 { top: 5%; left: 5%; }
@@ -1311,12 +1378,17 @@ h1 em { color: var(--gold); font-style: italic; }
   padding: 5rem 0;
   background: var(--cream2);
 }
+.wwb-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
 .wwb-heading {
-  max-width: 680px;
+  max-width: 560px;
   margin-bottom: 1.5rem;
 }
 .wwb-body {
-  max-width: 640px;
   margin-bottom: 2rem;
 }
 .wwb-body p {
@@ -1326,7 +1398,6 @@ h1 em { color: var(--gold); font-style: italic; }
   margin-bottom: 1rem;
 }
 .wwb-quote {
-  max-width: 620px;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-left: 3px solid var(--gold);
@@ -1344,6 +1415,17 @@ h1 em { color: var(--gold); font-style: italic; }
   color: var(--gold);
   line-height: 1;
   margin-bottom: 0.4rem;
+}
+.wwb-photo {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.2);
+}
+.wwb-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
 }
 
 /* ── Trial CTA ── */
@@ -1434,6 +1516,8 @@ h1 em { color: var(--gold); font-style: italic; }
 .bd-field textarea:focus {
   border-color: var(--gold);
 }
+.bd-submit { align-self: flex-start; }
+
 .bd-field input::placeholder,
 .bd-field textarea::placeholder {
   color: var(--ink2);
@@ -1445,12 +1529,24 @@ h1 em { color: var(--gold); font-style: italic; }
   padding: 5rem 0;
   background: var(--cream2);
 }
+.faqs-inner {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
 .faqs-header {
-  max-width: 580px;
-  margin-bottom: 2.5rem;
+  position: sticky;
+  top: 100px;
 }
 .faqs-header .section-heading {
-  margin-bottom: 0;
+  margin-bottom: 1rem;
+}
+.faqs-sub {
+  font-size: 15px;
+  color: var(--ink2);
+  line-height: 1.75;
+  margin-top: 0.5rem;
 }
 .faqs-list {
   display: flex;
@@ -1459,7 +1555,7 @@ h1 em { color: var(--gold); font-style: italic; }
   border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
-  max-width: 780px;
+  background: var(--card-bg);
 }
 
 /* ── Responsive ── */
@@ -1467,7 +1563,10 @@ h1 em { color: var(--gold); font-style: italic; }
   .hero-inner,
   .hiw-inner,
   .japan-map-inner,
-  .bd-inner { grid-template-columns: 1fr; }
+  .wwb-inner,
+  .bd-inner,
+  .faqs-inner { grid-template-columns: 1fr; }
+  .faqs-header { position: static; }
   .hero-visual { display: none; }
   .wwd-grid { grid-template-columns: 1fr 1fr; }
   .hiw-tl-track { flex-direction: column; align-items: stretch; }
@@ -1479,5 +1578,20 @@ h1 em { color: var(--gold); font-style: italic; }
 @media (max-width: 600px) {
   .wwd-grid,
   .bd-row { grid-template-columns: 1fr; }
+  .wwd-card-img { height: 140px; }
+  .hiv-steps { grid-template-columns: repeat(2, 1fr); }
+  .wwb-img { height: 240px; }
+}
+@media (max-width: 480px) {
+  .what-we-do,
+  .how-it-works,
+  .hiw-timeline-section,
+  .japan-map-section,
+  .why-we-built,
+  .book-demo-section,
+  .faqs-section { padding: 3rem 0; }
+  .trial-cta { padding: 3.5rem 0; }
+  .container { padding: 0 1.25rem; }
+  .hero { padding: 2.5rem 1.25rem 2rem; }
 }
 </style>

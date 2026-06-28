@@ -92,7 +92,7 @@
               <label>{{ $t('services.page.askUs.question') }}</label>
               <textarea rows="4" :placeholder="$t('services.page.askUs.questionPlaceholder')"></textarea>
             </div>
-            <button type="submit" class="btn-primary">{{ $t('services.page.askUs.cta') }}</button>
+            <button type="submit" class="btn-primary sv-ask-submit">{{ $t('services.page.askUs.cta') }}</button>
           </form>
         </div>
       </div>
@@ -120,7 +120,7 @@ const cardIcons = {
 
 <style scoped>
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -279,6 +279,7 @@ const cardIcons = {
   flex-direction: column;
   gap: 1rem;
 }
+.sv-ask-submit { align-self: flex-start; }
 .sv-ask-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -322,5 +323,13 @@ const cardIcons = {
 @media (max-width: 600px) {
   .sv-grid { grid-template-columns: 1fr; }
   .sv-ask-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .container { padding: 0 1.25rem; }
+  .sv-hero,
+  .sv-services,
+  .sv-workflow-cta,
+  .sv-video,
+  .sv-ask { padding: 3rem 0; }
 }
 </style>

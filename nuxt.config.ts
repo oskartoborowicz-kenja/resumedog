@@ -21,6 +21,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Upload your CV and let AI rewrite, convert, and match it to any job description - in seconds.' }
       ],
       link: [
+        { rel: 'icon', type: 'image/avif', href: '/resumedog/images/kenja-logo-favicon-.avif' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap' },
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' }

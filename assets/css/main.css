@@ -5,7 +5,7 @@
   --ink: #09090b;
   --ink2: #52525b;
   --cream: #e0f2fe;
-  --cream2: #bae6fd;
+  --cream2: #d0ebfc;
   --gold: #0d9488;
   --gold2: #0f766e;
   --teal: #312e81;
@@ -22,11 +22,11 @@
   --ink2: #a09890;
   --cream: #0f172a;
   --cream2: #1e293b;
-  --gold: #fb923c;
-  --gold2: #f97316;
+  --gold: #C69F5A;
+  --gold2: #a8843d;
   --teal: #818cf8;
   --teal2: #1e1b4b;
-  --cta: #f97316;
+  --cta: #C69F5A;
   --card-bg: #1e293b;
   --border: rgba(240, 236, 230, 0.1);
 }
@@ -59,6 +59,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   transition: background 0.25s, color 0.25s;
+  overflow-x: hidden;
 }
 
 a { text-decoration: none; }
@@ -77,6 +78,7 @@ a { text-decoration: none; }
   cursor: pointer;
 }
 .btn-primary:hover { background: #0d5c55; }
+[data-theme="dark"] .btn-primary:hover { background: #a8843d; }
 
 .btn-secondary {
   color: var(--ink2);
@@ -89,20 +91,6 @@ a { text-decoration: none; }
 }
 .btn-secondary:hover { color: var(--ink); }
 
-.btn-gold {
-  background: var(--gold);
-  color: #1a1714;
-  padding: 0.9rem 2.25rem;
-  border-radius: 100px;
-  font-size: 15px;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: background 0.2s;
-  cursor: pointer;
-}
-.btn-gold:hover { background: var(--gold2); }
 
 .section-label {
   font-size: 11px;
@@ -115,7 +103,7 @@ a { text-decoration: none; }
 
 .section-heading {
   font-family: var(--font-display);
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 4vw + 0.5rem, 2.2rem);
   letter-spacing: -0.03em;
   line-height: 1.15;
   color: var(--ink);
@@ -132,6 +120,6 @@ a { text-decoration: none; }
   margin-bottom: 2rem;
 }
 
-@media (max-width: 900px) {
-  .section-heading { font-size: 2rem; }
+@media (max-width: 480px) {
+  .section-sub { font-size: 15px; }
 }
