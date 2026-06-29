@@ -3,7 +3,14 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n'],
   nitro: {
     prerender: {
-      routes: ['/', '/about', '/services', '/pricing', '/blog', '/contact', '/privacy', '/terms', '/eula'],
+      routes: [
+        '/', '/about', '/services', '/pricing', '/blog', '/contact',
+        '/privacy', '/terms', '/eula',
+        '/login', '/signup', '/forgot-password',
+        '/blog/ai-recruiting-what-firms-need-to-know-in-2026',
+        '/blog/ai-trends-shaping-recruiting-in-2026',
+        '/blog/how-ai-can-automate-resume-formatting-and-processing',
+      ],
       ignore: ['/upload'],
       crawlLinks: false,
       failOnError: false
