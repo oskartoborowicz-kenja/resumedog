@@ -2,7 +2,7 @@
   <nav class="navbar">
     <NuxtLink to="/" class="logo">
       <img :src="`${base}images/logo-nav.avif`" alt="ResumeDOG" class="logo-img" />
-      <span class="logo-name">ResumeDOG</span>
+      <span class="logo-name">Resume<span class="logo-dog">DOG</span></span>
     </NuxtLink>
     <ul class="nav-links">
       <li><NuxtLink to="/" :class="{ active: isHome }">{{ $t('nav.home') }}</NuxtLink></li>
@@ -78,6 +78,7 @@ const isContact = computed(() => route.path === '/contact')
   user-select: none;
   -webkit-user-select: none;
 }
+.logo-dog { color: var(--gold); font-style: italic; }
 .nav-links {
   display: flex;
   gap: 2rem;

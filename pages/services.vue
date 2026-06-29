@@ -64,39 +64,6 @@
       </div>
     </section>
 
-    <!-- Section 5: Ask a Question -->
-    <section class="sv-ask">
-      <div class="container">
-        <div class="sv-ask-inner">
-          <div class="sv-ask-copy">
-            <p class="section-label">{{ $t('services.page.askUs.label') }}</p>
-            <h2 class="section-heading">{{ $t('services.page.askUs.heading') }}</h2>
-            <p class="sv-body">{{ $t('services.page.askUs.body') }}</p>
-          </div>
-          <form class="sv-ask-form" @submit.prevent>
-            <div class="sv-ask-row">
-              <div class="sv-field">
-                <label>{{ $t('services.page.askUs.name') }}</label>
-                <input type="text" :placeholder="$t('services.page.askUs.name')" />
-              </div>
-              <div class="sv-field">
-                <label>{{ $t('services.page.askUs.company') }}</label>
-                <input type="text" :placeholder="$t('services.page.askUs.company')" />
-              </div>
-            </div>
-            <div class="sv-field">
-              <label>{{ $t('services.page.askUs.email') }}</label>
-              <input type="email" :placeholder="$t('services.page.askUs.email')" />
-            </div>
-            <div class="sv-field">
-              <label>{{ $t('services.page.askUs.question') }}</label>
-              <textarea rows="4" :placeholder="$t('services.page.askUs.questionPlaceholder')"></textarea>
-            </div>
-            <button type="submit" class="btn-primary sv-ask-submit">{{ $t('services.page.askUs.cta') }}</button>
-          </form>
-        </div>
-      </div>
-    </section>
 
   </main>
 </template>
@@ -263,73 +230,20 @@ const cardIcons = {
   text-align: center;
 }
 
-/* ── Ask a Question ── */
-.sv-ask {
-  padding: 5rem 0;
-  background: var(--cream);
-}
-.sv-ask-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 4rem;
-  align-items: start;
-}
-.sv-ask-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.sv-ask-submit { align-self: flex-start; }
-.sv-ask-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-.sv-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-.sv-field label {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--ink2);
-}
-.sv-field input,
-.sv-field textarea {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 0.7rem 1rem;
-  font-size: 14px;
-  font-family: var(--font-body);
-  color: var(--ink);
-  outline: none;
-  transition: border-color 0.2s;
-  resize: none;
-  width: 100%;
-}
-.sv-field input:focus,
-.sv-field textarea:focus { border-color: var(--gold); }
-.sv-field input::placeholder,
-.sv-field textarea::placeholder { color: var(--ink2); opacity: 0.5; }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .sv-grid { grid-template-columns: repeat(2, 1fr); }
   .sv-wf-inner { flex-direction: column; align-items: flex-start; }
-  .sv-ask-inner { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
   .sv-grid { grid-template-columns: 1fr; }
-  .sv-ask-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .container { padding: 0 1.25rem; }
   .sv-hero,
   .sv-services,
   .sv-workflow-cta,
-  .sv-video,
-  .sv-ask { padding: 3rem 0; }
+  .sv-video { padding: 3rem 0; }
 }
 </style>

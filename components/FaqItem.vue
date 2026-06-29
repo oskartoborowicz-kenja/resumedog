@@ -2,7 +2,7 @@
   <div class="faq-item" :class="{ open: isOpen }">
     <button class="faq-summary" @click="isOpen = !isOpen">
       <span>{{ q }}</span>
-      <span class="faq-icon">{{ isOpen ? '−' : '+' }}</span>
+      <span class="faq-icon">+</span>
     </button>
     <div class="faq-body" :style="{ height: isOpen ? contentHeight : '0px' }">
       <p ref="content">{{ a }}</p>

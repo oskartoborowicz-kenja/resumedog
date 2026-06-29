@@ -22,11 +22,11 @@
   --ink2: #a09890;
   --cream: #0f172a;
   --cream2: #1e293b;
-  --gold: #C69F5A;
-  --gold2: #a8843d;
+  --gold: #fb923c;
+  --gold2: #f97316;
   --teal: #818cf8;
   --teal2: #1e1b4b;
-  --cta: #C69F5A;
+  --cta: #f97316;
   --card-bg: #1e293b;
   --border: rgba(240, 236, 230, 0.1);
 }
@@ -78,7 +78,7 @@ a { text-decoration: none; }
   cursor: pointer;
 }
 .btn-primary:hover { background: #0d5c55; }
-[data-theme="dark"] .btn-primary:hover { background: #a8843d; }
+[data-theme="dark"] .btn-primary:hover { background: #ea6c0a; }
 
 .btn-secondary {
   color: var(--ink2);
@@ -117,7 +117,7 @@ a { text-decoration: none; }
   color: var(--ink2);
   font-weight: 300;
   max-width: 520px;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
 }
 
 @media (max-width: 480px) {

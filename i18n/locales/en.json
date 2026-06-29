@@ -108,8 +108,6 @@
     "headingEm": "questions",
     "sub": "Everything you need to know about ResumeDOG. Can't find the answer? Reach out to our team.",
     "items": [
-      { "q": "What is ResumeDOG?", "a": "ResumeDOG is an AI-powered resume formatting and translation tool for recruitment agencies. It helps recruiters prepare candidate resumes for client submission by supporting formatting, translation, anonymization, editing, and export." },
-      { "q": "Who is ResumeDOG built for?", "a": "ResumeDOG is built for recruitment agencies, staffing firms, and recruiting teams that prepare candidate resumes before sending them to clients. It is not designed as a general resume builder for job seekers." },
       { "q": "Does ResumeDOG replace recruiters?", "a": "No. ResumeDOG is designed to reduce repetitive document preparation work. Recruiters still review, edit, and approve resumes before client submission." },
       { "q": "Why is ResumeDOG focused on Japan?", "a": "ResumeDOG is being built with Japanese recruitment workflows in mind, including English-Japanese translation, privacy-conscious resume handling, and future support for Japan-specific recruitment outputs." },
       { "q": "Is ResumeDOG Haken Law compliant?", "a": "ResumeDOG is being developed with Haken Law-related workflow requirements in mind, and those requirements are being reviewed as part of product development." },
@@ -282,7 +280,7 @@
         "name": "Professional",
         "description": "For recruiters preparing client submissions regularly.",
         "cta": "Choose Professional",
-        "features": ["Unlimited conversions", "English-Japanese translation", "Anonymization", "Job description matching", "Word/PDF export"]
+        "features": ["English-Japanese translation", "Anonymization", "Job description matching", "Word/PDF export"]
       },
       "team": {
         "name": "Team",

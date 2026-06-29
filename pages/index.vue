@@ -5,9 +5,7 @@
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-content">
-          <div class="hero-logo-lockup">
-            <img :src="`${base}images/logo.avif`" alt="" class="hero-logo-img" aria-hidden="true" />
-          </div>
+          <div class="hero-brand">Resume<span class="hero-brand-dog">DOG</span></div>
           <div class="hero-eyebrow">{{ $t('hero.eyebrow') }}</div>
           <h1>{{ $t('hero.heading') }} <em>{{ $t('hero.headingEm') }}</em></h1>
           <p class="hero-supporting">{{ $t('hero.supporting') }}</p>
@@ -399,6 +397,20 @@
     </section>
 
     <!-- 7. Trial CTA -->
+    <!-- 9. FAQs -->
+    <section class="faqs-section">
+      <div class="container">
+        <div class="faqs-header">
+          <p class="section-label">{{ $t('homeFaqs.label') }}</p>
+          <h2 class="section-heading">{{ $t('homeFaqs.heading') }} <em>{{ $t('homeFaqs.headingEm') }}</em></h2>
+          <p class="faqs-sub">{{ $t('homeFaqs.sub') }}</p>
+        </div>
+        <div class="faqs-list">
+          <FaqItem v-for="(faq, i) in $tm('homeFaqs.items')" :key="i" :q="$rt(faq.q)" :a="$rt(faq.a)" />
+        </div>
+      </div>
+    </section>
+
     <section class="trial-cta">
       <div class="container">
         <p class="section-label tctl-label">{{ $t('trialCta.label') }}</p>
@@ -407,66 +419,6 @@
         <div class="trial-actions">
           <NuxtLink to="/signup" class="btn-primary btn-lg">{{ $t('trialCta.cta') }}</NuxtLink>
           <p class="trial-fine">{{ $t('trialCta.fine') }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. Book a Demo -->
-    <section class="book-demo-section">
-      <div class="container">
-        <div class="bd-inner">
-          <div class="bd-copy">
-            <p class="section-label">{{ $t('bookDemo.label') }}</p>
-            <h2 class="section-heading">{{ $t('bookDemo.heading') }}</h2>
-            <p class="section-sub">{{ $t('bookDemo.body') }}</p>
-          </div>
-          <form class="bd-form" @submit.prevent>
-            <div class="bd-row">
-              <div class="bd-field">
-                <label>{{ $t('bookDemo.name') }}</label>
-                <input type="text" :placeholder="$t('bookDemo.name')" />
-              </div>
-              <div class="bd-field">
-                <label>{{ $t('bookDemo.company') }}</label>
-                <input type="text" :placeholder="$t('bookDemo.company')" />
-              </div>
-            </div>
-            <div class="bd-row">
-              <div class="bd-field">
-                <label>{{ $t('bookDemo.email') }}</label>
-                <input type="email" :placeholder="$t('bookDemo.email')" />
-              </div>
-              <div class="bd-field">
-                <label>{{ $t('bookDemo.phone') }}</label>
-                <input type="tel" :placeholder="$t('bookDemo.phone')" />
-              </div>
-            </div>
-            <div class="bd-field">
-              <label>{{ $t('bookDemo.demoTime') }}</label>
-              <input type="text" :placeholder="$t('bookDemo.demoTime')" />
-            </div>
-            <div class="bd-field">
-              <label>{{ $t('bookDemo.message') }}</label>
-              <textarea rows="4" :placeholder="$t('bookDemo.messagePlaceholder')"></textarea>
-            </div>
-            <button type="submit" class="btn-primary bd-submit">{{ $t('bookDemo.cta') }}</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- 9. FAQs -->
-    <section class="faqs-section">
-      <div class="container">
-        <div class="faqs-inner">
-          <div class="faqs-header">
-            <p class="section-label">{{ $t('homeFaqs.label') }}</p>
-            <h2 class="section-heading">{{ $t('homeFaqs.heading') }} <em>{{ $t('homeFaqs.headingEm') }}</em></h2>
-            <p class="faqs-sub">{{ $t('homeFaqs.sub') }}</p>
-          </div>
-          <div class="faqs-list">
-            <FaqItem v-for="(faq, i) in $tm('homeFaqs.items')" :key="i" :q="$rt(faq.q)" :a="$rt(faq.a)" />
-          </div>
         </div>
       </div>
     </section>
@@ -511,26 +463,18 @@ const hiwSteps = computed(() =>
   gap: 4rem;
   align-items: center;
 }
-.hero-logo-lockup {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
-}
-.hero-logo-img {
-  height: 120px;
-  width: auto;
-  display: block;
-}
-.hero-logo-text {
+
+.hero-brand {
   font-family: var(--font-display);
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--ink);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
   user-select: none;
   -webkit-user-select: none;
 }
+.hero-brand-dog { color: var(--gold); font-style: italic; }
 
 .hero-eyebrow {
   display: inline-flex;
@@ -1466,81 +1410,19 @@ h1 em { color: var(--gold); font-style: italic; }
   opacity: 0.75;
 }
 
-/* ── Book a Demo ── */
-.book-demo-section {
-  padding: 5rem 0;
-  background: var(--cream);
-}
-.bd-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 4rem;
-  align-items: start;
-}
-.bd-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.bd-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-.bd-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-.bd-field label {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--ink2);
-  letter-spacing: 0.01em;
-}
-.bd-field input,
-.bd-field textarea {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 0.7rem 1rem;
-  font-size: 14px;
-  font-family: var(--font-body);
-  color: var(--ink);
-  outline: none;
-  transition: border-color 0.2s;
-  resize: none;
-  width: 100%;
-}
-.bd-field input:focus,
-.bd-field textarea:focus {
-  border-color: var(--gold);
-}
-.bd-submit { align-self: flex-start; }
-
-.bd-field input::placeholder,
-.bd-field textarea::placeholder {
-  color: var(--ink2);
-  opacity: 0.5;
-}
 
 /* ── FAQs ── */
 .faqs-section {
   padding: 5rem 0;
   background: var(--cream2);
 }
-.faqs-inner {
-  display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 4rem;
-  align-items: start;
-}
 .faqs-header {
-  position: sticky;
-  top: 100px;
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
 }
 .faqs-header .section-heading {
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 .faqs-sub {
   font-size: 15px;
@@ -1556,6 +1438,8 @@ h1 em { color: var(--gold); font-style: italic; }
   border-radius: 16px;
   overflow: hidden;
   background: var(--card-bg);
+  max-width: 780px;
+  margin: 0 auto;
 }
 
 /* ── Responsive ── */
@@ -1565,8 +1449,6 @@ h1 em { color: var(--gold); font-style: italic; }
   .japan-map-inner,
   .wwb-inner,
   .bd-inner,
-  .faqs-inner { grid-template-columns: 1fr; }
-  .faqs-header { position: static; }
   .hero-visual { display: none; }
   .wwd-grid { grid-template-columns: 1fr 1fr; }
   .hiw-tl-track { flex-direction: column; align-items: stretch; }
@@ -1576,8 +1458,7 @@ h1 em { color: var(--gold); font-style: italic; }
   .jmap-wrap { max-width: 320px; }
 }
 @media (max-width: 600px) {
-  .wwd-grid,
-  .bd-row { grid-template-columns: 1fr; }
+  .wwd-grid { grid-template-columns: 1fr; }
   .wwd-card-img { height: 140px; }
   .hiv-steps { grid-template-columns: repeat(2, 1fr); }
   .wwb-img { height: 240px; }
@@ -1588,7 +1469,6 @@ h1 em { color: var(--gold); font-style: italic; }
   .hiw-timeline-section,
   .japan-map-section,
   .why-we-built,
-  .book-demo-section,
   .faqs-section { padding: 3rem 0; }
   .trial-cta { padding: 3.5rem 0; }
   .container { padding: 0 1.25rem; }

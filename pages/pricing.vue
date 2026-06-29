@@ -13,9 +13,24 @@
     <!-- Section 2: Plan Cards -->
     <section class="pr-plans">
       <div class="container">
+        <div class="pr-trial-row">
+          <div class="pr-card pr-card--trial">
+            <div class="pr-card-top">
+              <p class="pr-plan-name">{{ plans[0].name }}</p>
+              <p class="pr-price">{{ $t('pricing.tbd') }}</p>
+              <p class="pr-plan-desc">{{ plans[0].description }}</p>
+            </div>
+            <NuxtLink to="/contact" class="btn-primary pr-cta">{{ plans[0].cta }}</NuxtLink>
+            <ul class="pr-features">
+              <li v-for="feat in plans[0].features" :key="feat">
+                <i class="fa-solid fa-check pr-check" /> {{ feat }}
+              </li>
+            </ul>
+          </div>
+        </div>
         <div class="pr-grid">
           <div
-            v-for="plan in plans"
+            v-for="plan in plans.slice(1)"
             :key="plan.id"
             class="pr-card"
             :class="{ 'pr-card--featured': plan.featured }"
@@ -150,9 +165,18 @@ const compareRows = computed(() => {
   padding: 5rem 0;
   background: var(--cream2);
 }
+.pr-trial-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.pr-card--trial {
+  max-width: 420px;
+  width: 100%;
+}
 .pr-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 .pr-card {
@@ -329,13 +353,14 @@ const compareRows = computed(() => {
 
 /* ── Responsive ── */
 @media (max-width: 1100px) {
-  .pr-grid { grid-template-columns: repeat(3, 1fr); }
+  .pr-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 700px) {
-  .pr-grid { grid-template-columns: repeat(2, 1fr); }
+  .pr-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .pr-grid { grid-template-columns: 1fr; }
+  .pr-card--trial { max-width: 100%; }
   .container { padding: 0 1.25rem; }
   .pr-hero,
   .pr-plans,
