@@ -3,9 +3,14 @@
 
     <!-- 1. Hero -->
     <section class="hero">
-      <div class="hero-inner">
+      <div class="hero-inner" @mousemove="onMouseMove" @mouseleave="onMouseLeave">
         <div class="hero-content">
-          <div class="hero-brand">Resume<span class="hero-brand-dog">DOG</span></div>
+          <div class="hero-brand">
+            <span class="hero-paw-icon">
+              <svg width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><ellipse cx="9" cy="9" rx="3" ry="4"/><ellipse cx="16" cy="6.5" rx="3" ry="4"/><ellipse cx="23" cy="9" rx="3" ry="4"/><ellipse cx="27" cy="16" rx="2.5" ry="3.5"/><path d="M16 13c-4.5 0-8 3.5-8 7.5 0 3 2 5 4.5 5 1.5 0 2.5-.6 3.5-.6s2 .6 3.5.6c2.5 0 4.5-2 4.5-5 0-4-3.5-7.5-8-7.5z"/></g></svg>
+            </span>
+            Resume<span class="hero-brand-dog">DOG</span>
+          </div>
           <div class="hero-eyebrow">{{ $t('hero.eyebrow') }}</div>
           <h1>{{ $t('hero.heading') }} <em>{{ $t('hero.headingEm') }}</em></h1>
           <p class="hero-supporting">{{ $t('hero.supporting') }}</p>
@@ -19,132 +24,27 @@
             {{ $t('hero.trust2') }}
           </div>
         </div>
+        <!-- New hero visual -->
         <div class="hero-visual">
-          <!-- Main mockup window -->
-          <div class="hv-window">
-            <div class="hv-dots-bg"></div>
-            <!-- Title bar -->
-            <div class="hv-titlebar">
-              <div class="hv-dot"></div>
-              <div class="hv-dot"></div>
-              <div class="hv-dot"></div>
-              <span class="hv-titlebar-label">resumedog · transform</span>
-              <span class="hv-live"><span class="hv-pulse"></span>live</span>
+          <div class="winwrap" ref="winwrapEl" :style="winwrapStyle">
+            <div class="window">
+              <div class="winbar">
+                <span class="wd" style="background:#E2675E"></span>
+                <span class="wd" style="background:#E6B23C"></span>
+                <span class="wd" style="background:#3FA34D"></span>
+                <span class="wurl">app.resumedog.io/dashboard</span>
+              </div>
+              <img :src="`${base}images/shot-dashboard.png`" alt="Resume Dog conversion queue" class="win-img" />
             </div>
-            <!-- Canvas area -->
-            <div class="hv-canvas">
-              <!-- SVG connectors -->
-              <svg class="hv-svg" viewBox="0 0 600 480" preserveAspectRatio="none">
-                <path d="M180 200 C 250 220, 280 240, 300 250" stroke="rgba(212,162,76,0.5)" stroke-width="1.4" stroke-dasharray="3 5" fill="none"/>
-                <path d="M300 250 C 360 250, 400 230, 460 200" stroke="rgba(15,28,46,0.32)" stroke-width="1.4" stroke-dasharray="3 5" fill="none"/>
-              </svg>
-
-              <!-- Raw input card -->
-              <div class="hv-card hv-card-raw">
-                <div class="hv-card-header">
-                  <span class="hv-mono">resume_raw.docx</span>
-                  <div class="hv-dot-sm"></div>
-                </div>
-                <div class="hv-lines">
-                  <div class="hv-line dark short"></div>
-                  <div class="hv-line long"></div>
-                  <div class="hv-line med"></div>
-                  <div class="hv-line-gap"></div>
-                  <div class="hv-line dark short"></div>
-                  <div class="hv-line long"></div>
-                  <div class="hv-line long"></div>
-                  <div class="hv-line med"></div>
-                  <div class="hv-line-gap"></div>
-                  <div class="hv-line long"></div>
-                  <div class="hv-line med"></div>
-                </div>
-                <div class="hv-badge-raw">{{ $t('howItWorks.pipelineIn') }}</div>
-              </div>
-
-              <!-- JD card -->
-              <div class="hv-card hv-card-jd">
-                <div class="hv-card-header">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="hv-icon-amber"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6"/></svg>
-                  <span class="hv-mono">job_description.txt</span>
-                </div>
-                <div class="hv-lines">
-                  <div class="hv-line dark short" style="height:6px"></div>
-                  <div class="hv-line long" style="height:6px"></div>
-                  <div class="hv-line long" style="height:6px"></div>
-                  <div class="hv-line med" style="height:6px"></div>
-                  <div class="hv-line long" style="height:6px"></div>
-                  <div class="hv-line" style="height:6px;width:70%"></div>
-                </div>
-              </div>
-
-              <!-- Center AI orb -->
-              <div class="hv-orb-wrap">
-                <div class="hv-ring-outer"></div>
-                <div class="hv-ring-inner"></div>
-                <div class="hv-orb">
-                  <svg width="26" height="26" viewBox="0 0 32 32"><g fill="currentColor"><ellipse cx="9" cy="9" rx="3" ry="4"/><ellipse cx="16" cy="6.5" rx="3" ry="4"/><ellipse cx="23" cy="9" rx="3" ry="4"/><ellipse cx="27" cy="16" rx="2.5" ry="3.5"/><path d="M16 13c-4.5 0-8 3.5-8 7.5 0 3 2 5 4.5 5 1.5 0 2.5-.6 3.5-.6s2 .6 3.5.6c2.5 0 4.5-2 4.5-5 0-4-3.5-7.5-8-7.5z"/></g></svg>
-                </div>
-              </div>
-
-              <!-- Output card -->
-              <div class="hv-card hv-card-out">
-                <div class="hv-card-stripe"></div>
-                <div class="hv-card-header" style="padding-top:0.25rem">
-                  <div class="hv-out-logo">
-                    <svg width="11" height="11" viewBox="0 0 32 32"><g fill="currentColor"><ellipse cx="9" cy="9" rx="3" ry="4"/><ellipse cx="16" cy="6.5" rx="3" ry="4"/><ellipse cx="23" cy="9" rx="3" ry="4"/><ellipse cx="27" cy="16" rx="2.5" ry="3.5"/><path d="M16 13c-4.5 0-8 3.5-8 7.5 0 3 2 5 4.5 5 1.5 0 2.5-.6 3.5-.6s2 .6 3.5.6c2.5 0 4.5-2 4.5-5 0-4-3.5-7.5-8-7.5z"/></g></svg>
-                  </div>
-                  <span class="hv-mono">Your Agency</span>
-                  <span class="hv-mono amber" style="margin-left:auto">v.final</span>
-                </div>
-                <div class="hv-out-candidate">
-                  <div class="hv-avatar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></div>
-                  <div class="hv-out-info">
-                    <div class="hv-line dark" style="width:70%;height:7px"></div>
-                    <div class="hv-line amber short" style="height:5px;margin-top:4px"></div>
-                  </div>
-                </div>
-                <div class="hv-lines" style="margin-top:0.5rem">
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><div class="hv-amber-dot"></div><div class="hv-line dark" style="width:38%;height:6px"></div></div>
-                  <div class="hv-line long"></div>
-                  <div class="hv-line long"></div>
-                  <div class="hv-line med"></div>
-                  <div class="hv-line-gap"></div>
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><div class="hv-amber-dot"></div><div class="hv-line dark" style="width:42%;height:6px"></div></div>
-                  <div class="hv-line long"></div>
-                  <div class="hv-line med"></div>
-                </div>
-                <div class="hv-badge-out">{{ $t('howItWorks.pipelineOut') }}</div>
-              </div>
-
-              <!-- Floating pills -->
-              <div class="hv-pill hv-pill-amber" style="top:22%;left:38%">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-                EN→JP translate
-              </div>
-              <div class="hv-pill hv-pill-dark" style="top:56%;left:34%">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-                Anonymize
-              </div>
-              <div class="hv-pill hv-pill-light" style="top:74%;right:28%">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19l10-10M14 4l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3zM19 14l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2z"/></svg>
-                Tailored to JD
-              </div>
-
-              <!-- Export buttons -->
-              <div class="hv-exports">
-                <button class="hv-export-btn">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0-4-4m4 4 4-4M4 20h16"/></svg>
-                  DOCX
-                </button>
-                <button class="hv-export-btn">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0-4-4m4 4 4-4M4 20h16"/></svg>
-                  PDF
-                </button>
-              </div>
+            <div class="frag frag-tl" :style="fragStyle">
+              <div class="frag-tag"><span class="jpdot"></span>日本語 <span class="ar">→</span> EN</div>
+              <div class="frag-sub">CROSS-LANGUAGE · EXACT</div>
+            </div>
+            <div class="frag frag-br" :style="fragStyle">
+              <div class="frag-label">Review time</div>
+              <div class="frag-num">−38%</div>
             </div>
           </div>
-
-          <!-- Stat cards below -->
           <div class="hv-stats">
             <div class="hv-stat-card">
               <div class="hv-stat-top">
@@ -172,7 +72,8 @@
             </div>
           </div>
         </div>
-      </div>
+        </div>
+      
     </section>
 
     <!-- Visual Break Bar -->
@@ -434,6 +335,37 @@ useSeoMeta({
 
 const base = useRuntimeConfig().app.baseURL
 const { tm, rt } = useI18n()
+
+const winwrapEl = ref(null)
+const winwrapStyle = ref({})
+const fragStyle = ref({})
+
+function onMouseMove(e) {
+  const el = winwrapEl.value
+  if (!el) return
+  const rect = el.closest('.hero-inner').getBoundingClientRect()
+  const x = (e.clientX - rect.left - rect.width / 2)
+  const y = (e.clientY - rect.top - rect.height / 2)
+  winwrapStyle.value = {
+    transform: `translate(${x * 0.02}px, ${y * 0.02}px)`,
+    transition: 'transform 0.15s ease-out'
+  }
+  fragStyle.value = {
+    transform: `translate(${x * 0.03}px, ${y * 0.03}px)`,
+    transition: 'transform 0.1s ease-out'
+  }
+}
+
+function onMouseLeave() {
+  winwrapStyle.value = {
+    transform: 'translate(0px, 0px)',
+    transition: 'transform 0.6s ease-out'
+  }
+  fragStyle.value = {
+    transform: 'translate(0px, 0px)',
+    transition: 'transform 0.6s ease-out'
+  }
+}
 const hiwSteps = computed(() =>
   tm('howItWorks.steps').map((label, i) => ({
     icon: rt(tm('howItWorks.stepIcons')[i]),
@@ -467,6 +399,9 @@ const hiwSteps = computed(() =>
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   color: var(--ink);
   letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
@@ -474,6 +409,17 @@ const hiwSteps = computed(() =>
   -webkit-user-select: none;
 }
 .hero-brand-dog { color: var(--gold); font-style: italic; }
+.hero-paw-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--ink);
+  color: var(--cream);
+  flex-shrink: 0;
+}
 
 .hero-eyebrow {
   display: inline-flex;
@@ -556,309 +502,101 @@ h1 em { color: var(--gold); font-style: italic; }
   gap: 0.75rem;
 }
 
-/* Window frame */
-.hv-window {
+/* New winwrap visual */
+.winwrap {
   position: relative;
-  height: 460px;
-  border-radius: 20px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  overflow: hidden;
-  box-shadow: rgba(15,28,46,0.35) 0px 60px 120px -60px;
-}
-.hv-dots-bg {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(var(--border) 1px, transparent 1px);
-  background-size: 18px 18px;
-  opacity: 0.5;
-}
-
-/* Title bar */
-.hv-titlebar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 36px;
-  border-bottom: 1px solid var(--border);
-  background: var(--cream);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
-  gap: 6px;
-  z-index: 30;
-}
-.hv-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--ink2);
-  opacity: 0.3;
-}
-.hv-titlebar-label {
-  margin-left: 0.75rem;
-  font-size: 10px;
-  font-family: monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--ink2);
-}
-.hv-live {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 10px;
-  font-family: monospace;
-  color: var(--gold2);
-}
-.hv-pulse {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
-
-/* Canvas */
-.hv-canvas {
-  position: relative;
+  display: inline-block;
   width: 100%;
-  height: 100%;
-  padding: 36px 2.5rem 1rem;
-  box-sizing: border-box;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
-.hv-svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-/* Cards */
-.hv-card {
-  position: absolute;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+.window {
   border-radius: 14px;
-  padding: 1.25rem;
-  box-shadow: 0 20px 40px -20px rgba(15,28,46,0.2);
-}
-.hv-card-raw {
-  left: 0;
-  top: 1.5rem;
-  width: 220px;
-  transform: rotate(-3deg);
-}
-.hv-card-jd {
-  left: 42px;
-  top: 148px;
-  width: 180px;
-  transform: rotate(5deg);
-}
-.hv-card-out {
-  right: 0;
-  top: 0.5rem;
-  width: 240px;
-  transform: rotate(4deg);
   overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  background: var(--card-bg);
 }
-.hv-card-stripe {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: linear-gradient(to right, var(--ink), var(--gold), var(--ink));
-}
-.hv-card-header {
+.winbar {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 0.75rem;
+  padding: 10px 14px;
+  background: var(--cream2);
+  border-bottom: 1px solid var(--border);
 }
-.hv-mono {
-  font-size: 9px;
-  font-family: monospace;
-  text-transform: uppercase;
+.wd {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.wurl {
+  margin-left: 10px;
+  font-size: 11px;
+  color: var(--ink2);
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+}
+.win-img {
+  width: 100%;
+  display: block;
+}
+.frag {
+  position: absolute;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.frag-tl {
+  top: -18px;
+  left: -20px;
+}
+.frag-br {
+  bottom: -20px;
+  right: -16px;
+}
+.frag-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.frag-sub {
+  font-size: 9.5px;
+  color: var(--ink2);
+  margin-top: 4px;
+  letter-spacing: 0.06em;
+  font-family: var(--font-body);
+}
+.frag-label {
+  font-size: 9.5px;
   letter-spacing: 0.1em;
   color: var(--ink2);
+  text-transform: uppercase;
+  font-family: var(--font-body);
 }
-.hv-mono.amber { color: var(--gold2); }
-.hv-dot-sm {
+.frag-num {
+  font-size: 24px;
+  color: var(--gold);
+  letter-spacing: -0.03em;
+  margin-top: 2px;
+  font-weight: 600;
+}
+.jpdot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--ink2);
-  opacity: 0.4;
-  margin-left: auto;
-}
-.hv-icon-amber { color: var(--gold2); }
-
-/* Lines (document skeleton) */
-.hv-lines { display: flex; flex-direction: column; gap: 6px; }
-.hv-line {
-  height: 7px;
-  border-radius: 100px;
-  background: var(--border);
-}
-.hv-line.dark { background: var(--ink2); opacity: 0.35; }
-.hv-line.amber { background: var(--gold); opacity: 0.7; }
-.hv-line.short { width: 45%; }
-.hv-line.med { width: 65%; }
-.hv-line.long { width: 90%; }
-.hv-line-gap { height: 8px; }
-
-/* Badges */
-.hv-badge-raw {
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  background: var(--ink);
-  color: var(--cream);
-  font-size: 9px;
-  font-family: monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 2px 8px;
-  border-radius: 6px;
-}
-.hv-badge-out {
-  position: absolute;
-  bottom: -8px;
-  right: -8px;
   background: var(--gold);
-  color: var(--ink);
-  font-size: 9px;
-  font-family: monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 2px 8px;
-  border-radius: 6px;
+  display: inline-block;
 }
+.ar { color: var(--ink2); }
 
-/* Output card specifics */
-.hv-out-logo {
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  background: var(--ink);
-  color: var(--cream);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hv-out-candidate {
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 0.5rem;
-  align-items: flex-start;
-}
-.hv-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--cream2);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ink2);
-  flex-shrink: 0;
-}
-.hv-out-info { flex: 1; padding-top: 4px; }
-.hv-amber-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  flex-shrink: 0;
-}
 
-/* AI Orb */
-.hv-orb-wrap {
-  position: absolute;
-  right: 28%;
-  top: 64%;
-  transform: translate(50%, -50%);
-  width: 120px;
-  height: 120px;
-  z-index: 10;
-}
-.hv-ring-outer {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 1px dashed var(--border);
-  animation: spin 12s linear infinite;
-}
-.hv-ring-inner {
-  position: absolute;
-  inset: 12px;
-  border-radius: 50%;
-  border: 1px solid rgba(245,158,11,0.4);
-  animation: spin 18s linear infinite reverse;
-}
-.hv-orb {
-  position: absolute;
-  inset: 28px;
-  border-radius: 50%;
-  background: var(--ink);
-  color: var(--cream);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 20px 40px -10px rgba(212,162,76,0.4);
-  animation: breathe 2.4s cubic-bezier(0.4,0,0.2,1) infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-@keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
-
-/* Floating pills */
-.hv-pill {
-  position: absolute;
-  z-index: 20;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 10px;
-  border-radius: 100px;
-  font-size: 11px;
-  font-weight: 500;
-  box-shadow: 0 10px 24px -10px rgba(15,28,46,0.35);
-}
-.hv-pill-amber { background: var(--gold); color: var(--ink); }
-.hv-pill-dark { background: var(--ink); color: var(--cream); }
-.hv-pill-light { background: var(--card-bg); color: var(--ink); border: 1px solid var(--border); }
-
-/* Export buttons */
-.hv-exports {
-  position: absolute;
-  bottom: 0.75rem;
-  right: 1rem;
-  display: flex;
-  gap: 0.5rem;
-  z-index: 20;
-}
-.hv-export-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 10px;
-  border-radius: 8px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  font-size: 11px;
-  font-family: monospace;
-  font-weight: 500;
-  color: var(--ink);
-  cursor: pointer;
-  box-shadow: 0 8px 20px -10px rgba(15,28,46,0.25);
-}
 
 /* Stat cards row */
 .hv-stats {
@@ -882,11 +620,15 @@ h1 em { color: var(--gold); font-style: italic; }
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: var(--ink);
-  color: var(--cream);
+  background: var(--gold);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+[data-theme="dark"] .hv-stat-icon {
+  background: var(--ink);
+  color: var(--cream);
 }
 .hv-stat-num {
   font-size: 11px;

@@ -166,13 +166,23 @@ const compareRows = computed(() => {
   background: var(--cream2);
 }
 .pr-trial-row {
-  display: flex;
-  justify-content: center;
   margin-bottom: 1.5rem;
 }
 .pr-card--trial {
-  max-width: 420px;
   width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pr-card--trial .pr-cta {
+  width: auto !important;
+  display: inline-block !important;
+  padding: 0.5rem 2rem;
+  font-size: 13px;
+}
+.pr-card--trial .pr-features {
+  text-align: left;
 }
 .pr-grid {
   display: grid;
