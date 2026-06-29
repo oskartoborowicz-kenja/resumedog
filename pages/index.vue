@@ -9,7 +9,7 @@
             <span class="hero-paw-icon">
               <svg width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><ellipse cx="9" cy="9" rx="3" ry="4"/><ellipse cx="16" cy="6.5" rx="3" ry="4"/><ellipse cx="23" cy="9" rx="3" ry="4"/><ellipse cx="27" cy="16" rx="2.5" ry="3.5"/><path d="M16 13c-4.5 0-8 3.5-8 7.5 0 3 2 5 4.5 5 1.5 0 2.5-.6 3.5-.6s2 .6 3.5.6c2.5 0 4.5-2 4.5-5 0-4-3.5-7.5-8-7.5z"/></g></svg>
             </span>
-            Resume<span class="hero-brand-dog">DOG</span>
+Resume<span class="hero-brand-dog">DOG</span>
           </div>
           <div class="hero-eyebrow">{{ $t('hero.eyebrow') }}</div>
           <h1>{{ $t('hero.heading') }} <em>{{ $t('hero.headingEm') }}</em></h1>
