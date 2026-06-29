@@ -6,8 +6,8 @@
   --ink2: #52525b;
   --cream: #e0f2fe;
   --cream2: #d0ebfc;
-  --gold: #0d9488;
-  --gold2: #0f766e;
+  --accent: #0d9488;
+  --accent2: #0f766e;
   --teal: #312e81;
   --teal2: #e0e7ff;
   --cta: #0d9488;
@@ -22,8 +22,8 @@
   --ink2: #a09890;
   --cream: #0f172a;
   --cream2: #1e293b;
-  --gold: #fb923c;
-  --gold2: #f97316;
+  --accent: #fb923c;
+  --accent2: #f97316;
   --teal: #818cf8;
   --teal2: #1e1b4b;
   --cta: #f97316;
@@ -78,7 +78,7 @@ a { text-decoration: none; }
   cursor: pointer;
 }
 .btn-primary:hover { background: #0d5c55; }
-[data-theme="dark"] .btn-primary:hover { background: #ea6c0a; }
+[data-theme="dark"] .btn-primary:hover { background: #fdba74; }
 
 .btn-secondary {
   color: var(--ink2);
@@ -110,7 +110,7 @@ a { text-decoration: none; }
   margin-bottom: 0.75rem;
   font-weight: 600;
 }
-.section-heading em { color: var(--gold); font-style: italic; }
+.section-heading em { color: var(--accent); font-style: italic; }
 
 .section-sub {
   font-size: 16px;

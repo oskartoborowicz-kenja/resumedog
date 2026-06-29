@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <main>
 
     <!-- Section 1: ResumeDOG -->
@@ -167,7 +167,7 @@ const { locale } = useI18n()
   font-family: var(--font-display);
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--accent);
   letter-spacing: 0.08em;
   background: var(--card-bg);
   border: 1px solid var(--border);

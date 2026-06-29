@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <footer class="app-footer">
     <NuxtLink to="/" class="logo">Resume<span>DOG</span></NuxtLink>
     <div class="footer-links">
@@ -27,7 +27,7 @@
   color: var(--ink);
   letter-spacing: -0.02em;
 }
-.logo span { color: var(--gold); font-style: italic; }
+.logo span { color: var(--accent); font-style: italic; }
 .footer-links { display: flex; gap: 2rem; }
 .footer-links a { color: var(--ink2); transition: color 0.2s; }
 .footer-links a:hover { color: var(--ink); }
@@ -35,5 +35,9 @@
 @media (max-width: 600px) {
   .app-footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
   .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+}
+@media (max-width: 480px) {
+  .app-footer { padding: 1.5rem 1.25rem; }
+  .footer-links { gap: 0.75rem; }
 }
 </style>

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="faq-item" :class="{ open: isOpen }">
     <button class="faq-summary" @click="isOpen = !isOpen">
       <span>{{ q }}</span>
@@ -67,8 +67,8 @@ watch(isOpen, async (val) => {
 }
 .faq-item.open .faq-icon {
   transform: rotate(45deg);
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 .faq-body {
   height: 0;

@@ -1,11 +1,11 @@
-<template>
+﻿<template>
   <main>
 
     <!-- Section 1: Hero -->
     <section class="pr-hero">
       <div class="container">
         <p class="section-label">{{ $t('pricing.label') }}</p>
-        <h1 class="section-heading pr-h1">{{ $t('pricing.heading') }}</h1>
+        <h1 class="section-heading pr-h1">{{ $t('pricing.heading') }} Resume<em class="pr-brand">DOG</em> {{ $t('pricing.headingEnd') }}</h1>
         <p class="pr-body">{{ $t('pricing.body') }}</p>
       </div>
     </section>
@@ -149,6 +149,8 @@ const compareRows = computed(() => {
   padding: 5rem 0;
   background: var(--cream);
 }
+
+.pr-brand { color: var(--accent); font-style: italic; }
 .pr-h1 {
   max-width: 680px;
   margin-bottom: 1.25rem;
@@ -250,6 +252,7 @@ const compareRows = computed(() => {
   transition: border-color 0.2s, background 0.2s;
 }
 .btn-outline:hover { border-color: var(--ink); background: var(--cream2); }
+[data-theme="dark"] .btn-outline:hover { background: #334155; }
 .btn-primary {
   background: var(--ink);
   color: var(--cream);
@@ -273,7 +276,7 @@ const compareRows = computed(() => {
   line-height: 1.4;
 }
 .pr-check {
-  color: var(--gold);
+  color: var(--accent);
   font-size: 11px;
   flex-shrink: 0;
   margin-top: 2px;
@@ -315,7 +318,7 @@ const compareRows = computed(() => {
   width: 220px;
 }
 .pr-th-featured {
-  color: var(--gold);
+  color: var(--accent);
   background: var(--cream);
 }
 .pr-table tbody tr {
@@ -338,7 +341,7 @@ const compareRows = computed(() => {
   color: var(--ink);
   font-weight: 400;
 }
-.pr-check-icon { color: var(--gold); font-size: 14px; }
+.pr-check-icon { color: var(--accent); font-size: 14px; }
 .pr-dash { color: var(--ink2); opacity: 0.4; font-size: 16px; }
 .pr-cell-text { font-size: 13px; color: var(--ink2); }
 
@@ -376,5 +379,7 @@ const compareRows = computed(() => {
   .pr-plans,
   .pr-compare,
   .pr-cta-section { padding: 3rem 0; }
+  .pr-price { font-size: clamp(1.5rem, 5vw, 2rem); }
+  .pr-th-feature { width: 120px; }
 }
 </style>

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <main>
 
     <!-- Section 1: Hero -->
@@ -7,7 +7,7 @@
         <div>
           <p class="section-label">{{ $t('services.label') }}</p>
           <h1 class="section-heading sv-h1">{{ $t('services.page.heading') }}</h1>
-          <p class="sv-body">{{ $t('services.page.body') }}</p>
+          <p class="sv-body">{{ $t('services.page.bodyBefore') }} Resume<em class="sv-brand-dog">DOG</em> {{ $t('services.page.bodyAfter') }}</p>
           <NuxtLink to="/about" class="btn-primary sv-cta">{{ $t('services.page.heroCta') }}</NuxtLink>
         </div>
         <div class="sv-hero-img" :style="{ backgroundImage: `url(${base}/images/home-resume.jpg)` }" />
@@ -40,7 +40,7 @@
           <div>
             <p class="section-label">{{ $t('services.page.workflowCta.label') }}</p>
             <h2 class="section-heading">{{ $t('services.page.workflowCta.heading') }}</h2>
-            <p class="sv-body">{{ $t('services.page.workflowCta.body') }}</p>
+            <p class="sv-body">{{ $t('services.page.workflowCta.bodyBefore') }} Resume<em class="sv-brand-dog">DOG</em> {{ $t('services.page.workflowCta.bodyAfter') }}</p>
           </div>
           <NuxtLink to="/about" class="btn-primary sv-wf-btn">{{ $t('services.page.workflowCta.cta') }}</NuxtLink>
         </div>
@@ -50,8 +50,8 @@
     <!-- Section 4: AI Explainer Video -->
     <section class="sv-video">
       <div class="container">
-        <p class="section-label">{{ $t('services.page.video.label') }}</p>
-        <h2 class="section-heading">{{ $t('services.page.video.heading') }}</h2>
+        <p class="section-label">Meet Resume<em class="sv-brand-dog">DOG</em></p>
+        <h2 class="section-heading">Meet Resume<em class="sv-brand-dog">DOG</em>.</h2>
         <p class="sv-body sv-video-body">{{ $t('services.page.video.body') }}</p>
         <div class="sv-video-frame">
           <div class="sv-video-placeholder">
@@ -97,6 +97,8 @@ const cardIcons = {
   padding: 5rem 0 4.5rem;
   background: var(--cream);
 }
+
+.sv-brand-dog { color: var(--accent); font-style: italic; }
 .sv-hero-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -155,6 +157,7 @@ const cardIcons = {
   align-items: center;
   justify-content: center;
   font-size: 18px;
+  align-self: center;
 }
 .sv-card h3 {
   font-family: var(--font-display);
@@ -245,5 +248,7 @@ const cardIcons = {
   .sv-services,
   .sv-workflow-cta,
   .sv-video { padding: 3rem 0; }
+  .sv-card { padding: 1.25rem; }
+  .sv-wf-inner { gap: 1.5rem; }
 }
 </style>

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <main class="auth-page">
     <div class="auth-card">
       <NuxtLink to="/" class="auth-logo">Resume<span>DOG</span></NuxtLink>
@@ -102,7 +102,7 @@ const handleSubmit = async () => {
   display: inline-block;
   margin-bottom: 2rem;
 }
-.auth-logo span { color: var(--gold); }
+.auth-logo span { color: var(--accent); }
 
 .success-icon {
   font-size: 2.5rem;

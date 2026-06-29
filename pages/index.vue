@@ -1,15 +1,14 @@
-<template>
+﻿<template>
   <main>
 
     <!-- 1. Hero -->
     <section class="hero">
-      <div class="hero-inner" @mousemove="onMouseMove" @mouseleave="onMouseLeave">
+      <div class="hero-inner">
         <div class="hero-content">
           <div class="hero-brand">
             <span class="hero-paw-icon">
               <svg width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><ellipse cx="9" cy="9" rx="3" ry="4"/><ellipse cx="16" cy="6.5" rx="3" ry="4"/><ellipse cx="23" cy="9" rx="3" ry="4"/><ellipse cx="27" cy="16" rx="2.5" ry="3.5"/><path d="M16 13c-4.5 0-8 3.5-8 7.5 0 3 2 5 4.5 5 1.5 0 2.5-.6 3.5-.6s2 .6 3.5.6c2.5 0 4.5-2 4.5-5 0-4-3.5-7.5-8-7.5z"/></g></svg>
-            </span>
-Resume<span class="hero-brand-dog">DOG</span>
+            </span><span class="hero-brand-name">Resume<span class="hero-brand-dog">DOG</span></span>
           </div>
           <div class="hero-eyebrow">{{ $t('hero.eyebrow') }}</div>
           <h1>{{ $t('hero.heading') }} <em>{{ $t('hero.headingEm') }}</em></h1>
@@ -41,8 +40,8 @@ Resume<span class="hero-brand-dog">DOG</span>
               <div class="frag-sub">CROSS-LANGUAGE · EXACT</div>
             </div>
             <div class="frag frag-br" :style="fragStyle">
-              <div class="frag-label">Review time</div>
-              <div class="frag-num">−38%</div>
+              <div class="frag-label">{{ $t('hero.reviewTime') }}</div>
+              <div class="frag-num">-38%</div>
             </div>
           </div>
           <div class="hv-stats">
@@ -125,7 +124,7 @@ Resume<span class="hero-brand-dog">DOG</span>
           </div>
         </div>
         <div class="section-footer">
-          <NuxtLink to="/services" class="read-more">{{ $t('services.readMore') }} <i class="fa-solid fa-arrow-right"></i></NuxtLink>
+          <NuxtLink to="/services" class="btn-primary wwd-explore-btn">{{ $t('services.readMore') }} <i class="fa-solid fa-arrow-right"></i></NuxtLink>
         </div>
       </div>
     </section>
@@ -155,16 +154,15 @@ Resume<span class="hero-brand-dog">DOG</span>
                   <span class="hiv-mono">candidate_resume.docx</span>
                   <div class="hiv-dot-sm"></div>
                 </div>
-                <div class="hiv-lines">
-                  <div class="hiv-line dark short"></div>
-                  <div class="hiv-line long"></div>
-                  <div class="hiv-line med"></div>
-                  <div class="hiv-line long"></div>
-                  <div class="hiv-line short"></div>
-                  <div class="hiv-gap"></div>
-                  <div class="hiv-line dark short"></div>
-                  <div class="hiv-line long"></div>
-                  <div class="hiv-line med"></div>
+                <div class="hiv-text">
+                  <div class="hiv-txt-heading">{{ $t('howItWorks.docIn.h1') }}</div>
+                  <div class="hiv-txt-line">{{ $t('howItWorks.docIn.l1') }}</div>
+                  <div class="hiv-txt-line muted">{{ $t('howItWorks.docIn.b1') }}</div>
+                  <div class="hiv-txt-line muted">{{ $t('howItWorks.docIn.b2') }}</div>
+                  <div class="hiv-txt-line muted">{{ $t('howItWorks.docIn.b3') }}</div>
+                  <div class="hiv-txt-gap"></div>
+                  <div class="hiv-txt-heading">{{ $t('howItWorks.docIn.h2') }}</div>
+                  <div class="hiv-txt-line">{{ $t('howItWorks.docIn.l2') }}</div>
                 </div>
                 <div class="hiv-label">{{ $t('howItWorks.pipelineIn') }}</div>
               </div>
@@ -182,16 +180,16 @@ Resume<span class="hero-brand-dog">DOG</span>
                   </div>
                   <span class="hiv-mono">client_ready.docx</span>
                 </div>
-                <div class="hiv-lines">
-                  <div class="hiv-line dark short"></div>
-                  <div class="hiv-line long accent"></div>
-                  <div class="hiv-line med accent"></div>
-                  <div class="hiv-line long accent"></div>
-                  <div class="hiv-line med"></div>
-                  <div class="hiv-gap"></div>
-                  <div class="hiv-line dark short"></div>
-                  <div class="hiv-line long accent"></div>
-                  <div class="hiv-line med accent"></div>
+                <div class="hiv-text">
+                  <div class="hiv-txt-heading accent">{{ $t('howItWorks.docOut.h1') }}</div>
+                  <div class="hiv-txt-line bold">{{ $t('howItWorks.docOut.l1') }}</div>
+                  <div class="hiv-txt-line muted">{{ $t('howItWorks.docOut.l2') }}</div>
+                  <div class="hiv-txt-line accent-dot">{{ $t('howItWorks.docOut.b1') }}</div>
+                  <div class="hiv-txt-line accent-dot">{{ $t('howItWorks.docOut.b2') }}</div>
+                  <div class="hiv-txt-line accent-dot">{{ $t('howItWorks.docOut.b3') }}</div>
+                  <div class="hiv-txt-gap"></div>
+                  <div class="hiv-txt-heading accent">{{ $t('howItWorks.docOut.h2') }}</div>
+                  <div class="hiv-txt-line bold">{{ $t('howItWorks.docOut.l3') }}</div>
                 </div>
                 <div class="hiv-exports">
                   <span class="hiv-export-tag"><i class="fa-solid fa-file-word"></i> DOCX</span>
@@ -240,7 +238,7 @@ Resume<span class="hero-brand-dog">DOG</span>
           <div class="japan-map-visual">
             <div class="jmap-wrap">
               <div class="jmap-center">
-                <i class="fa-solid fa-dog"></i>
+                <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><g fill="currentColor"><ellipse cx="9" cy="9" rx="3" ry="4"/><ellipse cx="16" cy="6.5" rx="3" ry="4"/><ellipse cx="23" cy="9" rx="3" ry="4"/><ellipse cx="27" cy="16" rx="2.5" ry="3.5"/><path d="M16 13c-4.5 0-8 3.5-8 7.5 0 3 2 5 4.5 5 1.5 0 2.5-.6 3.5-.6s2 .6 3.5.6c2.5 0 4.5-2 4.5-5 0-4-3.5-7.5-8-7.5z"/></g></svg>
                 <span>ResumeDOG</span>
               </div>
               <div class="jmap-node jmap-n1">
@@ -260,10 +258,10 @@ Resume<span class="hero-brand-dog">DOG</span>
                 <span>{{ $t('japan.map4') }}</span>
               </div>
               <svg class="jmap-lines" viewBox="0 0 400 400" preserveAspectRatio="none">
-                <line x1="200" y1="200" x2="60" y2="80" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
-                <line x1="200" y1="200" x2="340" y2="80" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
-                <line x1="200" y1="200" x2="60" y2="320" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
-                <line x1="200" y1="200" x2="340" y2="320" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                <line x1="200" y1="200" x2="60" y2="80" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                <line x1="200" y1="200" x2="340" y2="80" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                <line x1="200" y1="200" x2="60" y2="320" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
+                <line x1="200" y1="200" x2="340" y2="320" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.5"/>
               </svg>
             </div>
           </div>
@@ -275,6 +273,9 @@ Resume<span class="hero-brand-dog">DOG</span>
     <section class="why-we-built">
       <div class="container">
         <div class="wwb-inner">
+          <div class="wwb-photo">
+            <img :src="`${base}images/frustrated-man.png`" alt="" class="wwb-img" />
+          </div>
           <div class="wwb-text">
             <p class="section-label">{{ $t('whyWeBuilt.label') }}</p>
             <h2 class="section-heading wwb-heading">
@@ -288,9 +289,6 @@ Resume<span class="hero-brand-dog">DOG</span>
               <span class="quote-mark">"</span>
               {{ $t('whyWeBuilt.quote') }}
             </blockquote>
-          </div>
-          <div class="wwb-photo">
-            <img :src="`${base}images/frustrated-man.png`" alt="" class="wwb-img" />
           </div>
         </div>
       </div>
@@ -340,32 +338,29 @@ const winwrapEl = ref(null)
 const winwrapStyle = ref({})
 const fragStyle = ref({})
 
-function onMouseMove(e) {
-  const el = winwrapEl.value
-  if (!el) return
-  const rect = el.closest('.hero-inner').getBoundingClientRect()
-  const x = (e.clientX - rect.left - rect.width / 2)
-  const y = (e.clientY - rect.top - rect.height / 2)
+function onPageMouseMove(e) {
+  if (window.scrollY > window.innerHeight) return
+  const cx = window.innerWidth / 2
+  const cy = window.innerHeight / 2
+  const x = e.clientX - cx
+  const y = e.clientY - cy
   winwrapStyle.value = {
-    transform: `translate(${x * 0.02}px, ${y * 0.02}px)`,
-    transition: 'transform 0.15s ease-out'
+    transform: `translate(${x * 0.01}px, ${y * 0.01}px)`,
+    transition: 'transform 0.3s ease-out'
   }
   fragStyle.value = {
-    transform: `translate(${x * 0.03}px, ${y * 0.03}px)`,
-    transition: 'transform 0.1s ease-out'
+    transform: `translate(${x * 0.015}px, ${y * 0.015}px)`,
+    transition: 'transform 0.2s ease-out'
   }
 }
 
-function onMouseLeave() {
-  winwrapStyle.value = {
-    transform: 'translate(0px, 0px)',
-    transition: 'transform 0.6s ease-out'
-  }
-  fragStyle.value = {
-    transform: 'translate(0px, 0px)',
-    transition: 'transform 0.6s ease-out'
-  }
-}
+
+onMounted(() => {
+  window.addEventListener('mousemove', onPageMouseMove)
+})
+onUnmounted(() => {
+  window.removeEventListener('mousemove', onPageMouseMove)
+})
 const hiwSteps = computed(() =>
   tm('howItWorks.steps').map((label, i) => ({
     icon: rt(tm('howItWorks.stepIcons')[i]),
@@ -408,7 +403,8 @@ const hiwSteps = computed(() =>
   user-select: none;
   -webkit-user-select: none;
 }
-.hero-brand-dog { color: var(--gold); font-style: italic; }
+.hero-brand-name { white-space: nowrap; }
+.hero-brand-dog { color: var(--accent); font-style: italic; }
 .hero-paw-icon {
   display: flex;
   align-items: center;
@@ -444,20 +440,14 @@ h1 {
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
-h1 em { color: var(--gold); font-style: italic; }
+h1 em { color: var(--accent); font-style: italic; }
 .hero-supporting {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--ink);
   margin-bottom: 1rem;
 }
-.hero-body {
-  font-size: 15px;
-  color: var(--ink2);
-  line-height: 1.7;
-  max-width: 480px;
-  margin-bottom: 1.25rem;
-}
+
 .hero-actions {
   display: flex;
   gap: 0.75rem;
@@ -479,6 +469,7 @@ h1 em { color: var(--gold); font-style: italic; }
 }
 .btn-demo:hover { background: var(--cream2); }
 [data-theme="dark"] .btn-demo { background: var(--cream2); }
+[data-theme="dark"] .btn-demo:hover { background: #334155; }
 .hero-trust {
   font-size: 13px;
   color: var(--ink2);
@@ -490,7 +481,7 @@ h1 em { color: var(--gold); font-style: italic; }
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--accent);
   display: inline-block;
 }
 .trust-sep { color: var(--border); }
@@ -582,16 +573,17 @@ h1 em { color: var(--gold); font-style: italic; }
 }
 .frag-num {
   font-size: 24px;
-  color: var(--gold);
+  color: var(--accent);
   letter-spacing: -0.03em;
   margin-top: 2px;
   font-weight: 600;
 }
+[data-theme="dark"] .frag-num { color: #2dd4bf; }
 .jpdot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--accent);
   display: inline-block;
 }
 .ar { color: var(--ink2); }
@@ -620,7 +612,7 @@ h1 em { color: var(--gold); font-style: italic; }
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: var(--gold);
+  background: var(--accent);
   color: #fff;
   display: flex;
   align-items: center;
@@ -633,7 +625,7 @@ h1 em { color: var(--gold); font-style: italic; }
 .hv-stat-num {
   font-size: 11px;
   font-family: monospace;
-  color: var(--gold2);
+  color: var(--accent2);
 }
 .hv-stat-title {
   font-size: 13px;
@@ -682,7 +674,7 @@ h1 em { color: var(--gold); font-style: italic; }
   white-space: nowrap;
   letter-spacing: 0.01em;
 }
-.mq-item i { color: var(--gold); font-size: 12px; }
+.mq-item i { color: var(--accent); font-size: 12px; }
 .mq-sep {
   color: var(--border);
   font-size: 16px;
@@ -751,6 +743,7 @@ h1 em { color: var(--gold); font-style: italic; }
   line-height: 1.3;
 }
 .wwd-card p { font-size: 15px; color: var(--ink2); line-height: 1.7; }
+.section-footer { margin-top: 2rem; }
 
 /* ── What ResumeDOG Does (split) ── */
 .how-it-works {
@@ -821,7 +814,7 @@ h1 em { color: var(--gold); font-style: italic; }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(to right, var(--teal), var(--gold));
+  background: linear-gradient(to right, var(--teal), var(--accent));
 }
 .hiv-doc-header {
   display: flex;
@@ -850,18 +843,33 @@ h1 em { color: var(--gold); font-style: italic; }
   display: flex; align-items: center; justify-content: center;
   font-size: 10px;
 }
-.hiv-lines { display: flex; flex-direction: column; gap: 5px; }
-.hiv-line {
-  height: 6px;
-  border-radius: 100px;
-  background: var(--border);
+.hiv-text { display: flex; flex-direction: column; gap: 3px; }
+.hiv-txt-heading {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  margin-top: 2px;
 }
-.hiv-line.dark { background: var(--ink2); opacity: 0.25; }
-.hiv-line.accent { background: var(--gold); opacity: 0.5; }
-.hiv-line.short { width: 40%; }
-.hiv-line.med { width: 65%; }
-.hiv-line.long { width: 90%; }
-.hiv-gap { height: 6px; }
+.hiv-txt-heading.accent { color: var(--accent); }
+.hiv-txt-line {
+  font-size: 8.5px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hiv-txt-line.muted { color: var(--ink2); }
+.hiv-txt-line.bold { font-weight: 600; }
+.hiv-txt-line.accent-dot::before {
+  content: '·';
+  color: var(--accent);
+  margin-right: 4px;
+  font-weight: 700;
+}
+.hiv-txt-gap { height: 6px; }
 .hiv-label {
   position: absolute;
   bottom: 0.75rem; right: 0.75rem;
@@ -875,7 +883,7 @@ h1 em { color: var(--gold); font-style: italic; }
   border-radius: 4px;
 }
 .hiv-label.out {
-  background: var(--gold);
+  background: var(--accent);
   color: var(--ink);
 }
 .hiv-exports {
@@ -916,7 +924,7 @@ h1 em { color: var(--gold); font-style: italic; }
   color: var(--ink2);
 }
 .hiv-step-icon {
-  color: var(--gold);
+  color: var(--accent);
   font-size: 12px;
   flex-shrink: 0;
 }
@@ -935,7 +943,7 @@ h1 em { color: var(--gold); font-style: italic; }
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 1rem;
 }
 .hiw-tl-line {
@@ -944,7 +952,7 @@ h1 em { color: var(--gold); font-style: italic; }
   left: 22px;
   right: 22px;
   height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--teal));
+  background: linear-gradient(90deg, var(--accent), var(--teal));
   opacity: 0.35;
   z-index: 0;
 }
@@ -962,7 +970,7 @@ h1 em { color: var(--gold); font-style: italic; }
   height: 44px;
   border-radius: 50%;
   background: var(--card-bg);
-  border: 2px solid var(--gold);
+  border: 2px solid var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -972,7 +980,7 @@ h1 em { color: var(--gold); font-style: italic; }
   font-family: var(--font-display);
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--accent);
 }
 .hiw-tl-card {
   background: var(--card-bg);
@@ -981,6 +989,7 @@ h1 em { color: var(--gold); font-style: italic; }
   padding: 1.25rem 1rem;
   text-align: center;
   width: 100%;
+  flex: 1;
 }
 .hiw-tl-card h3 {
   font-family: var(--font-display);
@@ -1020,7 +1029,7 @@ h1 em { color: var(--gold); font-style: italic; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--gold);
+  background: var(--accent);
   color: #fff;
   border-radius: 16px;
   padding: 0.85rem 1.2rem;
@@ -1044,6 +1053,7 @@ h1 em { color: var(--gold); font-style: italic; }
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.3rem;
   font-size: 11px;
   font-weight: 500;
@@ -1051,6 +1061,7 @@ h1 em { color: var(--gold); font-style: italic; }
   text-align: center;
   z-index: 2;
   width: 120px;
+  height: 80px;
   line-height: 1.35;
 }
 .jmap-node i { color: var(--teal); font-size: 1rem; }
@@ -1086,7 +1097,7 @@ h1 em { color: var(--gold); font-style: italic; }
 .wwb-quote {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--accent);
   border-radius: 0 14px 14px 0;
   padding: 1.75rem 2rem;
   font-family: var(--font-display);
@@ -1098,7 +1109,7 @@ h1 em { color: var(--gold); font-style: italic; }
 .quote-mark {
   display: block;
   font-size: 2.5rem;
-  color: var(--gold);
+  color: var(--accent);
   line-height: 1;
   margin-bottom: 0.4rem;
 }
@@ -1121,7 +1132,7 @@ h1 em { color: var(--gold); font-style: italic; }
   text-align: center;
 }
 .tctl-label {
-  color: var(--gold) !important;
+  color: var(--accent) !important;
   opacity: 0.85;
 }
 .trial-cta .section-heading {
@@ -1186,12 +1197,16 @@ h1 em { color: var(--gold); font-style: italic; }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .hero-inner,
+  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-visual { max-width: 540px; margin: 0 auto; width: 100%; }
+  .frag { display: none; }
   .hiw-inner,
   .japan-map-inner,
-  .wwb-inner,
-  .bd-inner,
-  .hero-visual { display: none; }
+  .wwb-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hiw-visual { display: none; }
+  .japan-map-visual { display: none; }
+  .wwb-photo { order: -1; }
+  .wwb-img { height: 260px; width: 100%; object-fit: cover; border-radius: 16px; }
   .wwd-grid { grid-template-columns: 1fr 1fr; }
   .hiw-tl-track { flex-direction: column; align-items: stretch; }
   .hiw-tl-line { display: none; }
@@ -1204,6 +1219,7 @@ h1 em { color: var(--gold); font-style: italic; }
   .wwd-card-img { height: 140px; }
   .hiv-steps { grid-template-columns: repeat(2, 1fr); }
   .wwb-img { height: 240px; }
+  .hv-stats { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .what-we-do,
@@ -1215,5 +1231,7 @@ h1 em { color: var(--gold); font-style: italic; }
   .trial-cta { padding: 3.5rem 0; }
   .container { padding: 0 1.25rem; }
   .hero { padding: 2.5rem 1.25rem 2rem; }
+  .hero-brand { font-size: 1.6rem; }
+  .jmap-node { width: auto; min-width: 80px; }
 }
 </style>

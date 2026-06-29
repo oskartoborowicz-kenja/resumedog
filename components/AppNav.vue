@@ -20,7 +20,7 @@
           <img src="https://flagcdn.com/20x15/us.png" class="lang-flag" alt="EN" />EN
         </span>
         <span class="lang-opt" :class="{ 'lang-active': locale === 'ja' }">
-          <img src="https://flagcdn.com/20x15/jp.png" class="lang-flag" alt="JP" />JP
+          <img src="https://flagcdn.com/20x15/jp.png" class="lang-flag" alt="JA" />JA
         </span>
       </button>
       <button class="theme-toggle" :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'" @click="toggleTheme">
@@ -28,6 +28,32 @@
       </button>
       <NuxtLink to="/login" class="nav-login">{{ $t('nav.login') }}</NuxtLink>
       <NuxtLink to="/signup" class="btn-primary nav-cta">{{ $t('nav.cta') }}</NuxtLink>
+    </div>
+    <button class="hamburger" :class="{ open: menuOpen }" aria-label="Toggle menu" @click="menuOpen = !menuOpen">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" :class="{ open: menuOpen }" @click.self="menuOpen = false">
+      <ul class="mobile-links" @click="menuOpen = false">
+        <li><NuxtLink to="/" :class="{ active: isHome }">{{ $t('nav.home') }}</NuxtLink></li>
+        <li><NuxtLink to="/about" :class="{ active: isAbout }">{{ $t('nav.about') }}</NuxtLink></li>
+        <li><NuxtLink to="/services" :class="{ active: isServices }">{{ $t('nav.services') }}</NuxtLink></li>
+        <li><NuxtLink to="/pricing" :class="{ active: isPricing }">{{ $t('nav.pricing') }}</NuxtLink></li>
+        <li><NuxtLink to="/blog" :class="{ active: isBlog }">{{ $t('nav.blog') }}</NuxtLink></li>
+        <li><NuxtLink to="/contact" :class="{ active: isContact }">{{ $t('nav.contact') }}</NuxtLink></li>
+      </ul>
+      <div class="mobile-footer">
+        <button class="lang-switch" aria-label="Switch language" @click="toggleLang">
+          <span class="lang-opt" :class="{ 'lang-active': locale === 'en' }">
+            <img src="https://flagcdn.com/20x15/us.png" class="lang-flag" alt="EN" />EN
+          </span>
+          <span class="lang-opt" :class="{ 'lang-active': locale === 'ja' }">
+            <img src="https://flagcdn.com/20x15/jp.png" class="lang-flag" alt="JA" />JA
+          </span>
+        </button>
+        <NuxtLink to="/signup" class="btn-primary mobile-cta" @click="menuOpen = false">{{ $t('nav.cta') }}</NuxtLink>
+      </div>
     </div>
   </nav>
 </template>
@@ -39,12 +65,16 @@ const { locale, setLocale } = useI18n()
 const toggleLang = () => setLocale(locale.value === 'en' ? 'ja' : 'en')
 const route = useRoute()
 
+const menuOpen = ref(false)
+
 const isHome = computed(() => route.path === '/')
 const isPricing = computed(() => route.path === '/pricing')
 const isBlog = computed(() => route.path.startsWith('/blog'))
 const isAbout = computed(() => route.path === '/about')
 const isServices = computed(() => route.path === '/services')
 const isContact = computed(() => route.path === '/contact')
+
+watch(() => route.path, () => { menuOpen.value = false })
 </script>
 
 <style scoped>
@@ -86,7 +116,7 @@ const isContact = computed(() => route.path === '/contact')
   user-select: none;
   -webkit-user-select: none;
 }
-.logo-dog { color: var(--gold); font-style: italic; }
+.logo-dog { color: var(--accent); font-style: italic; }
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -168,7 +198,7 @@ const isContact = computed(() => route.path === '/contact')
   display: block;
 }
 .lang-active {
-  background: var(--gold);
+  background: var(--accent);
   color: #fff;
 }
 
@@ -186,12 +216,8 @@ const isContact = computed(() => route.path === '/contact')
   justify-content: center;
   transition: background 0.2s, color 0.2s;
 }
-.theme-toggle:hover {
-  background: var(--teal);
-}
-[data-theme="dark"] .theme-toggle {
-  color: var(--gold);
-}
+.theme-toggle:hover { background: var(--teal); }
+[data-theme="dark"] .theme-toggle { color: var(--accent); }
 
 .nav-cta {
   background: var(--ink);
@@ -204,17 +230,99 @@ const isContact = computed(() => route.path === '/contact')
 }
 .nav-cta:hover { background: var(--teal) !important; }
 
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile menu ── */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 1.5rem 1.5rem;
+  flex-direction: column;
+  gap: 0.25rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  z-index: 99;
+}
+.mobile-menu.open { display: flex; }
+.mobile-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-links li a {
+  display: block;
+  padding: 0.75rem 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink2);
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+.mobile-links li:last-child a { border-bottom: none; }
+.mobile-links li a:hover,
+.mobile-links li a.active { color: var(--ink); }
+.mobile-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.mobile-cta {
+  padding: 0.6rem 1.5rem;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff !important;
+}
+
 @media (max-width: 900px) {
   .navbar { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
+  .hamburger { display: flex; }
 }
 @media (max-width: 680px) {
   .navbar { padding: 0.75rem 1rem; }
   .nav-login { display: none; }
-  .nav-cta {
+  .nav-right .nav-cta {
     font-size: 12px;
     padding: 0.45rem 0.9rem;
     white-space: nowrap;
   }
+}
+@media (max-width: 480px) {
+  .nav-right .lang-switch { display: none; }
+}
+@media (max-width: 360px) {
+  .nav-right .nav-cta { display: none; }
 }
 </style>

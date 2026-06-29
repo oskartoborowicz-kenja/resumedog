@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <main>
     <section class="blog-hero">
       <div class="hero-eyebrow">{{ $t('blog.eyebrow') }}</div>
@@ -116,13 +116,13 @@ const posts = computed(() =>
 }
 h1 {
   font-family: var(--font-display);
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
   line-height: 1.1;
   letter-spacing: -0.03em;
   font-weight: 400;
   margin-bottom: 1rem;
 }
-h1 em { color: var(--gold); font-style: italic; }
+h1 em { color: var(--accent); font-style: italic; }
 .hero-sub { font-size: 17px; color: var(--ink2); font-weight: 300; }
 
 .blog-content {
@@ -139,7 +139,6 @@ h1 em { color: var(--gold); font-style: italic; }
   background-position: center;
   margin-bottom: 1.75rem;
 }
-.featured-body { }
 .featured-card {
   display: block;
   background: var(--card-bg);
@@ -150,7 +149,7 @@ h1 em { color: var(--gold); font-style: italic; }
   transition: border-color 0.2s, transform 0.2s;
   color: inherit;
 }
-.featured-card:hover { border-color: var(--gold2); transform: translateY(-2px); }
+.featured-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
 .featured-card h2 {
   font-family: var(--font-display);
   font-size: 2rem;
@@ -175,7 +174,6 @@ h1 em { color: var(--gold); font-style: italic; }
   background-position: center;
   margin-bottom: 1.25rem;
 }
-.post-body-inner { }
 .post-card {
   display: block;
   background: var(--card-bg);
@@ -185,7 +183,7 @@ h1 em { color: var(--gold); font-style: italic; }
   transition: border-color 0.2s, transform 0.2s;
   color: inherit;
 }
-.post-card:hover { border-color: var(--gold2); transform: translateY(-2px); }
+.post-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
 .post-card h3 {
   font-family: var(--font-display);
   font-size: 1.3rem;
@@ -239,7 +237,14 @@ h1 em { color: var(--gold); font-style: italic; }
 
 @media (max-width: 900px) {
   .posts-grid { grid-template-columns: 1fr; }
-  h1 { font-size: 2.5rem; }
   .blog-content { padding: 2rem 1.5rem; }
+}
+@media (max-width: 480px) {
+  .blog-hero { padding: 3rem 1.25rem 2rem; }
+  .featured-card { padding: 1.25rem; }
+  .subscribe-form { flex-direction: column; }
+  .subscribe-form button { width: 100%; }
+  .post-card { padding: 1rem; }
+  .blog-content { padding: 2rem 1.25rem; }
 }
 </style>

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <main>
     <section class="ct-section">
       <div class="container">
@@ -393,7 +393,7 @@ onMounted(() => {
   color: var(--ink);
   transition: color 0.2s;
 }
-.ct-detail-link:hover { color: var(--gold); }
+.ct-detail-link:hover { color: var(--accent); }
 
 .ct-divider {
   height: 1px;
@@ -441,7 +441,7 @@ onMounted(() => {
   width: 100%;
 }
 .ct-field input:focus,
-.ct-field textarea:focus { border-color: var(--gold); }
+.ct-field textarea:focus { border-color: var(--accent); }
 .ct-field input::placeholder,
 .ct-field textarea::placeholder { color: var(--ink2); opacity: 0.5; }
 
@@ -455,7 +455,7 @@ onMounted(() => {
   overflow: visible;
   transition: border-color 0.2s;
 }
-.ct-phone-wrap:focus-within { border-color: var(--gold); }
+.ct-phone-wrap:focus-within { border-color: var(--accent); }
 
 .ct-dial-wrap {
   position: relative;

@@ -19,7 +19,8 @@
     "cta1": "Start Free Trial",
     "cta2": "Book a Demo",
     "trust1": "No credit card required",
-    "trust2": "5 trial conversions"
+    "trust2": "5 trial conversions",
+    "reviewTime": "Review time"
   },
   "whatWeDo": {
     "label": "Business Impact",
@@ -52,6 +53,25 @@
     "bullet6": "Export clean Word or PDF files",
     "pipelineIn": "Raw input",
     "pipelineOut": "Client-ready",
+    "docIn": {
+      "h1": "職務経歴 / WORK EXPERIENCE",
+      "l1": "採用担当　TalentBridge株式会社　2019〜",
+      "b1": "候補者のソーシング対応（英語・日本語）",
+      "b2": "クライアントへの候補者提出書類の作成",
+      "b3": "履歴書の翻訳・フォーマット整理",
+      "h2": "学歴 / EDUCATION",
+      "l2": "早稲田大学　商学部　2015–2019"
+    },
+    "docOut": {
+      "h1": "Work Experience",
+      "l1": "Recruiter · TalentBridge Co.",
+      "l2": "April 2019 – March 2023",
+      "b1": "Candidate sourcing & placement",
+      "b2": "Client submission management",
+      "b3": "EN ⇄ JP resume translation",
+      "h2": "Education",
+      "l3": "Waseda University · B.A. Commerce"
+    },
     "steps": ["Format", "Translate", "Anonymize", "Tailor to JD", "Review", "Export"],
     "stepIcons": ["fa-solid fa-align-left", "fa-solid fa-language", "fa-solid fa-user-shield", "fa-solid fa-bullseye", "fa-solid fa-pen-to-square", "fa-solid fa-file-export"]
   },
@@ -80,7 +100,7 @@
     "headingEm": "fixing resumes.",
     "p1": "Recruiters should spend their time sourcing candidates, speaking with clients, and moving hiring processes forward - not rebuilding documents from scratch.",
     "p2": "ResumeDOG removes the repetitive formatting, translation, anonymization, and export work that slows down client submissions. Recruiters stay in control, but the manual document work becomes faster and more consistent.",
-    "quote": "The problem was not the candidate. It was the manual work needed before a strong candidate could be sent to the client."
+    "quote": "Our team was already building with RAG and large language models. The answer was obvious. We built an AI that reads the job description, rewrites the resume to match, and applies your agency's brand. Backend work done in seconds."
   },
   "trialCta": {
     "label": "Get Started",
@@ -163,7 +183,8 @@
     "readMore": "Explore all services",
     "page": {
       "heading": "Resume preparation services for recruitment agencies.",
-      "body": "ResumeDOG helps recruiters format, translate, anonymize, tailor, and export candidate resumes for client submission.",
+      "bodyBefore": "",
+      "bodyAfter": "helps recruiters format, translate, anonymize, tailor, and export candidate resumes for client submission.",
       "heroCta": "See How It Works",
       "cards": {
         "formatting":    { "title": "Resume Formatting",           "body": "Standardize candidate resumes into clean, professional layouts that match your agency's workflow." },
@@ -176,7 +197,8 @@
       "workflowCta": {
         "label": "Workflow",
         "heading": "See the full workflow.",
-        "body": "From upload to export, ResumeDOG keeps the resume preparation process simple, controlled, and recruiter-led.",
+        "bodyBefore": "From upload to export,",
+        "bodyAfter": "keeps the resume preparation process simple, controlled, and recruiter-led.",
         "cta": "How It Works"
       },
       "video": {
@@ -257,7 +279,8 @@
   },
   "pricing": {
     "label": "Pricing",
-    "heading": "Choose the ResumeDOG plan that fits your team",
+    "heading": "Choose the",
+    "headingEnd": "plan that fits your team",
     "body": "Choose the plan that matches your resume volume, team size, and workflow needs.",
     "tbd": "TBD",
     "compare": "Compare plans",

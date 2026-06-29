@@ -1,4 +1,4 @@
-# ResumeDOG — Claude Code Notes
+﻿# ResumeDOG — Claude Code Notes
 
 ## Project Overview
 Nuxt 3 marketing site for ResumeDOG, an AI resume formatting SaaS for recruitment agencies. File-based routing, `@nuxtjs/i18n` v10, Vue 3 Composition API.
@@ -59,7 +59,7 @@ Defined in `assets/css/main.css`. Dark mode via `[data-theme="dark"]` on `<html>
 | `--ink2` | `#52525b` | `#a09890` |
 | `--cream` | `#e0f2fe` | `#0f172a` |
 | `--cream2` | `#bae6fd` | `#1e293b` |
-| `--gold` | `#0d9488` (Deep Teal) | `#fb923c` (Coral) |
+| `--accent` | `#0d9488` (Deep Teal) | `#fb923c` (Coral) |
 | `--teal` | `#312e81` (Deep Indigo) | `#818cf8` |
 | `--card-bg` | `#ffffff` | `#1e293b` |
 
@@ -82,7 +82,7 @@ Backgrounds alternate `--cream` / `--cream2` per section to create visual separa
 - Smooth scroll: `html { scroll-behavior: smooth; }` + `* { scroll-margin-top: 80px; }`
 - Buttons: `.btn-primary` (global), `.btn-demo` (scoped — transparent with border, dark mode gets `background: var(--cream2)`)
 - Plan card hover zoom: `transform: scale(1.03)` with `box-shadow` on `.plan-card:hover`
-- Form fields: `background: var(--card-bg)`, `border: 1px solid var(--border)`, `border-radius: 10px`, focus gets `border-color: var(--gold)`
+- Form fields: `background: var(--card-bg)`, `border: 1px solid var(--border)`, `border-radius: 10px`, focus gets `border-color: var(--accent)`
 
 ## Homepage Hero Visual (`pages/index.vue`)
 The right-side hero visual (`.hero-visual`) is a custom mockup built with scoped CSS — no Tailwind. Key classes:
