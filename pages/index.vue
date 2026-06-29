@@ -9,7 +9,6 @@
           <div class="hero-eyebrow">{{ $t('hero.eyebrow') }}</div>
           <h1>{{ $t('hero.heading') }} <em>{{ $t('hero.headingEm') }}</em></h1>
           <p class="hero-supporting">{{ $t('hero.supporting') }}</p>
-          <p class="hero-body">{{ $t('hero.body') }}</p>
           <div class="hero-actions">
             <NuxtLink to="/signup" class="btn-primary">{{ $t('hero.cta1') }}</NuxtLink>
             <button class="btn-demo">{{ $t('hero.cta2') }}</button>
@@ -952,6 +951,7 @@ h1 em { color: var(--gold); font-style: italic; }
 .what-we-do {
   padding: 5rem 0;
   background: var(--cream2);
+  text-align: center;
 }
 .wwd-grid {
   display: grid;
@@ -1414,7 +1414,7 @@ h1 em { color: var(--gold); font-style: italic; }
 /* ── FAQs ── */
 .faqs-section {
   padding: 5rem 0;
-  background: var(--cream2);
+  background: var(--cream);
 }
 .faqs-header {
   text-align: center;

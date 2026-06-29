@@ -16,6 +16,7 @@
         <h1>{{ post.title }}</h1>
         <p class="post-excerpt">{{ post.excerpt }}</p>
       </div>
+      <div v-if="post.image" class="post-hero-img" :style="{ backgroundImage: `url(${post.image})` }" />
       <div class="post-body" v-html="post.content" />
       <div class="post-footer">
         <NuxtLink to="/blog" class="btn-outline">
@@ -33,9 +34,11 @@
 
 <script setup>
 const route = useRoute()
+const base = useRuntimeConfig().app.baseURL.replace(/\/$/, '')
 
 const allPosts = {
   'ai-recruiting-what-firms-need-to-know-in-2026': {
+    image: `${base}/images/blog-ai-recruiting.webp`,
     tag: 'AI Recruiting',
     date: 'Apr 3, 2026',
     readTime: '4 min read',
@@ -80,6 +83,7 @@ const allPosts = {
   },
 
   'ai-trends-shaping-recruiting-in-2026': {
+    image: `${base}/images/blog-ai-trends.webp`,
     tag: 'Industry Trends',
     date: 'Apr 3, 2026',
     readTime: '4 min read',
@@ -117,6 +121,7 @@ const allPosts = {
   },
 
   'how-ai-can-automate-resume-formatting-and-processing': {
+    image: `${base}/images/blog-resume-auto.jpg`,
     tag: 'Resume Automation',
     date: 'Apr 3, 2026',
     readTime: '4 min read',
@@ -210,8 +215,15 @@ h1 {
   color: var(--ink2);
   font-weight: 300;
   line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.post-hero-img {
+  width: 100%;
+  height: 400px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
   margin-bottom: 3rem;
-  padding-bottom: 2rem;
   border-bottom: 0.5px solid var(--border);
 }
 .post-dot {
