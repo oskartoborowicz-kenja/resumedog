@@ -283,6 +283,7 @@
     "headingEnd": "プランを選択",
     "body": "履歴書の処理量、チームの規模、ワークフローのニーズに合ったプランをお選びください。",
     "tbd": "未定",
+    "prices": { "trial": "$0", "starter": "$15", "professional": "$59", "team": "$169", "enterprise": "カスタム" },
     "compare": "プランを比較",
     "compareLabels": ["月間履歴書変換数", "英日翻訳", "匿名化", "求人票マッチング", "Word/PDFエクスポート", "管理ダッシュボード", "カスタムテンプレート", "優先サポート"],
     "compareCell": { "limited": "制限あり", "tbd": "未定", "unlimited": "無制限" },

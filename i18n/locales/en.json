@@ -283,6 +283,7 @@
     "headingEnd": "plan that fits your team",
     "body": "Choose the plan that matches your resume volume, team size, and workflow needs.",
     "tbd": "TBD",
+    "prices": { "trial": "$0", "starter": "$15", "professional": "$59", "team": "$169", "enterprise": "Custom Solution" },
     "compare": "Compare plans",
     "compareLabels": ["Monthly resume conversions", "English-Japanese translation", "Anonymization", "Job description matching", "Word/PDF export", "Admin dashboard", "Custom templates", "Priority support"],
     "compareCell": { "limited": "Limited", "tbd": "TBD", "unlimited": "Unlimited" },

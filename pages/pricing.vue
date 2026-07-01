@@ -17,7 +17,7 @@
           <div class="pr-card pr-card--trial">
             <div class="pr-card-top">
               <p class="pr-plan-name">{{ plans[0].name }}</p>
-              <p class="pr-price">{{ $t('pricing.tbd') }}</p>
+              <p class="pr-price">{{ $t('pricing.prices.trial') }}</p>
               <p class="pr-plan-desc">{{ plans[0].description }}</p>
             </div>
             <NuxtLink to="/contact" class="btn-primary pr-cta">{{ plans[0].cta }}</NuxtLink>
@@ -37,7 +37,7 @@
           >
             <div class="pr-card-top">
               <p class="pr-plan-name">{{ plan.name }}</p>
-              <p class="pr-price">{{ $t('pricing.tbd') }}</p>
+              <p class="pr-price">{{ $t(`pricing.prices.${plan.id}`) }}</p>
               <p class="pr-plan-desc">{{ plan.description }}</p>
             </div>
             <NuxtLink to="/contact" :class="plan.featured ? 'btn-primary pr-cta' : 'btn-outline pr-cta'">

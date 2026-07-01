@@ -2,7 +2,7 @@
   <div class="faq-item" :class="{ open: isOpen }">
     <button class="faq-summary" @click="isOpen = !isOpen">
       <span>{{ q }}</span>
-      <span class="faq-icon">+</span>
+      <span class="faq-icon">{{ isOpen ? '−' : '+' }}</span>
     </button>
     <div class="faq-body" :style="{ height: isOpen ? contentHeight : '0px' }">
       <p ref="content">{{ a }}</p>
@@ -61,12 +61,12 @@ watch(isOpen, async (val) => {
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
+  line-height: 1;
   color: var(--ink2);
   flex-shrink: 0;
-  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s, color 0.2s;
 }
 .faq-item.open .faq-icon {
-  transform: rotate(45deg);
   border-color: var(--accent);
   color: var(--accent);
 }
