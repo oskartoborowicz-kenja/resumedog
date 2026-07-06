@@ -79,10 +79,9 @@
     <div class="marquee-bar" aria-hidden="true">
       <div class="marquee-track">
         <div class="marquee-inner">
-          <template v-for="_ in 2" :key="_">
+          <template v-for="_ in 4" :key="_">
             <template v-for="(item, i) in $tm('marquee.items')" :key="i">
-              <span class="mq-item"><i :class="$rt($tm('marquee.icons')[i])"></i> {{ $rt(item) }}</span>
-              <span class="mq-sep">·</span>
+              <span class="mq-chip"><i :class="$rt($tm('marquee.icons')[i])"></i> {{ $rt(item) }}</span>
             </template>
           </template>
         </div>
@@ -644,42 +643,49 @@ h1 em { color: var(--accent); font-style: italic; }
 .marquee-bar {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: var(--card-bg);
+  background: var(--cream2);
   overflow: hidden;
-  padding: 0.85rem 0;
+  padding: 1.35rem 0;
+  position: relative;
+}
+.marquee-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 140% at 50% 50%, rgba(13,148,136,0.1), transparent 70%);
+  pointer-events: none;
+}
+[data-theme="dark"] .marquee-bar::before {
+  background: radial-gradient(60% 140% at 50% 50%, rgba(129,140,248,0.14), transparent 70%);
 }
 .marquee-track {
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
 }
 .marquee-inner {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 0.75rem;
   width: max-content;
-  animation: marquee-scroll 32s linear infinite;
+  animation: marquee-scroll 60s linear infinite;
 }
 @keyframes marquee-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-.mq-item {
+.mq-chip {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
-  color: var(--ink2);
+  color: var(--ink);
   white-space: nowrap;
   letter-spacing: 0.01em;
+  padding: 0.5rem 1.1rem;
 }
-.mq-item i { color: var(--accent); font-size: 12px; }
-.mq-sep {
-  color: var(--border);
-  font-size: 16px;
-  user-select: none;
-}
+.mq-chip i { color: var(--accent); font-size: 12px; }
 
 /* ── What We Do ── */
 .what-we-do {

@@ -23,6 +23,9 @@
             :key="key"
             class="sv-card"
           >
+            <div v-if="cardImages[key]" class="sv-card-img" :class="`sv-card-img--${key}`">
+              <img :src="`${base}/images/${cardImages[key][locale] || cardImages[key].en}`" alt="" />
+            </div>
             <div class="sv-card-icon">
               <i :class="icon"></i>
             </div>
@@ -74,6 +77,7 @@ useSeoMeta({
   description: 'AI resume formatting, English-Japanese translation, candidate anonymization, job description matching, and Word/PDF export for recruitment agencies.'
 })
 const base = useRuntimeConfig().app.baseURL.replace(/\/$/, '')
+const { locale } = useI18n()
 
 const cardIcons = {
   'fa-solid fa-align-left':      'formatting',
@@ -82,6 +86,15 @@ const cardIcons = {
   'fa-solid fa-bullseye':        'matching',
   'fa-solid fa-sliders':         'templates',
   'fa-solid fa-file-arrow-down': 'export',
+}
+
+const cardImages = {
+  formatting:    { en: 'en/cv-formatter.png',       ja: 'ja/formatter-cv.png' },
+  translation:   { en: 'en/en-ja-translation.png',  ja: 'ja/en-ja-translation.png' },
+  anonymization: { en: 'en/anonymization-en.png',   ja: 'ja/anonymization-ja.png' },
+  matching:      { en: 'en/job-matching-en.png',    ja: 'ja/job-matching-ja.png' },
+  export:        { en: 'word-pdf-export.jfif',      ja: 'word-pdf-export.jfif' },
+  templates:     { en: 'template-format.jpg',       ja: 'template-format.jpg' },
 }
 </script>
 
@@ -146,6 +159,19 @@ const cardIcons = {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.sv-card-img {
+  width: calc(100% + 4rem);
+  margin: -2rem -2rem 0;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+}
+.sv-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .sv-card-icon {
   width: 46px;
