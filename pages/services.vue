@@ -26,9 +26,6 @@
             <div v-if="cardImages[key]" class="sv-card-img" :class="`sv-card-img--${key}`">
               <img :src="`${base}/images/${cardImages[key][locale] || cardImages[key].en}`" alt="" />
             </div>
-            <div class="sv-card-icon">
-              <i :class="icon"></i>
-            </div>
             <h3>{{ $t(`services.page.cards.${key}.title`) }}</h3>
             <p>{{ $t(`services.page.cards.${key}.body`) }}</p>
           </div>
