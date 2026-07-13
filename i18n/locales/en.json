@@ -187,12 +187,12 @@
       "bodyAfter": "helps recruiters format, translate, anonymize, tailor, and export candidate resumes for client submission.",
       "heroCta": "See How It Works",
       "cards": {
-        "formatting":    { "title": "Resume Formatting",           "body": "Standardize candidate resumes into clean, professional layouts that match your agency's workflow." },
-        "translation":   { "title": "English-Japanese Translation", "body": "Translate resumes between English and Japanese with recruitment-aware wording." },
-        "anonymization": { "title": "Candidate Anonymization",      "body": "Hide selected personal details before sharing resumes with clients." },
-        "matching":      { "title": "Job Description Matching",     "body": "Adjust resume emphasis to better reflect the client's role requirements while keeping the candidate's facts intact." },
-        "templates":     { "title": "Template and Format Controls", "body": "Apply your agency's preferred structure, layout, and formatting rules." },
-        "export":        { "title": "Word and PDF Export",          "body": "Download polished files in the formats clients expect." }
+        "formatting":    { "title": "Resume Formatting",           "body": "Standardize candidate resumes into clean, professional layouts that match your agency's workflow.", "docHeading": "EXPERIENCE", "docLine1": "Senior Recruiter · TalentBridge", "docLine2": "8 yrs · Tokyo, Japan", "docTag": "FORMATTED" },
+        "translation":   { "title": "English-Japanese Translation", "body": "Translate resumes between English and Japanese with recruitment-aware wording.", "docHeading": "職務経歴", "docLine1": "Recruiter · TalentBridge Co.", "docLine2": "採用担当・タレントブリッジ", "docTag": "EN ⇄ JP" },
+        "anonymization": { "title": "Candidate Anonymization",      "body": "Hide selected personal details before sharing resumes with clients.", "docHeading": "CANDIDATE", "docTag": "ANONYMIZED" },
+        "matching":      { "title": "Job Description Matching",     "body": "Adjust resume emphasis to better reflect the client's role requirements while keeping the candidate's facts intact.", "docHeading": "MATCH SCORE", "docTag": "MATCHED" },
+        "templates":     { "title": "Template and Format Controls", "body": "Apply your agency's preferred structure, layout, and formatting rules.", "docHeading": "AGENCY TEMPLATE", "docLine1": "Modern · Two-column", "docLine2": "Header, Skills, Experience", "docTag": "TEMPLATE" },
+        "export":        { "title": "Word and PDF Export",          "body": "Download polished files in the formats clients expect.", "docHeading": "READY TO SEND", "docTag": "EXPORTED" }
       },
       "workflowCta": {
         "label": "Workflow",

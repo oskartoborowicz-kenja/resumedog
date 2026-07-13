@@ -23,8 +23,40 @@
             :key="key"
             class="sv-card"
           >
-            <div v-if="cardImages[key]" class="sv-card-img" :class="`sv-card-img--${key}`">
-              <img :src="`${base}/images/${cardImages[key][locale] || cardImages[key].en}`" alt="" />
+            <div class="sv-doc">
+              <div class="sv-doc-stripe"></div>
+              <div class="sv-doc-header">
+                <span class="sv-doc-icon"><i :class="icon"></i></span>
+                <span class="sv-doc-file">{{ cardDocs[key].file }}</span>
+                <span class="sv-doc-dot"></span>
+              </div>
+
+              <div v-if="key === 'anonymization'" class="sv-doc-lines">
+                <div class="sv-doc-line heading">{{ $t(`services.page.cards.${key}.docHeading`) }}</div>
+                <div class="sv-doc-redacted"></div>
+                <div class="sv-doc-redacted short"></div>
+              </div>
+
+              <div v-else-if="key === 'matching'" class="sv-doc-match">
+                <span class="sv-doc-match-num">92%</span>
+                <span class="sv-doc-match-label">{{ $t(`services.page.cards.${key}.docHeading`) }}</span>
+              </div>
+
+              <div v-else-if="key === 'export'" class="sv-doc-lines">
+                <div class="sv-doc-line heading">{{ $t(`services.page.cards.${key}.docHeading`) }}</div>
+                <div class="sv-doc-exports">
+                  <span class="sv-doc-export-tag"><i class="fa-solid fa-file-word"></i> DOCX</span>
+                  <span class="sv-doc-export-tag"><i class="fa-regular fa-file-pdf"></i> PDF</span>
+                </div>
+              </div>
+
+              <div v-else class="sv-doc-lines">
+                <div class="sv-doc-line heading">{{ $t(`services.page.cards.${key}.docHeading`) }}</div>
+                <div class="sv-doc-line">{{ $t(`services.page.cards.${key}.docLine1`) }}</div>
+                <div class="sv-doc-line muted">{{ $t(`services.page.cards.${key}.docLine2`) }}</div>
+              </div>
+
+              <span class="sv-doc-tag">{{ $t(`services.page.cards.${key}.docTag`) }}</span>
             </div>
             <h3>{{ $t(`services.page.cards.${key}.title`) }}</h3>
             <p>{{ $t(`services.page.cards.${key}.body`) }}</p>
@@ -85,14 +117,15 @@ const cardIcons = {
   'fa-solid fa-file-arrow-down': 'export',
 }
 
-const cardImages = {
-  formatting:    { en: 'en/cv-formatter.png',       ja: 'ja/formatter-cv.png' },
-  translation:   { en: 'en/en-ja-translation.png',  ja: 'ja/en-ja-translation.png' },
-  anonymization: { en: 'en/anonymization-en.png',   ja: 'ja/anonymization-ja.png' },
-  matching:      { en: 'en/job-matching-en.png',    ja: 'ja/job-matching-ja.png' },
-  export:        { en: 'word-pdf-export.jfif',      ja: 'word-pdf-export.jfif' },
-  templates:     { en: 'template-format.jpg',       ja: 'template-format.jpg' },
+const cardDocs = {
+  formatting:    { file: 'resume_raw.docx' },
+  translation:   { file: 'resume_ja.docx' },
+  anonymization: { file: 'candidate_002.docx' },
+  matching:      { file: 'job_match.docx' },
+  templates:     { file: 'template.docx' },
+  export:        { file: 'client_ready.docx' },
 }
+
 </script>
 
 <style scoped>
@@ -157,30 +190,134 @@ const cardImages = {
   flex-direction: column;
   gap: 1rem;
 }
-.sv-card-img {
-  width: calc(100% + 4rem);
-  margin: -2rem -2rem 0;
-  height: 160px;
-  overflow: hidden;
-  border-radius: 18px 18px 0 0;
-}
-.sv-card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.sv-card-icon {
-  width: 46px;
-  height: 46px;
+.sv-doc {
+  position: relative;
+  background: var(--cream);
+  border: 1px solid var(--border);
   border-radius: 12px;
+  padding: 0.9rem 0.9rem 1.6rem;
+  overflow: hidden;
+}
+.sv-doc-stripe {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--teal), var(--accent));
+}
+.sv-doc-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+.sv-doc-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
   background: var(--teal2);
   color: var(--teal);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  align-self: center;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+.sv-doc-file {
+  font-size: 9.5px;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink2);
+}
+.sv-doc-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  margin-left: auto;
+}
+.sv-doc-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.sv-doc-line {
+  font-size: 11px;
+  color: var(--ink);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sv-doc-line.heading {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1px;
+}
+.sv-doc-line.muted {
+  color: var(--ink2);
+  font-size: 10.5px;
+}
+.sv-doc-redacted {
+  height: 9px;
+  width: 80%;
+  border-radius: 3px;
+  background: var(--ink2);
+  opacity: 0.35;
+  margin-top: 4px;
+}
+.sv-doc-redacted.short { width: 55%; }
+.sv-doc-match {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.sv-doc-match-num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.sv-doc-match-label {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink2);
+}
+.sv-doc-exports {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 4px;
+}
+.sv-doc-export-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9.5px;
+  font-family: monospace;
+  font-weight: 600;
+  color: var(--ink2);
+  background: var(--cream2);
+  border: 1px solid var(--border);
+  padding: 3px 7px;
+  border-radius: 6px;
+}
+.sv-doc-tag {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  font-size: 8px;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 .sv-card h3 {
   font-family: var(--font-display);
