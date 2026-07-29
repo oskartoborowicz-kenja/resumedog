@@ -72,18 +72,47 @@
       "h2": "学歴",
       "l3": "早稲田大学・商学部"
     },
-    "steps": ["フォーマット", "翻訳", "匿名化", "JD調整", "確認", "エクスポート"],
-    "stepIcons": ["fa-solid fa-align-left", "fa-solid fa-language", "fa-solid fa-user-shield", "fa-solid fa-bullseye", "fa-solid fa-pen-to-square", "fa-solid fa-file-export"]
+    "steps": [
+      "フォーマット",
+      "翻訳",
+      "匿名化",
+      "JD調整",
+      "確認",
+      "エクスポート"
+    ],
+    "stepIcons": [
+      "fa-solid fa-align-left",
+      "fa-solid fa-language",
+      "fa-solid fa-user-shield",
+      "fa-solid fa-bullseye",
+      "fa-solid fa-pen-to-square",
+      "fa-solid fa-file-export"
+    ]
   },
   "howItWorks2": {
     "label": "使い方",
     "heading": "生の履歴書からクライアント提出可能な状態まで。",
     "body": "クライアントに届く前の準備を、採用担当者主導のシンプルなワークフローで。",
-    "step1": { "title": "アップロード", "desc": "一般的な形式の候補者履歴書をドロップ。" },
-    "step2": { "title": "設定を選択", "desc": "言語、テンプレート、匿名化オプションを選択。" },
-    "step3": { "title": "変換", "desc": "ResumeDOGが自動でフォーマット、翻訳、調整を行います。" },
-    "step4": { "title": "確認", "desc": "出力結果を確認し、送付前に最終編集。" },
-    "step5": { "title": "エクスポート", "desc": "クライアント提出可能なWordまたはPDFをダウンロード。" }
+    "step1": {
+      "title": "アップロード",
+      "desc": "一般的な形式の候補者履歴書をドロップ。"
+    },
+    "step2": {
+      "title": "設定を選択",
+      "desc": "言語、テンプレート、匿名化オプションを選択。"
+    },
+    "step3": {
+      "title": "変換",
+      "desc": "ResumeDOGが自動でフォーマット、翻訳、調整を行います。"
+    },
+    "step4": {
+      "title": "確認",
+      "desc": "出力結果を確認し、送付前に最終編集。"
+    },
+    "step5": {
+      "title": "エクスポート",
+      "desc": "クライアント提出可能なWordまたはPDFをダウンロード。"
+    }
   },
   "japan": {
     "label": "日本向け",
@@ -128,10 +157,22 @@
     "headingEm": "聞かれること",
     "sub": "ResumeDOGについてよくある疑問にお答えします。ご不明な点はお気軽にお問い合わせください。",
     "items": [
-      { "q": "ResumeDOGは採用担当者を置き換えますか？", "a": "いいえ。ResumeDOGは繰り返しの書類準備作業を減らすために設計されています。採用担当者はクライアント提出前に引き続き履歴書を確認、編集、承認します。" },
-      { "q": "なぜResumeDOGは日本に注力しているのですか？", "a": "ResumeDOGは英日翻訳、プライバシーに配慮した履歴書処理、日本特有の採用書類出力の将来サポートなど、日本の採用ワークフローを念頭に置いて構築されています。" },
-      { "q": "ResumeDOGは派遣法に準拠していますか？", "a": "ResumeDOGは派遣法関連のワークフロー要件を念頭に置いて開発されており、それらの要件は製品開発の一環として検討中です。" },
-      { "q": "いつでもキャンセルできますか？", "a": "はい - 契約なし、縛りなし。アカウント設定からワンクリックでキャンセルできます。" }
+      {
+        "q": "ResumeDOGは採用担当者を置き換えますか？",
+        "a": "いいえ。ResumeDOGは繰り返しの書類準備作業を減らすために設計されています。採用担当者はクライアント提出前に引き続き履歴書を確認、編集、承認します。"
+      },
+      {
+        "q": "なぜResumeDOGは日本に注力しているのですか？",
+        "a": "ResumeDOGは英日翻訳、プライバシーに配慮した履歴書処理、日本特有の採用書類出力の将来サポートなど、日本の採用ワークフローを念頭に置いて構築されています。"
+      },
+      {
+        "q": "ResumeDOGは派遣法に準拠していますか？",
+        "a": "ResumeDOGは派遣法関連のワークフロー要件を念頭に置いて開発されており、それらの要件は製品開発の一環として検討中です。"
+      },
+      {
+        "q": "いつでもキャンセルできますか？",
+        "a": "はい - 契約なし、縛りなし。アカウント設定からワンクリックでキャンセルできます。"
+      }
     ]
   },
   "about": {
@@ -150,8 +191,20 @@
         "diagram": {
           "input": "生の履歴書",
           "inputSub": "あらゆる形式・言語",
-          "steps": ["整理", "翻訳", "匿名化", "再フォーマット", "調整"],
-          "icons": ["fa-solid fa-broom", "fa-solid fa-language", "fa-solid fa-eye-slash", "fa-solid fa-sliders", "fa-solid fa-pen-to-square"],
+          "steps": [
+            "整理",
+            "翻訳",
+            "匿名化",
+            "再フォーマット",
+            "調整"
+          ],
+          "icons": [
+            "fa-solid fa-broom",
+            "fa-solid fa-language",
+            "fa-solid fa-eye-slash",
+            "fa-solid fa-sliders",
+            "fa-solid fa-pen-to-square"
+          ],
           "output": "提出可能な書類",
           "outputSub": "数時間の手作業",
           "timeLabel": "1件あたり約2〜4時間"
@@ -164,8 +217,16 @@
         "diagram": {
           "input": "アップロード",
           "inputSub": "あらゆる形式・言語",
-          "steps": ["設定", "AI処理", "エクスポート"],
-          "icons": ["fa-solid fa-sliders", "fa-solid fa-microchip", "fa-solid fa-file-export"],
+          "steps": [
+            "設定",
+            "AI処理",
+            "エクスポート"
+          ],
+          "icons": [
+            "fa-solid fa-sliders",
+            "fa-solid fa-microchip",
+            "fa-solid fa-file-export"
+          ],
           "output": "確認",
           "outputSub": "数時間ではなく数分で",
           "timeLabel": "1件あたり約3分"
@@ -187,12 +248,48 @@
       "bodyAfter": "は採用担当者がクライアント提出用に候補者の履歴書をフォーマット、翻訳、匿名化、調整、エクスポートするお手伝いをします。",
       "heroCta": "仕組みを見る",
       "cards": {
-        "formatting":    { "title": "履歴書フォーマット",             "body": "候補者の履歴書をエージェンシーのワークフローに合ったクリーンでプロフェッショナルなレイアウトに標準化。", "docHeading": "職歴", "docLine1": "シニアリクルーター・タレントブリッジ", "docLine2": "経験8年・東京", "docTag": "フォーマット済み" },
-        "translation":   { "title": "英日翻訳",                       "body": "採用に特化した表現で英語と日本語の間で履歴書を翻訳。", "docHeading": "職務経歴", "docLine1": "Recruiter · TalentBridge Co.", "docLine2": "採用担当・タレントブリッジ", "docTag": "EN ⇄ JP" },
-        "anonymization": { "title": "候補者匿名化",                   "body": "クライアントに履歴書を共有する前に選択した個人情報を非表示に。", "docHeading": "候補者", "docTag": "匿名化済み" },
-        "matching":      { "title": "求人マッチング",                 "body": "候補者の事実を保ちながら、クライアントの求人要件をより反映するように履歴書の強調点を調整。", "docHeading": "マッチ度", "docTag": "マッチ" },
-        "templates":     { "title": "テンプレートとフォーマット設定", "body": "エージェンシーの希望する構成、レイアウト、フォーマットルールを適用。", "docHeading": "代理店テンプレート", "docLine1": "モダン・2カラム", "docLine2": "ヘッダー、スキル、職歴", "docTag": "テンプレート" },
-        "export":        { "title": "WordおよびPDF書き出し",           "body": "クライアントが期待するフォーマットで完成したファイルをダウンロード。", "docHeading": "送信準備完了", "docTag": "エクスポート済み" }
+        "formatting": {
+          "title": "履歴書フォーマット",
+          "body": "候補者の履歴書をエージェンシーのワークフローに合ったクリーンでプロフェッショナルなレイアウトに標準化。",
+          "docHeading": "職歴",
+          "docLine1": "シニアリクルーター・タレントブリッジ",
+          "docLine2": "経験8年・東京",
+          "docTag": "フォーマット済み"
+        },
+        "translation": {
+          "title": "英日翻訳",
+          "body": "採用に特化した表現で英語と日本語の間で履歴書を翻訳。",
+          "docHeading": "職務経歴",
+          "docLine1": "Recruiter · TalentBridge Co.",
+          "docLine2": "採用担当・タレントブリッジ",
+          "docTag": "EN ⇄ JP"
+        },
+        "anonymization": {
+          "title": "候補者匿名化",
+          "body": "クライアントに履歴書を共有する前に選択した個人情報を非表示に。",
+          "docHeading": "候補者",
+          "docTag": "匿名化済み"
+        },
+        "matching": {
+          "title": "求人マッチング",
+          "body": "候補者の事実を保ちながら、クライアントの求人要件をより反映するように履歴書の強調点を調整。",
+          "docHeading": "マッチ度",
+          "docTag": "マッチ"
+        },
+        "templates": {
+          "title": "テンプレートとフォーマット設定",
+          "body": "エージェンシーの希望する構成、レイアウト、フォーマットルールを適用。",
+          "docHeading": "代理店テンプレート",
+          "docLine1": "モダン・2カラム",
+          "docLine2": "ヘッダー、スキル、職歴",
+          "docTag": "テンプレート"
+        },
+        "export": {
+          "title": "WordおよびPDF書き出し",
+          "body": "クライアントが期待するフォーマットで完成したファイルをダウンロード。",
+          "docHeading": "送信準備完了",
+          "docTag": "エクスポート済み"
+        }
       },
       "workflowCta": {
         "label": "ワークフロー",
@@ -283,40 +380,83 @@
     "headingEnd": "プランを選択",
     "body": "履歴書の処理量、チームの規模、ワークフローのニーズに合ったプランをお選びください。",
     "tbd": "未定",
-    "prices": { "trial": "$0", "starter": "$15", "professional": "$59", "team": "$169", "enterprise": "カスタム" },
+    "prices": {
+      "trial": "$0",
+      "starter": "$15",
+      "professional": "$59",
+      "team": "$169",
+      "enterprise": "カスタム"
+    },
     "compare": "プランを比較",
-    "compareLabels": ["月間履歴書変換数", "英日翻訳", "匿名化", "求人票マッチング", "Word/PDFエクスポート", "管理ダッシュボード", "カスタムテンプレート", "優先サポート"],
-    "compareCell": { "limited": "制限あり", "tbd": "未定", "unlimited": "無制限" },
+    "compareLabels": [
+      "月間履歴書変換数",
+      "英日翻訳",
+      "匿名化",
+      "求人票マッチング",
+      "Word/PDFエクスポート",
+      "管理ダッシュボード",
+      "カスタムテンプレート",
+      "優先サポート"
+    ],
+    "compareCell": {
+      "limited": "制限あり",
+      "tbd": "未定",
+      "unlimited": "無制限"
+    },
     "plans": {
       "trial": {
         "name": "トライアル",
         "description": "少数の履歴書でResumeDOGをテストするために。",
         "cta": "無料トライアル開始",
-        "features": ["限定的な履歴書変換", "Word・PDF書き出し", "基本フォーマット"]
+        "features": [
+          "限定的な履歴書変換",
+          "Word・PDF書き出し",
+          "基本フォーマット"
+        ]
       },
       "starter": {
         "name": "スターター",
         "description": "時々履歴書を準備する個人採用担当者向け。",
         "cta": "スターターを選択",
-        "features": ["履歴書変換", "英日翻訳", "匿名化", "Word・PDF書き出し"]
+        "features": [
+          "履歴書変換",
+          "英日翻訳",
+          "匿名化",
+          "Word・PDF書き出し"
+        ]
       },
       "professional": {
         "name": "プロフェッショナル",
         "description": "定期的にクライアント提出用履歴書を準備する採用担当者向け。",
         "cta": "プロを選択",
-        "features": ["英日翻訳", "匿名化", "求人内容マッチング", "Word・PDF書き出し"]
+        "features": [
+          "英日翻訳",
+          "匿名化",
+          "求人内容マッチング",
+          "Word・PDF書き出し"
+        ]
       },
       "team": {
         "name": "チーム",
         "description": "複数の採用担当者と共有ワークフローを持つエージェンシー向け。",
         "cta": "チームを選択",
-        "features": ["プロのすべての機能", "複数席", "管理ダッシュボード", "共有ワークフロー"]
+        "features": [
+          "プロのすべての機能",
+          "複数席",
+          "管理ダッシュボード",
+          "共有ワークフロー"
+        ]
       },
       "enterprise": {
         "name": "エンタープライズ",
         "description": "カスタムテンプレート、管理コントロール、サポートが必要な大規模エージェンシー向け。",
         "cta": "営業に問い合わせる",
-        "features": ["チームのすべての機能", "カスタムテンプレート", "優先サポート", "専任担当者"]
+        "features": [
+          "チームのすべての機能",
+          "カスタムテンプレート",
+          "優先サポート",
+          "専任担当者"
+        ]
       }
     },
     "cta": {
@@ -342,9 +482,24 @@
       "success": "購読しました！"
     },
     "posts": [
-      { "tag": "AIリクルーティング", "date": "2026年4月3日", "title": "AI Recruiting: What Firms Need To Know in 2026", "excerpt": "スピード、正確性、人間関係が重要な採用業界にAIが浸透しています。候補者のソーシング、スクリーニング、書類準備を支援するAIツールについて、企業が知っておくべきことを解説します。" },
-      { "tag": "業界トレンド", "date": "2026年4月3日", "title": "AI Trends Shaping Recruiting in 2026", "excerpt": "AIは採用業界でますます存在感を高めています。基本的な自動化から、候補者のソーシング、履歴書処理、ワークフロー管理を支援する高度なシステムへと進化しています。" },
-      { "tag": "履歴書自動化", "date": "2026年4月3日", "title": "How AI Can Automate Resume Formatting and Processing", "excerpt": "採用担当者は形式や構造が異なる大量の履歴書を扱います。AIツールがこれらの作業をどのように支援するか、その仕組みと限界について解説します。" }
+      {
+        "tag": "AIリクルーティング",
+        "date": "2026年4月3日",
+        "title": "AI Recruiting: What Firms Need To Know in 2026",
+        "excerpt": "スピード、正確性、人間関係が重要な採用業界にAIが浸透しています。候補者のソーシング、スクリーニング、書類準備を支援するAIツールについて、企業が知っておくべきことを解説します。"
+      },
+      {
+        "tag": "業界トレンド",
+        "date": "2026年4月3日",
+        "title": "AI Trends Shaping Recruiting in 2026",
+        "excerpt": "AIは採用業界でますます存在感を高めています。基本的な自動化から、候補者のソーシング、履歴書処理、ワークフロー管理を支援する高度なシステムへと進化しています。"
+      },
+      {
+        "tag": "履歴書自動化",
+        "date": "2026年4月3日",
+        "title": "How AI Can Automate Resume Formatting and Processing",
+        "excerpt": "採用担当者は形式や構造が異なる大量の履歴書を扱います。AIツールがこれらの作業をどのように支援するか、その仕組みと限界について解説します。"
+      }
     ]
   },
   "forgotPassword": {
@@ -389,9 +544,21 @@
     ]
   },
   "heroStats": {
-    "stat1": { "num": "30秒", "title": "30秒処理", "body": "アップロードからクライアント提出まで、1分以内に完了。" },
-    "stat2": { "num": "2言語", "title": "EN⇄JP翻訳", "body": "日本語ネイティブ対応・履歴書サポートを内蔵。" },
-    "stat3": { "num": "100%", "title": "エンタープライズセキュリティ", "body": "匿名化・ロールベースアクセス・監査対応エクスポート。" }
+    "stat1": {
+      "num": "30秒",
+      "title": "30秒処理",
+      "body": "アップロードからクライアント提出まで、1分以内に完了。"
+    },
+    "stat2": {
+      "num": "2言語",
+      "title": "EN⇄JP翻訳",
+      "body": "日本語ネイティブ対応・履歴書サポートを内蔵。"
+    },
+    "stat3": {
+      "num": "100%",
+      "title": "エンタープライズセキュリティ",
+      "body": "匿名化・ロールベースアクセス・監査対応エクスポート。"
+    }
   },
   "footer": {
     "privacy": "プライバシーポリシー",
